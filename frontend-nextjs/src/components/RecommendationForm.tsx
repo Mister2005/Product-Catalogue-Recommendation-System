@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { type RecommendationRequest, type Metadata } from '@/lib/api'
+import { type RecommendationRequest, type Metadata } from '../lib/api'
 import { Loader2, Sparkles } from 'lucide-react'
 
 interface Props {
@@ -57,22 +57,20 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
         <button
           type="button"
           onClick={() => setInputMode('manual')}
-          className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all ${
-            inputMode === 'manual'
+          className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all ${inputMode === 'manual'
               ? 'bg-white text-blue-600 shadow-sm'
               : 'text-gray-600 hover:text-gray-900'
-          }`}
+            }`}
         >
           📝 Manual Form
         </button>
         <button
           type="button"
           onClick={() => setInputMode('upload')}
-          className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all ${
-            inputMode === 'upload'
+          className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all ${inputMode === 'upload'
               ? 'bg-white text-blue-600 shadow-sm'
               : 'text-gray-600 hover:text-gray-900'
-          }`}
+            }`}
         >
           📄 Resume & GitHub
         </button>
@@ -82,200 +80,200 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
         <>
           {/* Job Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Job Title
-          </label>
-          <input
-            type="text"
-            value={formData.job_title}
-            onChange={(e) => setFormData({ ...formData, job_title: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-            placeholder="e.g., Software Engineer"
-          />
-        </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Job Title
+              </label>
+              <input
+                type="text"
+                value={formData.job_title}
+                onChange={(e) => setFormData({ ...formData, job_title: e.target.value })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                placeholder="e.g., Software Engineer"
+              />
+            </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Job Family
-          </label>
-          <select
-            value={formData.job_family}
-            onChange={(e) => setFormData({ ...formData, job_family: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-          >
-            <option value="">Select Job Family</option>
-            {metadata?.job_families.map((family) => (
-              <option key={family} value={family}>
-                {family}
-              </option>
-            ))}
-          </select>
-        </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Job Family
+              </label>
+              <select
+                value={formData.job_family}
+                onChange={(e) => setFormData({ ...formData, job_family: e.target.value })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+              >
+                <option value="">Select Job Family</option>
+                {metadata?.job_families.map((family) => (
+                  <option key={family} value={family}>
+                    {family}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Job Level
-          </label>
-          <select
-            value={formData.job_level}
-            onChange={(e) => setFormData({ ...formData, job_level: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-          >
-            <option value="">Select Job Level</option>
-            {metadata?.job_levels.map((level) => (
-              <option key={level} value={level}>
-                {level}
-              </option>
-            ))}
-          </select>
-        </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Job Level
+              </label>
+              <select
+                value={formData.job_level}
+                onChange={(e) => setFormData({ ...formData, job_level: e.target.value })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+              >
+                <option value="">Select Job Level</option>
+                {metadata?.job_levels.map((level) => (
+                  <option key={level} value={level}>
+                    {level}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Industry
-          </label>
-          <select
-            value={formData.industry}
-            onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-          >
-            <option value="">Select Industry</option>
-            {metadata?.industries.map((industry) => (
-              <option key={industry} value={industry}>
-                {industry}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Industry
+              </label>
+              <select
+                value={formData.industry}
+                onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+              >
+                <option value="">Select Industry</option>
+                {metadata?.industries.map((industry) => (
+                  <option key={industry} value={industry}>
+                    {industry}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
 
-      {/* Skills */}
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Required Skills
-        </label>
-        <div className="flex gap-2 mb-2">
-          <input
-            type="text"
-            value={skillInput}
-            onChange={(e) => setSkillInput(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addSkill())}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-            placeholder="Type a skill and press Enter"
-          />
-          <button
-            type="button"
-            onClick={addSkill}
-            className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors"
-          >
-            Add
-          </button>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {formData.required_skills?.map((skill) => (
-            <span
-              key={skill}
-              className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
-            >
-              {skill}
+          {/* Skills */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Required Skills
+            </label>
+            <div className="flex gap-2 mb-2">
+              <input
+                type="text"
+                value={skillInput}
+                onChange={(e) => setSkillInput(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addSkill())}
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                placeholder="Type a skill and press Enter"
+              />
               <button
                 type="button"
-                onClick={() => removeSkill(skill)}
-                className="hover:text-blue-900"
+                onClick={addSkill}
+                className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors"
               >
-                ×
+                Add
               </button>
-            </span>
-          ))}
-        </div>
-      </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {formData.required_skills?.map((skill) => (
+                <span
+                  key={skill}
+                  className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                >
+                  {skill}
+                  <button
+                    type="button"
+                    onClick={() => removeSkill(skill)}
+                    className="hover:text-blue-900"
+                  >
+                    ×
+                  </button>
+                </span>
+              ))}
+            </div>
+          </div>
 
-      {/* Options */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Language
-          </label>
-          <select
-            value={formData.language}
-            onChange={(e) => setFormData({ ...formData, language: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-          >
-            {metadata?.languages.map((lang) => (
-              <option key={lang} value={lang}>
-                {lang}
-              </option>
-            ))}
-          </select>
-        </div>
+          {/* Options */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Language
+              </label>
+              <select
+                value={formData.language}
+                onChange={(e) => setFormData({ ...formData, language: e.target.value })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+              >
+                {metadata?.languages.map((lang) => (
+                  <option key={lang} value={lang}>
+                    {lang}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Max Duration (minutes)
-          </label>
-          <input
-            type="number"
-            value={formData.max_duration || ''}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                max_duration: e.target.value ? parseInt(e.target.value) : undefined,
-              })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-            placeholder="e.g., 60"
-          />
-        </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Max Duration (minutes)
+              </label>
+              <input
+                type="number"
+                value={formData.max_duration || ''}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    max_duration: e.target.value ? parseInt(e.target.value) : undefined,
+                  })
+                }
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                placeholder="e.g., 60"
+              />
+            </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Recommendation Engine
-          </label>
-          <select
-            value={formData.engine}
-            onChange={(e) => setFormData({ ...formData, engine: e.target.value as any })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-          >
-            <option value="hybrid">🎯 Hybrid (Recommended)</option>
-            <option value="gemini">🤖 Gemini AI</option>
-            <option value="rag">🔍 RAG Semantic Search</option>
-            <option value="nlp">📊 NLP Analysis</option>
-            <option value="clustering">🎲 Clustering</option>
-          </select>
-        </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Recommendation Engine
+              </label>
+              <select
+                value={formData.engine}
+                onChange={(e) => setFormData({ ...formData, engine: e.target.value as any })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+              >
+                <option value="hybrid">🎯 Hybrid (Recommended)</option>
+                <option value="gemini">🤖 Gemini AI</option>
+                <option value="rag">🔍 RAG Semantic Search</option>
+                <option value="nlp">📊 NLP Analysis</option>
+                <option value="clustering">🎲 Clustering</option>
+              </select>
+            </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Number of Recommendations
-          </label>
-          <input
-            type="number"
-            min="1"
-            max="20"
-            value={formData.num_recommendations}
-            onChange={(e) =>
-              setFormData({ ...formData, num_recommendations: parseInt(e.target.value) })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-          />
-        </div>
-      </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Number of Recommendations
+              </label>
+              <input
+                type="number"
+                min="1"
+                max="20"
+                value={formData.num_recommendations}
+                onChange={(e) =>
+                  setFormData({ ...formData, num_recommendations: parseInt(e.target.value) })
+                }
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+              />
+            </div>
+          </div>
 
-      <div className="flex items-center gap-2">
-        <input
-          type="checkbox"
-          id="remote"
-          checked={formData.remote_testing_required}
-          onChange={(e) =>
-            setFormData({ ...formData, remote_testing_required: e.target.checked })
-          }
-          className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label htmlFor="remote" className="text-sm text-gray-700">
-          Remote testing required
-        </label>
-      </div>
+          <div className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              id="remote"
+              checked={formData.remote_testing_required}
+              onChange={(e) =>
+                setFormData({ ...formData, remote_testing_required: e.target.checked })
+              }
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label htmlFor="remote" className="text-sm text-gray-700">
+              Remote testing required
+            </label>
+          </div>
         </>
       ) : (
         <>
@@ -288,7 +286,7 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
               <p className="text-sm text-blue-700 mb-6">
                 Our AI will analyze your resume and GitHub profile to automatically extract your skills, experience, and recommend the best assessments for you.
               </p>
-              
+
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">

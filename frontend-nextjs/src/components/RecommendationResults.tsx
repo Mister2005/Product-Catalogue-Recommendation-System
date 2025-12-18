@@ -1,6 +1,6 @@
 'use client'
 
-import { type RecommendationResponse } from '@/lib/api'
+import { type RecommendationResponse } from '../lib/api'
 import { Award, Clock, Globe, Users, Star, ArrowLeft, Download } from 'lucide-react'
 
 interface Props {
@@ -92,11 +92,10 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-4 h-4 ${
-                          i < getScoreStars(score.total_score)
+                        className={`w-4 h-4 ${i < getScoreStars(score.total_score)
                             ? 'text-yellow-400 fill-yellow-400'
                             : 'text-gray-300'
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>

@@ -2,13 +2,13 @@
 
 import { useState } from 'react'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { getRecommendations, getMetadata, type RecommendationRequest } from '@/lib/api'
+import { getRecommendations, getMetadata, type RecommendationRequest } from '../lib/api'
 import toast from 'react-hot-toast'
 import { Search, Sparkles, Filter, ArrowRight } from 'lucide-react'
-import RecommendationForm from '@/components/RecommendationForm'
-import RecommendationResults from '@/components/RecommendationResults'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import RecommendationForm from '../components/RecommendationForm'
+import RecommendationResults from '../components/RecommendationResults'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const [showResults, setShowResults] = useState(false)
@@ -28,9 +28,9 @@ export default function Home() {
     },
     onError: (error: any) => {
       console.error('Recommendation error:', error)
-      const errorMessage = error.response?.data?.detail 
-        ? (typeof error.response.data.detail === 'string' 
-          ? error.response.data.detail 
+      const errorMessage = error.response?.data?.detail
+        ? (typeof error.response.data.detail === 'string'
+          ? error.response.data.detail
           : JSON.stringify(error.response.data.detail))
         : 'Failed to get recommendations'
       toast.error(errorMessage)
@@ -58,16 +58,16 @@ export default function Home() {
               <Sparkles className="w-4 h-4" />
               <span>AI-Powered Assessment Recommendations</span>
             </div>
-            
+
             <h1 className="text-5xl font-bold text-gray-900 mb-4">
               SHL Assessment
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                 {' '}Recommendation Engine
               </span>
             </h1>
-            
+
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Discover the perfect assessments for your hiring needs using advanced AI, 
+              Discover the perfect assessments for your hiring needs using advanced AI,
               RAG technology, and multiple intelligent recommendation engines.
             </p>
 
