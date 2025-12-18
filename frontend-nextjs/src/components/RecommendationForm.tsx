@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { type RecommendationRequest, type Metadata } from '../lib/api'
+import { type RecommendationRequest, type Metadata } from '../services/api'
 import { Loader2, Sparkles } from 'lucide-react'
 
 interface Props {
@@ -58,8 +58,8 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
           type="button"
           onClick={() => setInputMode('manual')}
           className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all ${inputMode === 'manual'
-              ? 'bg-white text-blue-600 shadow-sm'
-              : 'text-gray-600 hover:text-gray-900'
+            ? 'bg-white text-blue-600 shadow-sm'
+            : 'text-gray-600 hover:text-gray-900'
             }`}
         >
           📝 Manual Form
@@ -68,8 +68,8 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
           type="button"
           onClick={() => setInputMode('upload')}
           className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all ${inputMode === 'upload'
-              ? 'bg-white text-blue-600 shadow-sm'
-              : 'text-gray-600 hover:text-gray-900'
+            ? 'bg-white text-blue-600 shadow-sm'
+            : 'text-gray-600 hover:text-gray-900'
             }`}
         >
           📄 Resume & GitHub

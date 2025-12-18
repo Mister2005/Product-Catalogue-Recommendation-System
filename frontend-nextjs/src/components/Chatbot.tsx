@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
-import { chatWithAI } from '../lib/api';
+import { chatWithAI } from '../services/api';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -164,8 +164,8 @@ export default function Chatbot() {
                 >
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl ${message.role === 'user'
-                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-br-sm'
-                        : 'bg-white text-gray-800 rounded-bl-sm shadow-sm border border-gray-100'
+                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-br-sm'
+                      : 'bg-white text-gray-800 rounded-bl-sm shadow-sm border border-gray-100'
                       }`}
                   >
                     <div className="text-sm" dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }} />

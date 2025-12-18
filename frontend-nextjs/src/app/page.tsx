@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { getRecommendations, getMetadata, type RecommendationRequest } from '../lib/api'
+import { getRecommendations, getMetadata, type RecommendationRequest } from '../services/api'
 import toast from 'react-hot-toast'
 import { Search, Sparkles, Filter, ArrowRight } from 'lucide-react'
 import RecommendationForm from '../components/RecommendationForm'
