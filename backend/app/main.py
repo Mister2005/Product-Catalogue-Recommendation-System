@@ -23,6 +23,39 @@ _initialization_complete = False
 _initialization_error = None
 
 
+
+def _load_models_sync(app: FastAPI):
+    """Synchronous function to load heavy ML models - runs in thread pool"""
+    log.info("Loading ML models in background thread...")
+    
+    # Import heavy modules lazily
+    from app.services.hybrid_recommender import HybridRecommender
+    from app.services.rag_recommender import RAGRecommender
+    from app.services.nlp_recommender import NLPRecommender
+    from app.services.clustering_recommender import ClusteringRecommender
+    from app.services.gemini_recommender import GeminiRecommender
+    
+    # Initialize recommenders
+    rag_recommender = RAGRecommender()
+    nlp_recommender = NLPRecommender()
+    clustering_recommender = ClusteringRecommender()
+    gemini_recommender = GeminiRecommender()
+    hybrid_recommender = HybridRecommender(
+        rag_recommender=rag_recommender,
+        nlp_recommender=nlp_recommender,
+        clustering_recommender=clustering_recommender,
+        gemini_recommender=gemini_recommender
+    )
+    
+    return {
+        "rag": rag_recommender,
+        "nlp": nlp_recommender,
+        "clustering": clustering_recommender,
+        "gemini": gemini_recommender,
+        "hybrid": hybrid_recommender
+    }
+
+
 async def initialize_services(app: FastAPI):
     """Background task to initialize heavy services after server starts"""
     global _initialization_complete, _initialization_error
@@ -48,43 +81,47 @@ async def initialize_services(app: FastAPI):
         except Exception as e:
             log.error(f"Supabase connection failed: {str(e)}")
         
-        # Import and initialize recommenders lazily
-        log.info("Loading ML models (this may take a moment)...")
+        # Offload heavy model loading to thread pool to avoid blocking event loop
+        log.info("Offloading ML model loading to thread pool...")
+        loop = asyncio.get_running_loop()
         
-        from app.services.hybrid_recommender import HybridRecommender
-        from app.services.rag_recommender import RAGRecommender
-        from app.services.nlp_recommender import NLPRecommender
-        from app.services.clustering_recommender import ClusteringRecommender
-        from app.services.gemini_recommender import GeminiRecommender
+        # Run blocking model loading in executor
+        models = await loop.run_in_executor(None, _load_models_sync, app)
         
-        app.state.rag_recommender = RAGRecommender()
-        app.state.nlp_recommender = NLPRecommender()
-        app.state.clustering_recommender = ClusteringRecommender()
-        app.state.gemini_recommender = GeminiRecommender()
-        app.state.hybrid_recommender = HybridRecommender(
-            rag_recommender=app.state.rag_recommender,
-            nlp_recommender=app.state.nlp_recommender,
-            clustering_recommender=app.state.clustering_recommender,
-            gemini_recommender=app.state.gemini_recommender
-        )
+        # Assign initialized models to app state
+        app.state.rag_recommender = models["rag"]
+        app.state.nlp_recommender = models["nlp"]
+        app.state.clustering_recommender = models["clustering"]
+        app.state.gemini_recommender = models["gemini"]
+        app.state.hybrid_recommender = models["hybrid"]
         
         log.info("Recommendation engines initialized")
         
-        # Index assessments for RAG
+        # Index assessments for RAG (this involves DB calls, can stay async or be offloaded if heavy)
+        # Assuming indexing involves network calls mostly, but embedding generation is CPU bound
+        # Let's run indexing in executor as well if it uses embedding model
+        
         try:
             db = get_supabase_client()
-            log.info("Indexing assessments for RAG...")
-            app.state.rag_recommender.index_assessments(db)
-            log.info("RAG indexing complete")
             
-            # Pre-fit NLP and Clustering models
-            log.info("Pre-fitting NLP recommender...")
-            app.state.nlp_recommender.fit(db)
-            log.info("NLP pre-fitting complete")
+            # Sub-function for heavy indexing tasks
+            def _index_and_fit_sync(models, db_client):
+                log.info("Indexing assessments for RAG...")
+                models["rag"].index_assessments(db_client)
+                log.info("RAG indexing complete")
+                
+                log.info("Pre-fitting NLP recommender...")
+                models["nlp"].fit(db_client)
+                log.info("NLP pre-fitting complete")
+                
+                log.info("Pre-fitting Clustering recommender...")
+                models["clustering"].fit(db_client)
+                log.info("Clustering pre-fitting complete")
             
-            log.info("Pre-fitting Clustering recommender...")
-            app.state.clustering_recommender.fit(db)
-            log.info("Clustering pre-fitting complete")
+            # Run heavy indexing/fitting in executor
+            log.info("Running indexing and fitting in thread pool...")
+            await loop.run_in_executor(None, _index_and_fit_sync, models, db)
+
         except Exception as e:
             log.error(f"Error during model initialization: {e}")
         
@@ -94,6 +131,7 @@ async def initialize_services(app: FastAPI):
     except Exception as e:
         _initialization_error = str(e)
         log.error(f"Error initializing recommenders: {e}")
+
 
 
 # Lifespan context manager for startup/shutdown
