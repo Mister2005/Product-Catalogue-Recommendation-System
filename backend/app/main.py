@@ -1,6 +1,7 @@
 """
 Production-ready FastAPI application
 """
+import asyncio
 from contextlib import asynccontextmanager
 from datetime import datetime
 from typing import List, Optional
@@ -26,13 +27,15 @@ from app.services.github_analyzer import GitHubAnalyzer
 
 settings = get_settings()
 
+# Track initialization state
+_initialization_complete = False
 
-# Lifespan context manager for startup/shutdown
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Application lifespan management"""
-    # Startup
-    log.info("Starting SHL Recommendation Engine")
+
+async def initialize_services(app: FastAPI):
+    """Background task to initialize heavy services after server starts"""
+    global _initialization_complete
+    
+    log.info("Starting background initialization of services...")
     
     # Connect to cache (optional - app works without it)
     try:
@@ -63,7 +66,7 @@ async def lifespan(app: FastAPI):
         
         log.info("Recommendation engines initialized")
         
-        # Index assessments for RAG on startup
+        # Index assessments for RAG
         try:
             db = get_supabase_client()
             log.info("Indexing assessments for RAG...")
@@ -83,7 +86,25 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         log.error(f"Error initializing recommenders: {e}")
     
-    log.info("SHL Recommendation Engine started successfully")
+    _initialization_complete = True
+    log.info("Background initialization complete - all services ready")
+
+
+# Lifespan context manager for startup/shutdown
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Application lifespan management - starts server immediately, initializes in background"""
+    # Startup - minimal work to allow port binding quickly
+    log.info("Starting SHL Recommendation Engine - binding to port...")
+    
+    # Mark services as not ready initially
+    app.state.services_ready = False
+    
+    # Schedule background initialization AFTER server starts
+    # This allows uvicorn to bind to the port immediately
+    asyncio.create_task(initialize_services(app))
+    
+    log.info("Server started - background initialization in progress")
     
     yield
     
@@ -213,10 +234,22 @@ async def root():
 
 
 @app.get("/health")
-async def health_check(db: Client = Depends(get_db)):
-    """Health check endpoint"""
-    # Check database
+async def health_check():
+    """Health check endpoint - returns quickly for port detection"""
+    global _initialization_complete
+    
+    # Always return quickly to satisfy Render's port detection
+    if not _initialization_complete:
+        return {
+            "status": "starting",
+            "version": settings.version,
+            "timestamp": datetime.utcnow(),
+            "message": "Services initializing..."
+        }
+    
+    # Full health check once initialized
     try:
+        db = get_supabase_client()
         db.table("assessments").select("id").limit(1).execute()
         db_status = "healthy"
     except Exception as e:
