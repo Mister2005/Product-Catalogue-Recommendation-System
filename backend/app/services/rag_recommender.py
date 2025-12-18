@@ -82,7 +82,8 @@ class RAGRecommender:
         return " | ".join(parts)
     
     def index_assessments(self, db):
-        """Index all assessments in ChromaDB"""
+        """Index all assessments in ChromaDB with memory optimization"""
+        import gc
         log.info("Starting assessment indexing for RAG")
         
         response = db.table("assessments").select("*").execute()
@@ -92,41 +93,62 @@ class RAGRecommender:
             log.warning("No assessments found to index")
             return
         
-        # Prepare data
-        documents = []
-        metadatas = []
-        ids = []
+        # Helper to create batches
+        def batch_data(data, batch_size):
+            for i in range(0, len(data), batch_size):
+                yield data[i:i + batch_size]
         
-        for assessment in assessments:
-            text = self._create_assessment_text(assessment)
-            documents.append(text)
-            
-            # Create metadata
-            metadata = {
-                "id": assessment['id'],
-                "name": assessment.get('name', ''),
-                "type": assessment.get('type', ''),
-                "job_family": assessment.get('job_family', '') or "",
-                "job_level": assessment.get('job_level', '') or "",
-                "remote_testing": str(assessment.get('remote_testing', False)),
-                "duration": str(assessment.get('duration', 0) or 0)
-            }
-            metadatas.append(metadata)
-            ids.append(assessment['id'])
+        total_indexed = 0
+        batch_size = 32  # Small batch size for 512MB RAM
         
-        # Generate embeddings
-        log.info(f"Generating embeddings for {len(documents)} assessments")
-        embeddings = self.embedding_model.encode(documents, show_progress_bar=True)
+        # Process in batches
+        for batch_idx, batch_assessments in enumerate(batch_data(assessments, batch_size)):
+            try:
+                documents = []
+                metadatas = []
+                ids = []
+                
+                for assessment in batch_assessments:
+                    text = self._create_assessment_text(assessment)
+                    documents.append(text)
+                    
+                    # Create metadata
+                    metadata = {
+                        "id": assessment['id'],
+                        "name": assessment.get('name', ''),
+                        "type": assessment.get('type', ''),
+                        "job_family": assessment.get('job_family', '') or "",
+                        "job_level": assessment.get('job_level', '') or "",
+                        "remote_testing": str(assessment.get('remote_testing', False)),
+                        "duration": str(assessment.get('duration', 0) or 0)
+                    }
+                    metadatas.append(metadata)
+                    ids.append(assessment['id'])
+                
+                # Generate embeddings for batch
+                embeddings = self.embedding_model.encode(documents, show_progress_bar=False)
+                
+                # Add to ChromaDB
+                self.collection.add(
+                    embeddings=embeddings.tolist(),
+                    documents=documents,
+                    metadatas=metadatas,
+                    ids=ids
+                )
+                
+                total_indexed += len(batch_assessments)
+                log.info(f"Indexed batch {batch_idx + 1} ({len(batch_assessments)} items)")
+                
+                # Explicit cleanup
+                del documents, metadatas, ids, embeddings
+                gc.collect()
+                
+            except Exception as e:
+                log.error(f"Error indexing batch {batch_idx}: {e}")
+                continue
         
-        # Add to ChromaDB
-        self.collection.add(
-            embeddings=embeddings.tolist(),
-            documents=documents,
-            metadatas=metadatas,
-            ids=ids
-        )
-        
-        log.info(f"Successfully indexed {len(assessments)} assessments")
+        log.info(f"Successfully indexed {total_indexed} assessments")
+        gc.collect()
     
     def _create_query_text(self, request: RecommendationRequest) -> str:
         """Create query text from request"""

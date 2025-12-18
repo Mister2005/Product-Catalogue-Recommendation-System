@@ -26,34 +26,54 @@ _initialization_error = None
 
 def _load_models_sync(app: FastAPI):
     """Synchronous function to load heavy ML models - runs in thread pool"""
-    log.info("Loading ML models in background thread...")
+    import gc
+    log.info("Loading ML models in background thread (Sequential Mode)...")
     
-    # Import heavy modules lazily
-    from app.services.hybrid_recommender import HybridRecommender
-    from app.services.rag_recommender import RAGRecommender
-    from app.services.nlp_recommender import NLPRecommender
-    from app.services.clustering_recommender import ClusteringRecommender
-    from app.services.gemini_recommender import GeminiRecommender
+    models = {}
     
-    # Initialize recommenders
-    rag_recommender = RAGRecommender()
-    nlp_recommender = NLPRecommender()
-    clustering_recommender = ClusteringRecommender()
-    gemini_recommender = GeminiRecommender()
-    hybrid_recommender = HybridRecommender(
-        rag_recommender=rag_recommender,
-        nlp_recommender=nlp_recommender,
-        clustering_recommender=clustering_recommender,
-        gemini_recommender=gemini_recommender
-    )
-    
-    return {
-        "rag": rag_recommender,
-        "nlp": nlp_recommender,
-        "clustering": clustering_recommender,
-        "gemini": gemini_recommender,
-        "hybrid": hybrid_recommender
-    }
+    try:
+        # 1. NLP Recommender (Lightweight)
+        log.info("Loading NLP Recommender...")
+        from app.services.nlp_recommender import NLPRecommender
+        models["nlp"] = NLPRecommender()
+        gc.collect()
+        
+        # 2. Clustering Recommender (Medium)
+        log.info("Loading Clustering Recommender...")
+        from app.services.clustering_recommender import ClusteringRecommender
+        models["clustering"] = ClusteringRecommender()
+        gc.collect()
+        
+        # 3. Gemini Recommender (Lightweight API)
+        log.info("Loading Gemini Recommender...")
+        from app.services.gemini_recommender import GeminiRecommender
+        models["gemini"] = GeminiRecommender()
+        gc.collect()
+        
+        # 4. RAG Recommender (Heavy - Load Last)
+        log.info("Loading RAG Recommender...")
+        from app.services.rag_recommender import RAGRecommender
+        models["rag"] = RAGRecommender()
+        gc.collect()
+        
+        # 5. Hybrid Recommender (Wrapper)
+        log.info("Initializing Hybrid Recommender...")
+        from app.services.hybrid_recommender import HybridRecommender
+        models["hybrid"] = HybridRecommender(
+            rag_recommender=models["rag"],
+            nlp_recommender=models["nlp"],
+            clustering_recommender=models["clustering"],
+            gemini_recommender=models["gemini"]
+        )
+        gc.collect()
+        
+        log.info("All models loaded successfully")
+        return models
+        
+    except Exception as e:
+        log.error(f"Critical error loading models: {e}")
+        # Return whatever we have, or raise
+        raise e
 
 
 
