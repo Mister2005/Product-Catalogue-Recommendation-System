@@ -18,11 +18,17 @@ class CacheManager:
     
     async def connect(self):
         """Connect to Redis"""
-        self.redis_client = await redis.from_url(
-            settings.redis_url,
-            encoding="utf-8",
-            decode_responses=True
-        )
+        try:
+            self.redis_client = await redis.from_url(
+                settings.redis_url,
+                encoding="utf-8",
+                decode_responses=True
+            )
+            # Test connection
+            await self.redis_client.ping()
+        except Exception as e:
+            print(f"Redis connection failed (app will continue without cache): {e}")
+            self.redis_client = None
     
     async def disconnect(self):
         """Disconnect from Redis"""

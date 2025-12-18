@@ -34,9 +34,12 @@ async def lifespan(app: FastAPI):
     # Startup
     log.info("Starting SHL Recommendation Engine")
     
-    # Connect to cache
-    await cache.connect()
-    log.info("Connected to Redis cache")
+    # Connect to cache (optional - app works without it)
+    try:
+        await cache.connect()
+        log.info("Connected to Redis cache")
+    except Exception as e:
+        log.warning(f"Redis connection failed (continuing without cache): {e}")
     
     # Test Supabase connection
     try:
@@ -46,42 +49,51 @@ async def lifespan(app: FastAPI):
         log.error(f"Supabase connection failed: {str(e)}")
     
     # Initialize recommenders
-    app.state.rag_recommender = RAGRecommender()
-    app.state.nlp_recommender = NLPRecommender()
-    app.state.clustering_recommender = ClusteringRecommender()
-    app.state.gemini_recommender = GeminiRecommender()
-    app.state.hybrid_recommender = HybridRecommender(
-        rag_recommender=app.state.rag_recommender,
-        nlp_recommender=app.state.nlp_recommender,
-        clustering_recommender=app.state.clustering_recommender,
-        gemini_recommender=app.state.gemini_recommender
-    )
-    
-    log.info("Recommendation engines initialized")
-    
-    # Index assessments for RAG on startup
     try:
-        db = get_supabase_client()
-        log.info("Indexing assessments for RAG...")
-        app.state.rag_recommender.index_assessments(db)
-        log.info("RAG indexing complete")
+        app.state.rag_recommender = RAGRecommender()
+        app.state.nlp_recommender = NLPRecommender()
+        app.state.clustering_recommender = ClusteringRecommender()
+        app.state.gemini_recommender = GeminiRecommender()
+        app.state.hybrid_recommender = HybridRecommender(
+            rag_recommender=app.state.rag_recommender,
+            nlp_recommender=app.state.nlp_recommender,
+            clustering_recommender=app.state.clustering_recommender,
+            gemini_recommender=app.state.gemini_recommender
+        )
         
-        # Pre-fit NLP and Clustering models
-        log.info("Pre-fitting NLP recommender...")
-        app.state.nlp_recommender.fit(db)
-        log.info("NLP pre-fitting complete")
+        log.info("Recommendation engines initialized")
         
-        log.info("Pre-fitting Clustering recommender...")
-        app.state.clustering_recommender.fit(db)
-        log.info("Clustering pre-fitting complete")
+        # Index assessments for RAG on startup
+        try:
+            db = get_supabase_client()
+            log.info("Indexing assessments for RAG...")
+            app.state.rag_recommender.index_assessments(db)
+            log.info("RAG indexing complete")
+            
+            # Pre-fit NLP and Clustering models
+            log.info("Pre-fitting NLP recommender...")
+            app.state.nlp_recommender.fit(db)
+            log.info("NLP pre-fitting complete")
+            
+            log.info("Pre-fitting Clustering recommender...")
+            app.state.clustering_recommender.fit(db)
+            log.info("Clustering pre-fitting complete")
+        except Exception as e:
+            log.error(f"Error during model initialization: {e}")
     except Exception as e:
-        log.error(f"Error during model initialization: {e}")
+        log.error(f"Error initializing recommenders: {e}")
+    
+    log.info("SHL Recommendation Engine started successfully")
     
     yield
     
     # Shutdown
     log.info("Shutting down SHL Recommendation Engine")
-    await cache.disconnect()
+    try:
+        await cache.disconnect()
+    except:
+        pass
+
 
 
 # Create FastAPI app
