@@ -1,66 +1,63 @@
 # Web Framework
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-pydantic==2.5.3
-pydantic-settings==2.1.0
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.3
+pydantic-settings>=2.1.0
 
 # Database - Supabase
-supabase==2.3.4
-postgrest==0.13.2
+supabase>=2.3.4
+postgrest>=0.13.2
 
 # Caching
-redis==5.0.1
-hiredis==2.3.2
+redis>=5.0.1
+hiredis>=2.3.2
 
-# Machine Learning & NLP (using CPU-only torch for smaller deployment)
-scikit-learn==1.4.0
-numpy==1.26.3
-pandas==2.1.4
-sentence-transformers==2.2.2
-transformers==4.36.2
-
-# PyTorch - CPU only for production (smaller footprint)
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.1.2+cpu
+# Machine Learning & NLP (using flexible versions for compatibility)
+scikit-learn>=1.4.0
+numpy>=1.26.0
+pandas>=2.1.0
+sentence-transformers>=2.2.2
+transformers>=4.36.0
+torch>=2.1.0
 
 # Embeddings & RAG
-chromadb==0.4.22
-langchain==0.1.1
-langchain-community==0.0.13
+chromadb>=0.4.22
+langchain>=0.1.0
+langchain-community>=0.0.13
 
 # Clustering
-umap-learn==0.5.5
-hdbscan==0.8.33
+umap-learn>=0.5.5
+hdbscan>=0.8.33
 
 # AI Models
-google-generativeai==0.3.2
-openai==1.10.0
+google-generativeai>=0.3.2
+openai>=1.10.0
 
 # HTTP & API
-httpx==0.26.0
-requests==2.31.0
-aiofiles==23.2.1
+httpx>=0.26.0
+requests>=2.31.0
+aiofiles>=23.2.1
 
 # Document Processing
-PyPDF2==3.0.1
-pdfplumber==0.10.3
-python-multipart==0.0.6
+PyPDF2>=3.0.1
+pdfplumber>=0.10.3
+python-multipart>=0.0.6
 
 # GitHub Integration
-PyGithub==2.1.1
+PyGithub>=2.1.1
 
 # Security & Authentication
-python-jose[cryptography]==3.3.0
-passlib[bcrypt]==1.7.4
-python-dotenv==1.0.0
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-dotenv>=1.0.0
 
 # Logging & Monitoring
-loguru==0.7.2
-prometheus-client==0.19.0
+loguru>=0.7.2
+prometheus-client>=0.19.0
 
 # Utilities
-python-dateutil==2.8.2
-pytz==2023.3
+python-dateutil>=2.8.2
+pytz>=2023.3
 
 # Production server
-gunicorn==21.2.0
+gunicorn>=21.2.0

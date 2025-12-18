@@ -2,20 +2,21 @@ services:
   - type: web
     name: shl-recommendation-api
     runtime: python
+    pythonVersion: "3.11.0"
     region: oregon
     plan: free
     branch: main
     rootDir: backend
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: "3.11.0"
       - key: ENVIRONMENT
         value: production
       - key: DEBUG
-        value: false
+        value: "false"
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_KEY
@@ -39,6 +40,6 @@ services:
       - key: DEFAULT_RECOMMENDATION_ENGINE
         value: hybrid
       - key: MAX_RECOMMENDATIONS
-        value: 10
+        value: "10"
       - key: RATE_LIMIT_PER_MINUTE
-        value: 60
+        value: "60"
