@@ -56,18 +56,39 @@ def _load_models_sync(app: FastAPI):
     }
 
 
-async def initialize_services(app: FastAPI):
-    """Background task to initialize heavy services after server starts"""
-    global _initialization_complete, _initialization_error
+
+# Validating if models are loaded
+async def ensure_models_loaded(app: FastAPI):
+    """Ensure ML models are loaded, loading them if necessary"""
+    if hasattr(app.state, "rag_recommender") and app.state.rag_recommender:
+        return
+
+    log.info("Models not loaded. Triggering on-demand loading...")
+    loop = asyncio.get_running_loop()
     
-    log.info("Starting background initialization of services...")
+    # Run blocking model loading in executor
+    models = await loop.run_in_executor(None, _load_models_sync, app)
+    
+    # Assign initialized models to app state
+    app.state.rag_recommender = models["rag"]
+    app.state.nlp_recommender = models["nlp"]
+    app.state.clustering_recommender = models["clustering"]
+    app.state.gemini_recommender = models["gemini"]
+    app.state.hybrid_recommender = models["hybrid"]
+    
+    log.info("On-demand model loading complete")
+
+
+async def initialize_connections(app: FastAPI):
+    """Initialize lightweight connections (DB, Redis)"""
+    log.info("Initializing database and cache connections...")
     
     try:
-        # Import heavy modules lazily
+        # Import lightweight modules
         from app.core.database import get_supabase_client
         from app.core.cache import cache
         
-        # Connect to cache (optional - app works without it)
+        # Connect to cache
         try:
             await cache.connect()
             log.info("Connected to Redis cache")
@@ -80,77 +101,29 @@ async def initialize_services(app: FastAPI):
             log.info(f"Connected to Supabase: {settings.supabase_url}")
         except Exception as e:
             log.error(f"Supabase connection failed: {str(e)}")
-        
-        # Offload heavy model loading to thread pool to avoid blocking event loop
-        log.info("Offloading ML model loading to thread pool...")
-        loop = asyncio.get_running_loop()
-        
-        # Run blocking model loading in executor
-        models = await loop.run_in_executor(None, _load_models_sync, app)
-        
-        # Assign initialized models to app state
-        app.state.rag_recommender = models["rag"]
-        app.state.nlp_recommender = models["nlp"]
-        app.state.clustering_recommender = models["clustering"]
-        app.state.gemini_recommender = models["gemini"]
-        app.state.hybrid_recommender = models["hybrid"]
-        
-        log.info("Recommendation engines initialized")
-        
-        # Index assessments for RAG (this involves DB calls, can stay async or be offloaded if heavy)
-        # Assuming indexing involves network calls mostly, but embedding generation is CPU bound
-        # Let's run indexing in executor as well if it uses embedding model
-        
-        try:
-            db = get_supabase_client()
             
-            # Sub-function for heavy indexing tasks
-            def _index_and_fit_sync(models, db_client):
-                log.info("Indexing assessments for RAG...")
-                models["rag"].index_assessments(db_client)
-                log.info("RAG indexing complete")
-                
-                log.info("Pre-fitting NLP recommender...")
-                models["nlp"].fit(db_client)
-                log.info("NLP pre-fitting complete")
-                
-                log.info("Pre-fitting Clustering recommender...")
-                models["clustering"].fit(db_client)
-                log.info("Clustering pre-fitting complete")
-            
-            # Run heavy indexing/fitting in executor
-            log.info("Running indexing and fitting in thread pool...")
-            await loop.run_in_executor(None, _index_and_fit_sync, models, db)
-
-        except Exception as e:
-            log.error(f"Error during model initialization: {e}")
-        
-        _initialization_complete = True
-        log.info("Background initialization complete - all services ready")
-        
     except Exception as e:
-        _initialization_error = str(e)
-        log.error(f"Error initializing recommenders: {e}")
-
+        log.error(f"Error initializing connections: {e}")
 
 
 # Lifespan context manager for startup/shutdown
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Application lifespan management - starts server immediately, initializes in background"""
-    # Startup - minimal work to allow port binding quickly
-    log.info("Starting SHL Recommendation Engine - binding to port...")
+    """Application lifespan management - minimal startup for fast deployment"""
+    # Startup - FAST execution to allow port binding
+    log.info("Starting SHL Recommendation Engine...")
     
-    # Mark services as not ready initially
-    app.state.services_ready = False
+    # Initialize basic connections (DB, Redis) - no heavy models
+    await initialize_connections(app)
     
-    # Schedule background initialization AFTER server starts
-    # This allows uvicorn to bind to the port immediately
-    asyncio.create_task(initialize_services(app))
+    # Ready to serve (models will load on-demand)
+    global _initialization_complete
+    _initialization_complete = True
     
-    log.info("Server started - background initialization in progress")
+    log.info("Server ready - Models will load on first request")
     
     yield
+
     
     # Shutdown
     log.info("Shutting down SHL Recommendation Engine")
@@ -336,14 +309,10 @@ async def get_recommendations(
     
     Can accept either JSON body or multipart/form-data for file uploads.
     """
-    global _initialization_complete
+    # On-Demand Loading: Ensure models are loaded before processing
+    await ensure_models_loaded(http_request.app)
     
-    if not _initialization_complete:
-        raise HTTPException(
-            status_code=503, 
-            detail="Service is still initializing. Please try again in a few moments."
-        )
-    
+    # Import modules after ensuring models are loaded (though they are loaded into app.state)
     import json
     from app.core.database import get_supabase_client
     from app.core.cache import cache
@@ -507,14 +476,6 @@ async def list_assessments(
     job_family: str = Query(None),
 ):
     """List all assessments with pagination and filtering"""
-    global _initialization_complete
-    
-    if not _initialization_complete:
-        raise HTTPException(
-            status_code=503, 
-            detail="Service is still initializing. Please try again in a few moments."
-        )
-    
     from app.core.database import get_supabase_client
     db = get_supabase_client()
     
@@ -531,14 +492,6 @@ async def list_assessments(
 @app.get(f"{settings.api_v1_prefix}/assessments/{{assessment_id}}")
 async def get_assessment(assessment_id: str):
     """Get specific assessment by ID"""
-    global _initialization_complete
-    
-    if not _initialization_complete:
-        raise HTTPException(
-            status_code=503, 
-            detail="Service is still initializing. Please try again in a few moments."
-        )
-    
     from app.core.database import get_supabase_client
     db = get_supabase_client()
     
@@ -553,14 +506,6 @@ async def get_assessment(assessment_id: str):
 @app.get(f"{settings.api_v1_prefix}/metadata")
 async def get_metadata():
     """Get system metadata"""
-    global _initialization_complete
-    
-    if not _initialization_complete:
-        raise HTTPException(
-            status_code=503, 
-            detail="Service is still initializing. Please try again in a few moments."
-        )
-    
     from app.core.database import get_supabase_client
     from app.core.cache import cache
     
@@ -608,14 +553,6 @@ async def submit_feedback(
     feedback: schemas.FeedbackCreate,
 ):
     """Submit user feedback on recommendation"""
-    global _initialization_complete
-    
-    if not _initialization_complete:
-        raise HTTPException(
-            status_code=503, 
-            detail="Service is still initializing. Please try again in a few moments."
-        )
-    
     from app.core.database import get_supabase_client
     db = get_supabase_client()
     
@@ -642,14 +579,6 @@ async def chat(
     chat_request: schemas.ChatRequest,
 ):
     """Chat with AI assistant for queries and recommendations"""
-    global _initialization_complete
-    
-    if not _initialization_complete:
-        raise HTTPException(
-            status_code=503, 
-            detail="Service is still initializing. Please try again in a few moments."
-        )
-    
     from app.core.database import get_supabase_client
     db = get_supabase_client()
     
