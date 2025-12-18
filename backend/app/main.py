@@ -1,58 +1,62 @@
 """
 Production-ready FastAPI application
+Optimized for fast startup on Render - uses lazy loading for heavy ML dependencies
 """
 import asyncio
+import os
 from contextlib import asynccontextmanager
 from datetime import datetime
 from typing import List, Optional
-from fastapi import FastAPI, HTTPException, Depends, Query, File, UploadFile, Form, Body, Request
+from fastapi import FastAPI, HTTPException, Depends, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
-from supabase import Client
 
-import uuid
-
+# Only import lightweight modules at startup
 from app.core.config import get_settings
-from app.core.database import get_db, get_supabase_client
-from app.core.cache import cache
 from app.core.logging import log
 from app.models import schemas
-from app.services.hybrid_recommender import HybridRecommender
-from app.services.rag_recommender import RAGRecommender
-from app.services.nlp_recommender import NLPRecommender
-from app.services.clustering_recommender import ClusteringRecommender
-from app.services.gemini_recommender import GeminiRecommender
-from app.services.resume_parser import ResumeParser
-from app.services.github_analyzer import GitHubAnalyzer
 
 settings = get_settings()
 
 # Track initialization state
 _initialization_complete = False
+_initialization_error = None
 
 
 async def initialize_services(app: FastAPI):
     """Background task to initialize heavy services after server starts"""
-    global _initialization_complete
+    global _initialization_complete, _initialization_error
     
     log.info("Starting background initialization of services...")
     
-    # Connect to cache (optional - app works without it)
     try:
-        await cache.connect()
-        log.info("Connected to Redis cache")
-    except Exception as e:
-        log.warning(f"Redis connection failed (continuing without cache): {e}")
-    
-    # Test Supabase connection
-    try:
-        supabase = get_supabase_client()
-        log.info(f"Connected to Supabase: {settings.supabase_url}")
-    except Exception as e:
-        log.error(f"Supabase connection failed: {str(e)}")
-    
-    # Initialize recommenders
-    try:
+        # Import heavy modules lazily
+        from app.core.database import get_supabase_client
+        from app.core.cache import cache
+        
+        # Connect to cache (optional - app works without it)
+        try:
+            await cache.connect()
+            log.info("Connected to Redis cache")
+        except Exception as e:
+            log.warning(f"Redis connection failed (continuing without cache): {e}")
+        
+        # Test Supabase connection
+        try:
+            supabase = get_supabase_client()
+            log.info(f"Connected to Supabase: {settings.supabase_url}")
+        except Exception as e:
+            log.error(f"Supabase connection failed: {str(e)}")
+        
+        # Import and initialize recommenders lazily
+        log.info("Loading ML models (this may take a moment)...")
+        
+        from app.services.hybrid_recommender import HybridRecommender
+        from app.services.rag_recommender import RAGRecommender
+        from app.services.nlp_recommender import NLPRecommender
+        from app.services.clustering_recommender import ClusteringRecommender
+        from app.services.gemini_recommender import GeminiRecommender
+        
         app.state.rag_recommender = RAGRecommender()
         app.state.nlp_recommender = NLPRecommender()
         app.state.clustering_recommender = ClusteringRecommender()
@@ -83,11 +87,13 @@ async def initialize_services(app: FastAPI):
             log.info("Clustering pre-fitting complete")
         except Exception as e:
             log.error(f"Error during model initialization: {e}")
+        
+        _initialization_complete = True
+        log.info("Background initialization complete - all services ready")
+        
     except Exception as e:
+        _initialization_error = str(e)
         log.error(f"Error initializing recommenders: {e}")
-    
-    _initialization_complete = True
-    log.info("Background initialization complete - all services ready")
 
 
 # Lifespan context manager for startup/shutdown
@@ -111,10 +117,10 @@ async def lifespan(app: FastAPI):
     # Shutdown
     log.info("Shutting down SHL Recommendation Engine")
     try:
+        from app.core.cache import cache
         await cache.disconnect()
     except:
         pass
-
 
 
 # Create FastAPI app
@@ -236,19 +242,23 @@ async def root():
 @app.get("/health")
 async def health_check():
     """Health check endpoint - returns quickly for port detection"""
-    global _initialization_complete
+    global _initialization_complete, _initialization_error
     
     # Always return quickly to satisfy Render's port detection
     if not _initialization_complete:
         return {
             "status": "starting",
             "version": settings.version,
-            "timestamp": datetime.utcnow(),
-            "message": "Services initializing..."
+            "timestamp": datetime.utcnow().isoformat(),
+            "message": "Services initializing...",
+            "error": _initialization_error
         }
     
     # Full health check once initialized
     try:
+        from app.core.database import get_supabase_client
+        from app.core.cache import cache
+        
         db = get_supabase_client()
         db.table("assessments").select("id").limit(1).execute()
         db_status = "healthy"
@@ -263,19 +273,18 @@ async def health_check():
     except:
         cache_status = "unhealthy"
     
-    return schemas.HealthResponse(
-        status="healthy" if db_status == "healthy" and cache_status == "healthy" else "degraded",
-        version=settings.version,
-        timestamp=datetime.utcnow(),
-        database=db_status,
-        cache=cache_status
-    )
+    return {
+        "status": "healthy" if db_status == "healthy" else "degraded",
+        "version": settings.version,
+        "timestamp": datetime.utcnow().isoformat(),
+        "database": db_status,
+        "cache": cache_status
+    }
 
 
 @app.post(f"{settings.api_v1_prefix}/recommend", response_model=schemas.RecommendationResponse)
 async def get_recommendations(
     http_request: Request,
-    db: Client = Depends(get_db)
 ):
     """
     Get personalized assessment recommendations
@@ -289,7 +298,21 @@ async def get_recommendations(
     
     Can accept either JSON body or multipart/form-data for file uploads.
     """
+    global _initialization_complete
+    
+    if not _initialization_complete:
+        raise HTTPException(
+            status_code=503, 
+            detail="Service is still initializing. Please try again in a few moments."
+        )
+    
     import json
+    from app.core.database import get_supabase_client
+    from app.core.cache import cache
+    from app.services.resume_parser import ResumeParser
+    from app.services.github_analyzer import GitHubAnalyzer
+    
+    db = get_supabase_client()
     
     # Determine content type
     content_type = http_request.headers.get("content-type", "")
@@ -444,9 +467,19 @@ async def list_assessments(
     skip: int = Query(0, ge=0),
     limit: int = Query(50, ge=1, le=100),
     job_family: str = Query(None),
-    db: Client = Depends(get_db)
 ):
     """List all assessments with pagination and filtering"""
+    global _initialization_complete
+    
+    if not _initialization_complete:
+        raise HTTPException(
+            status_code=503, 
+            detail="Service is still initializing. Please try again in a few moments."
+        )
+    
+    from app.core.database import get_supabase_client
+    db = get_supabase_client()
+    
     query = db.table("assessments").select("*")
     
     if job_family:
@@ -458,8 +491,19 @@ async def list_assessments(
 
 
 @app.get(f"{settings.api_v1_prefix}/assessments/{{assessment_id}}")
-async def get_assessment(assessment_id: str, db: Client = Depends(get_db)):
+async def get_assessment(assessment_id: str):
     """Get specific assessment by ID"""
+    global _initialization_complete
+    
+    if not _initialization_complete:
+        raise HTTPException(
+            status_code=503, 
+            detail="Service is still initializing. Please try again in a few moments."
+        )
+    
+    from app.core.database import get_supabase_client
+    db = get_supabase_client()
+    
     response = db.table("assessments").select("*").eq("id", assessment_id).execute()
     
     if not response.data:
@@ -469,12 +513,25 @@ async def get_assessment(assessment_id: str, db: Client = Depends(get_db)):
 
 
 @app.get(f"{settings.api_v1_prefix}/metadata")
-async def get_metadata(db: Client = Depends(get_db)):
+async def get_metadata():
     """Get system metadata"""
+    global _initialization_complete
+    
+    if not _initialization_complete:
+        raise HTTPException(
+            status_code=503, 
+            detail="Service is still initializing. Please try again in a few moments."
+        )
+    
+    from app.core.database import get_supabase_client
+    from app.core.cache import cache
+    
     # Check cache
     cached = await cache.get("metadata")
     if cached:
         return cached
+    
+    db = get_supabase_client()
     
     # Get all assessments
     response = db.table("assessments").select("*").execute()
@@ -511,9 +568,19 @@ async def get_metadata(db: Client = Depends(get_db)):
 @app.post(f"{settings.api_v1_prefix}/feedback")
 async def submit_feedback(
     feedback: schemas.FeedbackCreate,
-    db: Client = Depends(get_supabase_client)
 ):
     """Submit user feedback on recommendation"""
+    global _initialization_complete
+    
+    if not _initialization_complete:
+        raise HTTPException(
+            status_code=503, 
+            detail="Service is still initializing. Please try again in a few moments."
+        )
+    
+    from app.core.database import get_supabase_client
+    db = get_supabase_client()
+    
     try:
         # Insert feedback into Supabase
         data = {
@@ -535,13 +602,20 @@ async def submit_feedback(
 @app.post(f"{settings.api_v1_prefix}/chat")
 async def chat(
     chat_request: schemas.ChatRequest,
-    db: Client = Depends(get_supabase_client)
 ):
     """Chat with AI assistant for queries and recommendations"""
+    global _initialization_complete
+    
+    if not _initialization_complete:
+        raise HTTPException(
+            status_code=503, 
+            detail="Service is still initializing. Please try again in a few moments."
+        )
+    
+    from app.core.database import get_supabase_client
+    db = get_supabase_client()
+    
     try:
-        # Get gemini recommender
-        gemini_recommender: GeminiRecommender = app.state.gemini_recommender
-        
         # Build context from database if needed
         context = ""
         
@@ -596,4 +670,4 @@ Provide a helpful, concise, and friendly response. If the user asks for recommen
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=settings.debug)
+    uvicorn.run(app, host="0.0.0.0", port=10000, reload=settings.debug)
