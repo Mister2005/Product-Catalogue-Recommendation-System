@@ -63,10 +63,11 @@ class Settings(BaseSettings):
         """Check if running in development environment"""
         return self.environment.lower() == "development"
     
-    # RAG Configuration
-    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
-    vector_dimension: int = 384
+    # RAG Settings - Using lighter model for memory optimization
+    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"  # 80MB instead of 420MB
+    vector_dimension: int = 384  # MiniLM uses 384 dimensions
     top_k_results: int = 10
+    model_loading_timeout: int = 60  # seconds
     
     # Recommendation Configuration
     default_recommendation_engine: str = "hybrid"

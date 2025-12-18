@@ -22,31 +22,88 @@ class RAGRecommender:
     """
     
     def __init__(self):
-        """Initialize RAG recommender"""
+        """Initialize RAG recommender with lazy loading"""
         self.model_name = settings.embedding_model
         self.dimension = settings.vector_dimension
         self.top_k = settings.top_k_results
         
-        # Initialize sentence transformer
-        log.info(f"Loading embedding model: {self.model_name}")
-        self.embedding_model = SentenceTransformer(self.model_name)
+        # Lazy loading flags
+        self._embedding_model = None
+        self._chroma_client = None
+        self._collection = None
+        self._indexed = False
         
-        # Initialize ChromaDB
-        self.chroma_client = chromadb.Client(Settings(
-            anonymized_telemetry=False,
-            allow_reset=True
-        ))
+        log.info(f"RAG recommender initialized (lazy loading mode)")
+    
+    def _ensure_model_loaded(self):
+        """Lazy load embedding model with timeout protection"""
+        if self._embedding_model is not None:
+            return
         
-        # Create or get collection
+        import signal
+        from contextlib import contextmanager
+        
+        @contextmanager
+        def timeout(seconds):
+            """Context manager for timeout"""
+            def timeout_handler(signum, frame):
+                raise TimeoutError(f"Model loading exceeded {seconds} seconds")
+            
+            # Set the signal handler and alarm
+            old_handler = signal.signal(signal.SIGALRM, timeout_handler)
+            signal.alarm(seconds)
+            try:
+                yield
+            finally:
+                signal.alarm(0)
+                signal.signal(signal.SIGALRM, old_handler)
+        
         try:
-            self.collection = self.chroma_client.get_collection(name="assessments")
-            log.info("Loaded existing ChromaDB collection")
-        except:
-            self.collection = self.chroma_client.create_collection(
-                name="assessments",
-                metadata={"hnsw:space": "cosine"}
-            )
-            log.info("Created new ChromaDB collection")
+            log.info(f"Loading embedding model: {self.model_name}")
+            timeout_seconds = getattr(settings, 'model_loading_timeout', 60)
+            
+            # Try with timeout on Unix systems
+            try:
+                with timeout(timeout_seconds):
+                    self._embedding_model = SentenceTransformer(self.model_name)
+            except (AttributeError, ValueError):
+                # Windows doesn't support SIGALRM, load without timeout
+                log.warning("Timeout not supported on this platform, loading without timeout")
+                self._embedding_model = SentenceTransformer(self.model_name)
+            
+            log.info(f"Embedding model loaded successfully")
+        except TimeoutError as e:
+            log.error(f"Model loading timeout: {e}")
+            raise RuntimeError(f"Failed to load embedding model: {e}")
+        except Exception as e:
+            log.error(f"Error loading embedding model: {e}")
+            raise RuntimeError(f"Failed to load embedding model: {e}")
+    
+    def _ensure_collection_loaded(self):
+        """Lazy load ChromaDB collection"""
+        if self._collection is not None:
+            return
+        
+        try:
+            log.info("Initializing ChromaDB client")
+            self._chroma_client = chromadb.Client(Settings(
+                anonymized_telemetry=False,
+                allow_reset=True
+            ))
+            
+            # Create or get collection
+            try:
+                self._collection = self._chroma_client.get_collection(name="assessments")
+                log.info("Loaded existing ChromaDB collection")
+            except:
+                self._collection = self._chroma_client.create_collection(
+                    name="assessments",
+                    metadata={"hnsw:space": "cosine"}
+                )
+                log.info("Created new ChromaDB collection")
+        except Exception as e:
+            log.error(f"Error initializing ChromaDB: {e}")
+            raise RuntimeError(f"Failed to initialize ChromaDB: {e}")
     
     def _create_assessment_text(self, assessment: dict) -> str:
         """Create rich text representation of assessment"""
@@ -84,6 +141,15 @@ class RAGRecommender:
     def index_assessments(self, db):
         """Index all assessments in ChromaDB with memory optimization"""
         import gc
+        
+        # Ensure model and collection are loaded
+        self._ensure_model_loaded()
+        self._ensure_collection_loaded()
+        
+        if self._indexed:
+            log.info("Assessments already indexed, skipping")
+            return
+        
         log.info("Starting assessment indexing for RAG")
         
         response = db.table("assessments").select("*").execute()
@@ -126,10 +192,10 @@ class RAGRecommender:
                     ids.append(assessment['id'])
                 
                 # Generate embeddings for batch
-                embeddings = self.embedding_model.encode(documents, show_progress_bar=False)
+                embeddings = self._embedding_model.encode(documents, show_progress_bar=False)
                 
                 # Add to ChromaDB
-                self.collection.add(
+                self._collection.add(
                     embeddings=embeddings.tolist(),
                     documents=documents,
                     metadatas=metadatas,
@@ -147,6 +213,7 @@ class RAGRecommender:
                 log.error(f"Error indexing batch {batch_idx}: {e}")
                 continue
         
+        self._indexed = True
         log.info(f"Successfully indexed {total_indexed} assessments")
         gc.collect()
     
@@ -191,6 +258,15 @@ class RAGRecommender:
         Returns:
             List of recommendation items
         """
+        # Ensure model and collection are loaded
+        self._ensure_model_loaded()
+        self._ensure_collection_loaded()
+        
+        # Index assessments if not already done
+        if not self._indexed:
+            log.info("Indexing assessments on first use")
+            self.index_assessments(db)
+        
         log.info(f"RAG recommendation for: {request.dict()}")
         
         # Create query
@@ -198,10 +274,10 @@ class RAGRecommender:
         log.info(f"Query text: {query_text}")
         
         # Generate query embedding
-        query_embedding = self.embedding_model.encode([query_text])[0]
+        query_embedding = self._embedding_model.encode([query_text])[0]
         
         # Search in ChromaDB
-        results = self.collection.query(
+        results = self._collection.query(
             query_embeddings=[query_embedding.tolist()],
             n_results=min(request.num_recommendations * 2, 20),
             include=["distances", "metadatas", "documents"]
