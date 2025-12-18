@@ -256,6 +256,7 @@ recommendations = response.json()
 ├── docs/
 │   ├── API.md                 # API documentation
 │   ├── ARCHITECTURE.md        # System architecture
+│   ├── DEPLOYMENT.md          # Deployment guide
 │   └── USAGE.md               # Usage guide
 ├── .env.example               # Environment variables template
 ├── .gitignore                 # Git ignore rules
