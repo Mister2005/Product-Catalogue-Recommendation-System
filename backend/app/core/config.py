@@ -1,8 +1,9 @@
 """
 Configuration management for the SHL Recommendation System
 """
+import os
 from functools import lru_cache
-from typing import List
+from typing import List, Optional
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -16,13 +17,13 @@ class Settings(BaseSettings):
         extra="ignore"
     )
     
-    # Supabase
+    # Supabase Configuration
     supabase_url: str = ""
     supabase_key: str = ""
-    supabase_db_password: str = "postgres"  # Set this in .env
+    supabase_db_password: str = ""
     database_url: str = ""  # Optional: direct PostgreSQL URL
     
-    # Redis
+    # Redis Configuration
     redis_url: str = "redis://localhost:6379/0"
     redis_cache_ttl: int = 3600
     
@@ -31,18 +32,36 @@ class Settings(BaseSettings):
     github_token: str = ""
     openai_api_key: str = ""
     
-    # Application
+    # Application Configuration
     environment: str = "development"
     debug: bool = True
     log_level: str = "INFO"
     secret_key: str = "your-secret-key-change-in-production"
     
-    # CORS
+    # Server Configuration
+    host: str = "0.0.0.0"
+    port: int = 8000
+    
+    # CORS Configuration
     allowed_origins: str = "http://localhost:3000,http://localhost:8000"
     
     def get_allowed_origins(self) -> List[str]:
         """Parse allowed origins from comma-separated string"""
-        return [origin.strip() for origin in self.allowed_origins.split(",")]
+        origins = [origin.strip() for origin in self.allowed_origins.split(",") if origin.strip()]
+        # In production, ensure we have valid origins
+        if self.is_production and not origins:
+            raise ValueError("ALLOWED_ORIGINS must be set in production")
+        return origins
+    
+    @property
+    def is_production(self) -> bool:
+        """Check if running in production environment"""
+        return self.environment.lower() == "production"
+    
+    @property
+    def is_development(self) -> bool:
+        """Check if running in development environment"""
+        return self.environment.lower() == "development"
     
     # RAG Configuration
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
@@ -62,12 +81,39 @@ class Settings(BaseSettings):
     rate_limit_per_minute: int = 60
     
     # Model Configuration
-    gemini_model: str = "gemini-1.5-flash"
+    gemini_model: str = "gemini-2.5-flash"
     gemini_temperature: float = 0.7
     gemini_max_tokens: int = 2048
+    
+    def validate_production_settings(self) -> None:
+        """Validate that required settings are configured for production"""
+        if not self.is_production:
+            return
+        
+        errors = []
+        
+        if not self.supabase_url:
+            errors.append("SUPABASE_URL is required")
+        if not self.supabase_key:
+            errors.append("SUPABASE_KEY is required")
+        if not self.gemini_api_key:
+            errors.append("GEMINI_API_KEY is required")
+        if self.secret_key == "your-secret-key-change-in-production":
+            errors.append("SECRET_KEY must be changed for production")
+        if self.debug:
+            errors.append("DEBUG should be False in production")
+        
+        if errors:
+            raise ValueError(f"Production configuration errors: {', '.join(errors)}")
 
 
 @lru_cache()
 def get_settings() -> Settings:
     """Get cached settings instance"""
-    return Settings()
+    settings = Settings()
+    
+    # Validate production settings on startup
+    if settings.is_production:
+        settings.validate_production_settings()
+    
+    return settings
