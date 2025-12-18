@@ -1,0 +1,72 @@
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Database - Supabase
+supabase==2.3.4
+postgrest==0.13.2
+
+# Caching
+redis==5.0.1
+hiredis==2.3.2
+
+# Machine Learning & NLP
+scikit-learn==1.4.0
+numpy==1.26.3
+pandas==2.1.4
+sentence-transformers==2.2.2
+transformers==4.36.2
+torch==2.1.2
+
+# Embeddings & RAG
+chromadb==0.4.22
+langchain==0.1.1
+langchain-community==0.0.13
+
+# Clustering
+umap-learn==0.5.5
+hdbscan==0.8.33
+
+# AI Models
+google-generativeai==0.3.2
+openai==1.10.0
+
+# HTTP & API
+httpx==0.26.0
+requests==2.31.0
+aiofiles==23.2.1
+
+# Document Processing
+PyPDF2==3.0.1
+pdfplumber==0.10.3
+python-multipart==0.0.6
+
+# GitHub Integration
+PyGithub==2.1.1
+
+# Security & Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+
+# Logging & Monitoring
+loguru==0.7.2
+prometheus-client==0.19.0
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-cov==4.1.0
+httpx==0.26.0
+
+# Code Quality
+black==23.12.1
+isort==5.13.2
+flake8==7.0.0
+mypy==1.8.0

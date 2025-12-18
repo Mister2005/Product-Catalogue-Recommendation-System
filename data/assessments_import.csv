@@ -1,0 +1,39 @@
+id,name,type,remote_testing,adaptive,job_family,job_level,description,duration
+account_manager_solution,Account Manager Solution,Pre-packaged Job Solution,True,False,Sales,Intermediate,Comprehensive assessment for account management positions,90
+administrative_professional_short,Administrative Professional - Short Form,Pre-packaged Job Solution,True,False,Administrative,Entry Level,Quick assessment for administrative support roles,45
+agency_manager_solution,Agency Manager Solution,Pre-packaged Job Solution,True,False,Management,Manager,Assessment for agency manager roles,75
+apprentice_plus_8_assessment,Apprentice + 8.0 Job Focused Assessment,Pre-packaged Job Solution,True,False,Entry Level Programs,Entry Level,Assessment for apprenticeship programs,35
+apprentice_8_assessment,Apprentice 8.0 Job Focused Assessment,Pre-packaged Job Solution,True,False,Entry Level Programs,Entry Level,Core apprentice assessment,30
+bank_admin_assistant_short,Bank Administrative Assistant - Short Form,Pre-packaged Job Solution,True,False,Banking,Entry Level,Assessment for bank administrative assistants,50
+bank_collections_agent_short,Bank Collections Agent - Short Form,Pre-packaged Job Solution,True,False,Banking,Entry Level,Assessment for collections agents in banking,45
+bank_operations_supervisor_short,Bank Operations Supervisor - Short Form,Pre-packaged Job Solution,True,False,Banking,Supervisor,Supervisor assessment for banking operations,60
+bilingual_spanish_reservation_agent,Bilingual Spanish Reservation Agent Solution,Pre-packaged Job Solution,True,False,Customer Service,Entry Level,Assessment for bilingual reservation agents,50
+bookkeeping_clerk_short,"Bookkeeping, Accounting, Auditing Clerk Short Form",Pre-packaged Job Solution,True,False,Finance,Entry Level,Assessment for bookkeeping and accounting clerks,55
+branch_manager_short,Branch Manager - Short Form,Pre-packaged Job Solution,True,False,Management,Manager,Management assessment for branch leadership roles,60
+cashier_solution,Cashier Solution,Pre-packaged Job Solution,True,False,Retail,Entry Level,Assessment for cashier and point-of-sale positions,30
+customer_service_rep,Customer Service Representative Solution,Pre-packaged Job Solution,True,False,Customer Service,Entry Level,Assessment for customer service representatives,40
+sales_representative,Sales Representative Solution,Pre-packaged Job Solution,True,False,Sales,Intermediate,Comprehensive sales representative assessment,70
+dotnet_framework_45,.NET Framework 4.5,Individual Test Solution,True,False,Technology,Intermediate,Technical knowledge assessment for .NET Framework 4.5,45
+dotnet_mvc,.NET MVC,Individual Test Solution,True,False,Technology,Intermediate,Assessment for .NET MVC development skills,45
+dotnet_mvvm,.NET MVVM,Individual Test Solution,True,False,Technology,Intermediate,Assessment for .NET MVVM pattern knowledge,40
+dotnet_wcf,.NET WCF,Individual Test Solution,True,False,Technology,Intermediate,Windows Communication Foundation assessment,45
+dotnet_wpf,.NET WPF,Individual Test Solution,True,False,Technology,Intermediate,Windows Presentation Foundation assessment,45
+dotnet_xaml,.NET XAML,Individual Test Solution,True,False,Technology,Intermediate,XAML markup language assessment,40
+adonet,ADO.NET,Individual Test Solution,True,False,Technology,Intermediate,ADO.NET data access technology assessment,40
+java_programming,Java Programming,Individual Test Solution,True,False,Technology,Intermediate,Core Java programming skills assessment,50
+javascript,JavaScript,Individual Test Solution,True,False,Technology,Intermediate,JavaScript programming assessment,45
+python_programming,Python Programming,Individual Test Solution,True,False,Technology,Intermediate,Python programming skills assessment,45
+sql_database,SQL Database,Individual Test Solution,True,False,Technology,Intermediate,SQL database skills assessment,40
+accounts_payable,Accounts Payable,Individual Test Solution,True,False,Finance,Entry Level,Knowledge assessment for accounts payable functions,30
+accounts_payable_simulation,Accounts Payable Simulation,Individual Test Solution,True,False,Finance,Entry Level,Simulation-based assessment for accounts payable scenarios,40
+accounts_receivable,Accounts Receivable,Individual Test Solution,True,False,Finance,Entry Level,Knowledge test for accounts receivable functions,30
+accounts_receivable_simulation,Accounts Receivable Simulation,Individual Test Solution,True,False,Finance,Entry Level,Simulation for accounts receivable scenarios,40
+financial_analysis,Financial Analysis,Individual Test Solution,True,False,Finance,Intermediate,Financial analysis skills assessment,60
+global_skills_development,Global Skills Development Report,Individual Test Solution,True,True,,,Comprehensive skills assessment for development planning suitable for all job levels,120
+cognitive_ability_test,Cognitive Ability Test,Individual Test Solution,True,True,,,General cognitive ability assessment,35
+personality_assessment,Occupational Personality Questionnaire (OPQ),Individual Test Solution,True,False,,,Comprehensive personality assessment for workplace behavior,25
+situational_judgment,Situational Judgment Test,Individual Test Solution,True,False,,,Scenario-based judgment and decision making assessment,30
+microsoft_excel,Microsoft Excel,Individual Test Solution,True,False,Administrative,Entry Level,Microsoft Excel proficiency assessment,35
+microsoft_word,Microsoft Word,Individual Test Solution,True,False,Administrative,Entry Level,Microsoft Word proficiency assessment,30
+microsoft_powerpoint,Microsoft PowerPoint,Individual Test Solution,True,False,Administrative,Entry Level,Microsoft PowerPoint proficiency assessment,30
+typing_speed,Typing Speed Test,Individual Test Solution,True,False,Administrative,Entry Level,Typing speed and accuracy assessment,10
