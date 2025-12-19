@@ -1,7 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import { type RecommendationResponse } from '../services/api'
-import { Award, Clock, Globe, Users, Star, ArrowLeft, Download } from 'lucide-react'
+import { Award, Clock, Globe, Users, Sparkles, ArrowLeft, Download, Loader2, Star } from 'lucide-react'
+import toast from 'react-hot-toast'
 
 interface Props {
   data?: RecommendationResponse
@@ -10,6 +12,49 @@ interface Props {
 }
 
 export default function RecommendationResults({ data, isLoading, onReset }: Props) {
+  const [isExporting, setIsExporting] = useState(false)
+
+  const handleExportPDF = async () => {
+    if (!data) return
+
+    setIsExporting(true)
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:10000'}/api/v1/export-pdf`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to generate PDF')
+      }
+
+      // Get the PDF blob
+      const blob = await response.blob()
+
+      // Create download link
+      const url = window.URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `SHL_Recommendations_${new Date().toISOString().split('T')[0]}.pdf`
+      document.body.appendChild(a)
+      a.click()
+
+      // Cleanup
+      window.URL.revokeObjectURL(url)
+      document.body.removeChild(a)
+
+      toast.success('PDF downloaded successfully!')
+    } catch (error) {
+      console.error('PDF export error:', error)
+      toast.error('Failed to export PDF')
+    } finally {
+      setIsExporting(false)
+    }
+  }
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center py-12">
@@ -36,16 +81,16 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
       {/* Header */}
       <div className="flex items-center justify-between pb-6 border-b">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <h2 className="text-2xl font-bold text-white mb-2">
             Your Personalized Recommendations
           </h2>
-          <p className="text-gray-600">
+          <p className="text-slate-400">
             {data.query_summary} • {data.total_count} results • Engine: {data.engine_used}
           </p>
         </div>
         <button
           onClick={onReset}
-          className="flex items-center gap-2 px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+          className="flex items-center gap-2 px-4 py-2 text-blue-400 hover:bg-blue-500/10 rounded-lg transition-all border border-blue-500/30"
         >
           <ArrowLeft className="w-4 h-4" />
           New Search
@@ -61,7 +106,8 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
           return (
             <div
               key={assessment.id}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+              className="glass border border-white/10 rounded-lg p-6 hover-lift hover-glow animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Header */}
               <div className="flex items-start justify-between mb-4">
@@ -70,13 +116,13 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
                     <span className="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-full font-bold">
                       {item.rank}
                     </span>
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-white">
                       {assessment.name}
                     </h3>
                   </div>
-                  <p className="text-sm text-gray-500 mb-2">{assessment.type}</p>
+                  <p className="text-sm text-slate-400 mb-2">{assessment.type}</p>
                   {assessment.description && (
-                    <p className="text-gray-700 text-sm">{assessment.description}</p>
+                    <p className="text-slate-300 text-sm">{assessment.description}</p>
                   )}
                 </div>
 
@@ -107,32 +153,32 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
                 <div className="flex items-center gap-2">
                   <Users className="w-4 h-4 text-gray-400" />
                   <div>
-                    <div className="text-xs text-gray-500">Job Family</div>
-                    <div className="text-sm font-medium">{assessment.job_family || 'General'}</div>
+                    <div className="text-xs text-slate-500">Job Family</div>
+                    <div className="text-sm font-medium text-white">{assessment.job_family || 'General'}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-gray-400" />
+                  <Sparkles className="w-5 h-5 text-yellow-400" />
                   <div>
-                    <div className="text-xs text-gray-500">Job Level</div>
-                    <div className="text-sm font-medium">{assessment.job_level || 'All Levels'}</div>
+                    <div className="text-xs text-slate-500">Job Level</div>
+                    <div className="text-sm font-medium text-white">{assessment.job_level || 'All Levels'}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-gray-400" />
                   <div>
-                    <div className="text-xs text-gray-500">Duration</div>
-                    <div className="text-sm font-medium">{assessment.duration ? `${assessment.duration} min` : 'Varies'}</div>
+                    <div className="text-xs text-slate-500">Duration</div>
+                    <div className="text-sm font-medium text-white">{assessment.duration ? `${assessment.duration} min` : 'Varies'}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-gray-400" />
                   <div>
-                    <div className="text-xs text-gray-500">Languages</div>
-                    <div className="text-sm font-medium">{assessment.languages?.join(', ') || 'English'}</div>
+                    <div className="text-xs text-slate-500">Languages</div>
+                    <div className="text-sm font-medium text-white">{assessment.languages?.join(', ') || 'English'}</div>
                   </div>
                 </div>
               </div>
@@ -141,7 +187,7 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
               <div className="space-y-2">
                 {assessment.test_types.length > 0 && (
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-xs font-medium text-gray-500">Test Types:</span>
+                    <span className="text-xs font-medium text-slate-400">Test Types:</span>
                     {assessment.test_types.map((type) => (
                       <span
                         key={type}
@@ -155,7 +201,7 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
 
                 {assessment.skills.length > 0 && (
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-xs font-medium text-gray-500">Skills:</span>
+                    <span className="text-xs font-medium text-slate-400">Skills:</span>
                     {assessment.skills.slice(0, 5).map((skill) => (
                       <span
                         key={skill}
@@ -174,7 +220,7 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
 
                 {assessment.industries.length > 0 && (
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-xs font-medium text-gray-500">Industries:</span>
+                    <span className="text-xs font-medium text-slate-400">Industries:</span>
                     {assessment.industries.slice(0, 3).map((industry) => (
                       <span
                         key={industry}
@@ -203,12 +249,12 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
 
               {/* Score Details */}
               {score.explanation && (
-                <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-600">
+                <div className="mt-4 p-3 bg-dark-tertiary/50 rounded-lg border border-white/10">
+                  <p className="text-sm text-slate-300">
                     <strong>Why recommended:</strong> {score.explanation}
                   </p>
                   {score.confidence && (
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-slate-400 mt-1">
                       Confidence: {(score.confidence * 100).toFixed(0)}%
                     </p>
                   )}
@@ -221,9 +267,22 @@ export default function RecommendationResults({ data, isLoading, onReset }: Prop
 
       {/* Export Button */}
       <div className="flex justify-center pt-6">
-        <button className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
-          <Download className="w-4 h-4" />
-          Export Results
+        <button
+          onClick={handleExportPDF}
+          disabled={isExporting}
+          className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-glow-md transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isExporting ? (
+            <>
+              <Loader2 className="w-4 h-4 animate-spin" />
+              Generating PDF...
+            </>
+          ) : (
+            <>
+              <Download className="w-4 h-4" />
+              Export Results
+            </>
+          )}
         </button>
       </div>
     </div>

@@ -210,16 +210,31 @@ Format: {{"recommendations": [{{"id": "assessment_id", "relevance_score": 0.9, "
             
             # Create recommendations
             recommendations = []
+            assessment_map = {a.get('id'): a for a in assessments}
             
             for idx, rec in enumerate(result.get("recommendations", [])):
                 assessment_id = rec.get("id")
                 
-                # Get assessment from database
-                response = db.table("assessments").select("*").eq("id", assessment_id).execute()
-                assessment = response.data[0] if response.data else None
+                # Try exact match first
+                assessment = assessment_map.get(assessment_id)
+                
+                # If not found, try fuzzy matching (case-insensitive, handle special chars)
+                if not assessment:
+                    # Try to find by name match or similar ID
+                    normalized_id = assessment_id.lower().replace('_', ' ').replace('-', ' ')
+                    for db_assessment in assessments:
+                        db_id = db_assessment.get('id', '').lower()
+                        db_name = db_assessment.get('name', '').lower()
+                        
+                        # Check if IDs are similar or if name matches
+                        if (normalized_id in db_id or db_id in normalized_id or 
+                            normalized_id in db_name or db_name in normalized_id):
+                            assessment = db_assessment
+                            log.info(f"Fuzzy matched '{assessment_id}' to '{db_assessment.get('id')}'")
+                            break
                 
                 if not assessment:
-                    log.warning(f"Assessment {assessment_id} not found")
+                    log.warning(f"Assessment {assessment_id} not found (skipping)")
                     continue
                 
                 # Apply filters

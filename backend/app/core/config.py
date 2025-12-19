@@ -31,6 +31,11 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
     github_token: str = ""
     openai_api_key: str = ""
+    huggingface_api_key: str = ""  # For HuggingFace Space embeddings
+    
+    # HuggingFace Configuration
+    use_huggingface_space: bool = True
+    huggingface_space_url: str = ""
     
     # Application Configuration
     environment: str = "development"

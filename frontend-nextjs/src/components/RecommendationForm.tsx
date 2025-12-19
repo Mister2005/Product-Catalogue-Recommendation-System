@@ -53,13 +53,13 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Input Mode Toggle */}
-      <div className="flex gap-4 p-1 bg-gray-100 rounded-lg">
+      <div className="flex gap-4 p-1 bg-dark-tertiary rounded-lg border border-white/10">
         <button
           type="button"
           onClick={() => setInputMode('manual')}
           className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all ${inputMode === 'manual'
-            ? 'bg-white text-blue-600 shadow-sm'
-            : 'text-gray-600 hover:text-gray-900'
+            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-glow-sm'
+            : 'text-slate-400 hover:text-white'
             }`}
         >
           📝 Manual Form
@@ -68,8 +68,8 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
           type="button"
           onClick={() => setInputMode('upload')}
           className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all ${inputMode === 'upload'
-            ? 'bg-white text-blue-600 shadow-sm'
-            : 'text-gray-600 hover:text-gray-900'
+            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-glow-sm'
+            : 'text-slate-400 hover:text-white'
             }`}
         >
           📄 Resume & GitHub
@@ -81,14 +81,14 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
           {/* Job Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-slate-300 mb-2">
                 Job Title
               </label>
               <input
                 type="text"
                 value={formData.job_title}
                 onChange={(e) => setFormData({ ...formData, job_title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                className="w-full px-4 py-3 bg-dark-tertiary border border-white/10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-slate-500 transition-all"
                 placeholder="e.g., Software Engineer"
               />
             </div>
@@ -100,7 +100,7 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
               <select
                 value={formData.job_family}
                 onChange={(e) => setFormData({ ...formData, job_family: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                className="w-full px-4 py-3 bg-dark-tertiary border border-white/10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition-all"
               >
                 <option value="">Select Job Family</option>
                 {metadata?.job_families.map((family) => (
@@ -159,13 +159,13 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
                 value={skillInput}
                 onChange={(e) => setSkillInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addSkill())}
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                className="flex-1 px-4 py-3 bg-dark-tertiary border border-white/10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-slate-500 transition-all"
                 placeholder="Type a skill and press Enter"
               />
               <button
                 type="button"
                 onClick={addSkill}
-                className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors"
+                className="px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-glow-sm transition-all"
               >
                 Add
               </button>
@@ -174,13 +174,13 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
               {formData.required_skills?.map((skill) => (
                 <span
                   key={skill}
-                  className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                  className="inline-flex items-center gap-1 px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
                 >
                   {skill}
                   <button
                     type="button"
                     onClick={() => removeSkill(skill)}
-                    className="hover:text-blue-900"
+                    className="hover:text-blue-100 transition-colors"
                   >
                     ×
                   </button>
@@ -279,11 +279,11 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
         <>
           {/* Resume & GitHub Upload Mode */}
           <div className="space-y-6">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-blue-900 mb-4">
+            <div className="glass border border-blue-500/30 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gradient mb-4">
                 📄 Upload Your Resume & GitHub Profile
               </h3>
-              <p className="text-sm text-blue-700 mb-6">
+              <p className="text-sm text-slate-300 mb-6">
                 Our AI will analyze your resume and GitHub profile to automatically extract your skills, experience, and recommend the best assessments for you.
               </p>
 
@@ -301,9 +301,9 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
                         setFormData({ ...formData, resume_file: file })
                       }
                     }}
-                    className="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 transition-colors"
+                    className="w-full px-4 py-3 border-2 border-dashed border-white/20 bg-dark-tertiary rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-blue-600 file:to-purple-600 file:text-white hover:file:shadow-glow-sm transition-all"
                   />
-                  <p className="text-xs text-gray-500 mt-2">📎 Supports PDF, DOC, DOCX files</p>
+                  <p className="text-xs text-slate-400 mt-2">📎 Supports PDF, DOC, DOCX files</p>
                 </div>
 
                 <div>
@@ -314,10 +314,10 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
                     type="url"
                     value={formData.github_url || ''}
                     onChange={(e) => setFormData({ ...formData, github_url: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                    className="w-full px-4 py-3 bg-dark-tertiary border border-white/10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-slate-500 transition-all"
                     placeholder="https://github.com/username"
                   />
-                  <p className="text-xs text-gray-500 mt-2">🔍 We'll analyze your repositories and contributions</p>
+                  <p className="text-xs text-slate-400 mt-2">🔍 We'll analyze your repositories and contributions</p>
                 </div>
               </div>
             </div>
@@ -347,7 +347,7 @@ export default function RecommendationForm({ metadata, onSubmit, isLoading }: Pr
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-medium hover:shadow-glow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 hover:scale-[1.02]"
       >
         {isLoading ? (
           <>

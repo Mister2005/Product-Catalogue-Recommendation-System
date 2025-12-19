@@ -620,6 +620,47 @@ async def submit_feedback(
         raise HTTPException(status_code=500, detail="Failed to submit feedback")
 
 
+@app.post(f"{settings.api_v1_prefix}/export-pdf")
+async def export_recommendations_pdf(
+    data: schemas.RecommendationResponse,
+):
+    """
+    Export recommendations as PDF
+    
+    Args:
+        data: Recommendation response data to export
+        
+    Returns:
+        PDF file as downloadable response
+    """
+    from fastapi.responses import StreamingResponse
+    from app.utils.pdf_generator import PDFGenerator
+    
+    try:
+        log.info(f"Generating PDF for {len(data.recommendations)} recommendations")
+        
+        # Generate PDF
+        pdf_generator = PDFGenerator()
+        pdf_buffer = pdf_generator.generate_pdf(data)
+        
+        # Create filename with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"SHL_Recommendations_{timestamp}.pdf"
+        
+        # Return as downloadable file
+        return StreamingResponse(
+            pdf_buffer,
+            media_type="application/pdf",
+            headers={
+                "Content-Disposition": f"attachment; filename={filename}"
+            }
+        )
+        
+    except Exception as e:
+        log.error(f"PDF generation error: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to generate PDF: {str(e)}")
+
+
 @app.post(f"{settings.api_v1_prefix}/chat")
 async def chat(
     chat_request: schemas.ChatRequest,
