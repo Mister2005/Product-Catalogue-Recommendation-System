@@ -85,9 +85,9 @@ class ClusteringRecommender:
                 self.umap_reducer = umap.UMAP(
                     n_components=n_components,
                     n_neighbors=n_neighbors,
-                    random_state=42,
                     metric='cosine',
-                    min_dist=0.1
+                    min_dist=0.1,
+                    n_jobs=1  # Explicitly set to avoid warning
                 )
                 reduced_features = self.umap_reducer.fit_transform(self.feature_matrix)
                 log.info(f"UMAP reduced features from {self.feature_matrix.shape[1]} to {n_components} dimensions")

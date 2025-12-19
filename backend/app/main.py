@@ -1,6 +1,6 @@
 """
 Production-ready FastAPI application
-Optimized for fast startup on Render - uses lazy loading for heavy ML dependencies
+Optimized for Render deployment - loads models at startup
 """
 import asyncio
 import os
@@ -79,11 +79,11 @@ def _load_models_sync(app: FastAPI):
 
 # Validating if models are loaded
 async def ensure_models_loaded(app: FastAPI):
-    """Ensure ML models are loaded, loading them if necessary"""
+    """Ensure ML models are loaded (fallback for startup failure)"""
     if hasattr(app.state, "rag_recommender") and app.state.rag_recommender:
         return
 
-    log.info("Models not loaded. Triggering on-demand loading...")
+    log.warning("Models not loaded at startup. Loading now (this may take 2-3 minutes)...")
     loop = asyncio.get_running_loop()
     
     # Run blocking model loading in executor
@@ -96,7 +96,7 @@ async def ensure_models_loaded(app: FastAPI):
     app.state.gemini_recommender = models["gemini"]
     app.state.hybrid_recommender = models["hybrid"]
     
-    log.info("On-demand model loading complete")
+    log.info("Models loaded successfully")
 
 
 async def initialize_connections(app: FastAPI):
@@ -129,18 +129,40 @@ async def initialize_connections(app: FastAPI):
 # Lifespan context manager for startup/shutdown
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Application lifespan management - minimal startup for fast deployment"""
-    # Startup - FAST execution to allow port binding
+    """Application lifespan management - load models at startup"""
+    # Startup
     log.info("Starting SHL Recommendation Engine...")
     
-    # Initialize basic connections (DB, Redis) - no heavy models
+    # Initialize basic connections (DB, Redis)
     await initialize_connections(app)
     
-    # Ready to serve (models will load on-demand)
+    # Load ML models at startup (in background thread to not block)
+    log.info("Loading ML models at startup...")
+    loop = asyncio.get_running_loop()
+    
+    try:
+        # Run blocking model loading in executor
+        models = await loop.run_in_executor(None, _load_models_sync, app)
+        
+        # Assign initialized models to app state
+        app.state.rag_recommender = models["rag"]
+        app.state.nlp_recommender = models["nlp"]
+        app.state.clustering_recommender = models["clustering"]
+        app.state.gemini_recommender = models["gemini"]
+        app.state.hybrid_recommender = models["hybrid"]
+        
+        log.info("✅ All models loaded and ready!")
+    except Exception as e:
+        log.error(f"Failed to load models at startup: {e}")
+        # Set error state but continue - models can be loaded on-demand
+        global _initialization_error
+        _initialization_error = str(e)
+    
+    # Ready to serve
     global _initialization_complete
     _initialization_complete = True
     
-    log.info("Server ready - Models will load on first request")
+    log.info("🚀 Server ready - All models loaded!")
     
     yield
 
