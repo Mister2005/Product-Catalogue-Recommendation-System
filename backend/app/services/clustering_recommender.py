@@ -82,20 +82,21 @@ class ClusteringRecommender:
                 # Optimized parameters for faster fitting
                 n_neighbors = min(10, len(assessments) - 1)  # Reduced from 15 to 10
                 n_components = min(5, len(assessments) // 3, self.feature_matrix.shape[1] - 1)  # Reduced from 10 to 5
-                
-                log.info(f"Starting UMAP reduction: {self.feature_matrix.shape[1]} -> {n_components} dims")
+               # Apply UMAP for dimensionality reduction (optimized for speed)
+                log.info(f"Starting UMAP reduction: {self.feature_matrix.shape[0]} -> {n_components} dims")
                 
                 self.umap_reducer = umap.UMAP(
                     n_components=n_components,
-                    n_neighbors=n_neighbors,
-                    metric='cosine',
+                    n_neighbors=10,  # Reduced from 15 for faster computation
                     min_dist=0.1,
-                    n_jobs=1,  # Explicitly set to avoid warning
-                    low_memory=True,  # Use low memory mode for faster processing
-                    random_state=42  # For reproducibility
+                    metric='euclidean',  # Faster than cosine
+                    random_state=42,
+                    n_jobs=1,  # Single job to avoid memory issues
+                    low_memory=True,  # Enable low memory mode
+                    verbose=False
                 )
                 reduced_features = self.umap_reducer.fit_transform(self.feature_matrix)
-                log.info(f"✅ UMAP completed: {self.feature_matrix.shape[1]} -> {n_components} dimensions")
+                log.info(f"✅ UMAP completed: {self.feature_matrix.shape[0]} -> {reduced_features.shape[1]} dimensions")
             else:
                 reduced_features = self.feature_matrix
                 log.info("Skipping UMAP reduction (insufficient data)")
