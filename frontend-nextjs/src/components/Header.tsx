@@ -12,7 +12,7 @@ export default function Header() {
               <p className="text-xs text-gray-500">v2.0 Production</p>
             </div>
           </div>
-          
+
           <nav className="hidden md:flex items-center gap-6">
             <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors">
               Home
@@ -21,7 +21,7 @@ export default function Header() {
               API Docs
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Mister2005/Product-Catalogue-Recommendation-System"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 hover:text-blue-600 transition-colors"

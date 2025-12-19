@@ -135,7 +135,7 @@ class RAGRecommender:
                 yield data[i:i + batch_size]
         
         total_indexed = 0
-        batch_size = 32  # Small batch size for 512MB RAM
+        batch_size = 64  # Optimized batch size for faster processing
         
         # Process in batches
         for batch_idx, batch_assessments in enumerate(batch_data(assessments, batch_size)):

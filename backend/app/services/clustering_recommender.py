@@ -76,21 +76,26 @@ class ClusteringRecommender:
         # Combine features
         self.feature_matrix = np.hstack([tfidf_features, numerical_features])
         
-        # Dimensionality reduction with UMAP (with error handling)
+        # Dimensionality reduction with UMAP (optimized for speed)
         try:
             if len(assessments) > self.n_clusters and len(assessments) >= 15:
-                n_neighbors = min(15, len(assessments) - 1)
-                n_components = min(10, len(assessments) // 3, self.feature_matrix.shape[1] - 1)
+                # Optimized parameters for faster fitting
+                n_neighbors = min(10, len(assessments) - 1)  # Reduced from 15 to 10
+                n_components = min(5, len(assessments) // 3, self.feature_matrix.shape[1] - 1)  # Reduced from 10 to 5
+                
+                log.info(f"Starting UMAP reduction: {self.feature_matrix.shape[1]} -> {n_components} dims")
                 
                 self.umap_reducer = umap.UMAP(
                     n_components=n_components,
                     n_neighbors=n_neighbors,
                     metric='cosine',
                     min_dist=0.1,
-                    n_jobs=1  # Explicitly set to avoid warning
+                    n_jobs=1,  # Explicitly set to avoid warning
+                    low_memory=True,  # Use low memory mode for faster processing
+                    random_state=42  # For reproducibility
                 )
                 reduced_features = self.umap_reducer.fit_transform(self.feature_matrix)
-                log.info(f"UMAP reduced features from {self.feature_matrix.shape[1]} to {n_components} dimensions")
+                log.info(f"✅ UMAP completed: {self.feature_matrix.shape[1]} -> {n_components} dimensions")
             else:
                 reduced_features = self.feature_matrix
                 log.info("Skipping UMAP reduction (insufficient data)")

@@ -164,3 +164,23 @@ site/
 *.crt
 secrets/
 credentials/
+
+# ===========================================
+# Performance Optimization
+# ===========================================
+PERFORMANCE_OPTIMIZATION.md
+SUBMISSION_ANSWERS.md
+comprehensive_evaluation_report.json
+#Latex files
+*.aux
+*.log
+*.out
+*.tex
+*.synctex.gz
+*.bbl
+*.blg
+*.dvi
+*.fls
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
