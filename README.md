@@ -1,72 +1,150 @@
 # SHL Assessment Recommendation Engine
 
-A production-ready AI-powered recommendation system for SHL assessments, featuring multiple intelligent recommendation engines and a modern web interface.
+A production-ready AI-powered recommendation system for SHL assessments, featuring multiple intelligent recommendation engines, comprehensive evaluation framework, and modern web interface.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [API Reference](#api-reference)
-- [Project Structure](#project-structure)
-- [Development](#development)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
-
----
-
-## Overview
+## 🌟 Overview
 
 This application provides intelligent assessment recommendations based on job requirements, skills, and organizational needs. It leverages multiple AI-powered recommendation engines to deliver accurate and relevant assessment suggestions for talent evaluation.
 
-## Features
+**Live Demo**: [Backend API](https://shl-recommendation-api-30oz.onrender.com) | [Frontend](https://product-catalogue-recommendation-sy.vercel.app/)
 
-- **Multiple Recommendation Engines**: Hybrid, Gemini AI, RAG, NLP, and Clustering-based approaches
-- **AI-Powered Chatbot**: Interactive assistant for assessment queries and recommendations
-- **Real-time Database**: Supabase (PostgreSQL) with vector search capabilities
-- **High-Performance Caching**: Redis for optimized response times
-- **Modern Web Interface**: Next.js frontend with responsive design
-- **RESTful API**: Well-documented FastAPI backend with OpenAPI specification
+### Key Achievements
 
-## Technology Stack
+✅ **518 Assessments** scraped from SHL website and stored in Supabase  
+✅ **5 Recommendation Engines** with hybrid approach (RAG, Gemini AI, NLP, Clustering)  
+✅ **Complete Evaluation Framework** with industry-standard metrics  
+✅ **Production-Ready** deployment on Render with optimized performance  
+✅ **Comprehensive Documentation** with technical justifications
+
+---
+
+## 📋 Table of Contents
+
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Quick Start](#quick-start)
+- [Deployment](#deployment)
+- [API Reference](#api-reference)
+- [Evaluation Framework](#evaluation-framework)
+- [Documentation](#documentation)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+
+---
+
+## ✨ Features
+
+### Recommendation Engines
+
+- **🤖 Hybrid Recommender** (Default): Combines all engines with weighted scoring
+  - RAG (40%): Semantic search with embeddings
+  - Gemini AI (30%): LLM-powered intelligent recommendations
+  - NLP (20%): TF-IDF text matching
+  - Clustering (10%): K-Means pattern discovery
+
+- **🧠 Gemini AI**: Google's latest Gemini 2.0 Flash model for contextual understanding
+- **🔍 RAG (Retrieval-Augmented Generation)**: Semantic search using HuggingFace embeddings
+- **📊 NLP**: Traditional text matching with TF-IDF and cosine similarity
+- **🎯 Clustering**: Pattern-based recommendations using K-Means
+
+### Additional Features
+
+- **💬 AI Chatbot**: Interactive assistant for assessment queries
+- **📈 Real-time Database**: Supabase PostgreSQL with vector search (pgvector)
+- **⚡ High-Performance Caching**: Redis for optimized response times
+- **🎨 Modern Web Interface**: Next.js 14 with TypeScript and Tailwind CSS
+- **📚 Auto-Generated API Docs**: OpenAPI/Swagger documentation
+- **🔒 Production-Ready**: Health checks, error handling, rate limiting
+
+---
+
+## 🛠️ Technology Stack
 
 ### Backend
-| Component | Technology |
-|-----------|------------|
-| Framework | FastAPI |
-| Database | Supabase (PostgreSQL) |
-| Cache | Redis |
-| AI/ML | Google Gemini, Sentence Transformers, scikit-learn |
-| ORM | SQLAlchemy |
+
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| Framework | FastAPI | High-performance async web framework |
+| Database | Supabase (PostgreSQL) | Managed database with vector search |
+| Vector DB | pgvector | Semantic search capabilities |
+| Cache | Redis (Upstash) | Response caching and rate limiting |
+| Embeddings | HuggingFace API | Sentence transformers via API |
+| LLM | Google Gemini 2.0 Flash | AI-powered recommendations |
+| ML | scikit-learn | Clustering and NLP algorithms |
+| Deployment | Render | Cloud platform (free tier) |
 
 ### Frontend
-| Component | Technology |
-|-----------|------------|
-| Framework | Next.js 14 |
-| Language | TypeScript |
-| Styling | Tailwind CSS |
-| State Management | React Query |
-| Animations | Framer Motion |
 
-## Prerequisites
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| Framework | Next.js 14 | React framework with App Router |
+| Language | TypeScript | Type-safe development |
+| Styling | Tailwind CSS | Utility-first CSS framework |
+| State | React Query | Server state management |
+| Animations | Framer Motion | Smooth UI animations |
+| Deployment | Vercel | Serverless deployment |
 
-- Python 3.11 or higher
-- Node.js 20 or higher
-- Redis 7 or higher (local or cloud-hosted)
-- Supabase account (free tier available)
-- Google Gemini API key
+---
 
-## Installation
+## 🏗️ Architecture
 
-### 1. Clone the Repository
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        CLIENT LAYER                             │
+│  Next.js Frontend (Vercel) + External API Clients               │
+└────────────────────────────┬────────────────────────────────────┘
+                             │ HTTP/REST API
+┌────────────────────────────┴────────────────────────────────────┐
+│                     API LAYER (FastAPI)                         │
+│  Render Deployment: https://shl-recommendation-api-30oz.onrender.com│
+│  - /api/v1/recommend  - /api/v1/chat  - /health                 │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│              RECOMMENDATION ENGINE LAYER                        │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  Hybrid Recommender (Weighted Ensemble)                  │   │
+│  │  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐             │   │
+│  │  │ Gemini │ │  RAG   │ │  NLP   │ │Cluster │             │   │
+│  │  │  30%   │ │  40%   │ │  20%   │ │  10%   │             │   │
+│  │  └────────┘ └────────┘ └────────┘ └────────┘             │   │
+│  └──────────────────────────────────────────────────────────┘   │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                   DATA & CACHE LAYER                            │
+│  ┌─────────────────────┐        ┌──────────────────────────┐    │
+│  │  Supabase (Cloud)   │        │  Redis (Upstash)         │    │
+│  │  - 517 Assessments  │        │  - Response caching      │    │
+│  │  - Vector embeddings│        │  - Rate limiting         │    │
+│  └─────────────────────┘        └──────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+See [ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed architecture documentation.
+
+---
+
+## 📦 Prerequisites
+
+- **Python 3.11+** for backend development
+- **Node.js 20+** for frontend development
+- **Supabase Account** (free tier) - [supabase.com](https://supabase.com)
+- **Google Gemini API Key** - [ai.google.dev](https://ai.google.dev)
+- **HuggingFace API Token** - [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
+- **Redis** (optional, recommended) - [upstash.com](https://upstash.com) for free tier
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
-cd product-catalogue-recommendation-system
+git clone https://github.com/yourusername/shl-recommendation-system.git
+cd shl-recommendation-system
 ```
 
 ### 2. Backend Setup
@@ -78,209 +156,283 @@ cd backend
 python -m venv venv
 
 # Activate virtual environment
-# Windows
+# Windows:
 venv\Scripts\activate
-# Linux/macOS
+# Linux/macOS:
 source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Copy environment template
+cp .env.example .env
+# Edit .env with your credentials
 ```
 
-### 3. Frontend Setup
+### 3. Configure Environment Variables
 
-```bash
-cd frontend-nextjs
-
-# Install dependencies
-npm install
-```
-
-### 4. Database Setup
-
-1. Create a Supabase project at [supabase.com](https://supabase.com)
-2. Navigate to Settings > Database to obtain connection credentials
-3. Execute the SQL setup script located at `data/SUPABASE_SQL_SETUP.sql` in the Supabase SQL Editor
-
-## Configuration
-
-### Environment Variables
-
-Create a `.env` file in the project root directory using `.env.example` as a template:
+Create `backend/.env`:
 
 ```env
-# Supabase Configuration
+# Supabase (Required)
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_KEY=your_supabase_anon_key
-SUPABASE_DB_PASSWORD=your_database_password
 
-# Redis Configuration
-REDIS_URL=redis://localhost:6379/0
-REDIS_CACHE_TTL=3600
-
-# API Keys
+# API Keys (Required)
 GEMINI_API_KEY=your_gemini_api_key
+HUGGINGFACE_API_KEY=your_huggingface_token
 
-# Application Configuration
+# Redis (Optional but recommended)
+REDIS_URL=redis://default:password@your-redis-url:port
+
+# Application
 ENVIRONMENT=development
 DEBUG=true
 LOG_LEVEL=INFO
-SECRET_KEY=your_secret_key_here
-
-# CORS Settings
+SECRET_KEY=your-secret-key-here
 ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8000
 
-# RAG Configuration
+# Models
+GEMINI_MODEL=gemini-2.0-flash
 EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
-VECTOR_DIMENSION=384
-TOP_K_RESULTS=10
-
-# Recommendation Configuration
 DEFAULT_RECOMMENDATION_ENGINE=hybrid
 MAX_RECOMMENDATIONS=10
-
-# Next.js Frontend
-NEXT_PUBLIC_API_URL=http://localhost:8000
-
-# Model Configuration
-GEMINI_MODEL=gemini-2.5-flash
-GEMINI_TEMPERATURE=0.7
-GEMINI_MAX_TOKENS=2048
-
-# Rate Limiting
-RATE_LIMIT_PER_MINUTE=60
 ```
 
-> **Note**: Never commit sensitive credentials to version control. The `.env` file is excluded via `.gitignore`.
-
-## Usage
-
-### Starting the Application
-
-**Terminal 1 - Backend Server:**
+### 4. Run Backend
 
 ```bash
-cd backend
+# Test integration
+python test_integration.py
 
-# Activate virtual environment
-# Windows
-venv\Scripts\activate
-# Linux/macOS
-source venv/bin/activate
-
-# Start the server
-python -m uvicorn app.main:app --reload --port 8000
+# Start server
+uvicorn app.main:app --reload --port 8000
 ```
 
-**Terminal 2 - Frontend Development Server:**
+Visit:
+- API: http://localhost:8000
+- Docs: http://localhost:8000/docs
+- Health: http://localhost:8000/health
+
+### 5. Frontend Setup (Optional)
 
 ```bash
 cd frontend-nextjs
+npm install
+
+# Create .env.local
+echo "NEXT_PUBLIC_API_URL=http://localhost:8000" > .env.local
+
+# Start development server
 npm run dev
 ```
 
-### Accessing the Application
+Visit: http://localhost:3000
 
-| Service | URL |
-|---------|-----|
-| Frontend Application | http://localhost:3000 |
-| Backend API | http://localhost:8000 |
-| API Documentation (Swagger) | http://localhost:8000/docs |
-| API Documentation (ReDoc) | http://localhost:8000/redoc |
+---
 
-## API Reference
+## 🌐 Deployment
 
-### Endpoints
+### Deploy Backend to Render
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/v1/recommend` | Get assessment recommendations |
-| POST | `/api/v1/chat` | Interact with AI chatbot |
-| GET | `/api/v1/assessments` | List all assessments |
-| GET | `/api/v1/metadata` | Retrieve system metadata |
-| GET | `/health` | Health check endpoint |
+**Quick Deploy**:
+1. Push code to GitHub
+2. Go to [dashboard.render.com](https://dashboard.render.com)
+3. New + → Web Service
+4. Connect repository
+5. Render auto-detects `render.yaml`
+6. Set environment variables
+7. Deploy!
 
-### Example Request
+**Environment Variables** (set in Render dashboard):
+- `SUPABASE_URL`
+- `SUPABASE_KEY`
+- `GEMINI_API_KEY`
+- `HUGGINGFACE_API_KEY`
+- `ALLOWED_ORIGINS` (your frontend URL)
+- `REDIS_URL` (optional)
 
-```python
-import requests
+### Deploy Frontend to Vercel
 
-response = requests.post(
-    'http://localhost:8000/api/v1/recommend',
-    json={
-        "job_title": "Software Engineer",
-        "job_family": "Technology",
-        "required_skills": ["Python", "JavaScript"],
-        "num_recommendations": 5,
-        "engine": "hybrid"
-    }
-)
+```bash
+cd frontend-nextjs
+vercel
 
-recommendations = response.json()
+# Set environment variable
+vercel env add NEXT_PUBLIC_API_URL
+# Enter your Render backend URL: https://shl-recommendation-api-30oz.onrender.com
 ```
 
-### Recommendation Engines
+---
 
-| Engine | Description |
-|--------|-------------|
-| `hybrid` | Combines all methods for optimal results (recommended) |
-| `gemini` | Google Gemini AI for intelligent recommendations |
-| `rag` | Retrieval-Augmented Generation with semantic search |
-| `nlp` | TF-IDF based text matching |
-| `clustering` | K-Means pattern recognition |
+## 📡 API Reference
 
-## Project Structure
+### Get Recommendations
+
+```bash
+POST /api/v1/recommend
+Content-Type: application/json
+
+{
+  "job_title": "Software Engineer",
+  "required_skills": ["Python", "JavaScript"],
+  "job_family": "Technology",
+  "job_level": "Intermediate",
+  "engine": "hybrid",
+  "num_recommendations": 5
+}
+```
+
+**Response**:
+```json
+{
+  "recommendations": [
+    {
+      "id": "python_programming",
+      "name": "Python Programming",
+      "score": 0.95,
+      "match_reason": "Strong match for Python skills",
+      "type": "Individual Test Solution",
+      "test_types": ["K"],
+      "duration": 30
+    }
+  ],
+  "engine_used": "hybrid",
+  "total_results": 5
+}
+```
+
+### Available Engines
+
+- `hybrid` (default): Weighted combination of all engines
+- `gemini`: Google Gemini AI
+- `rag`: Semantic search with embeddings
+- `nlp`: TF-IDF text matching
+- `clustering`: K-Means clustering
+
+See [API.md](docs/API.md) for complete API documentation.
+
+---
+
+## 📊 Evaluation Framework
+
+The system includes a comprehensive evaluation framework measuring:
+
+### Stage 1: Scraping Evaluation
+- **Completeness**: 518/518 assessments (100%)
+- **Data Quality**: 100% required fields complete
+- **Verification**: Automated quality checks
+
+### Stage 2: Retrieval Evaluation
+- **Metrics**: Precision@K, Recall@K, MRR
+- **Test Cases**: 10 diverse queries
+- **Thresholds**: P@10 >0.8, R@10 >0.7, MRR >0.85
+
+### Stage 3: Recommendation Evaluation
+- **Metrics**: NDCG@K, MAP, Hit Rate
+- **Test Cases**: 5 job scenarios
+- **Thresholds**: NDCG@10 >0.75, MAP >0.70
+
+**Run Evaluation**:
+```bash
+python scripts/run_comprehensive_evaluation.py --stage all
+```
+
+See [EVALUATION.md](docs/EVALUATION.md) for detailed evaluation documentation.
+
+---
+
+## 📚 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [ARCHITECTURE.md](docs/ARCHITECTURE.md) | System architecture and data flow |
+| [API.md](docs/API.md) | Complete API reference |
+| [DEPLOYMENT.md](docs/DEPLOYMENT.md) | Deployment guide for all platforms |
+| [EVALUATION.md](docs/EVALUATION.md) | Evaluation framework and metrics |
+| [TECHNICAL_JUSTIFICATION.md](docs/TECHNICAL_JUSTIFICATION.md) | Technical choices and justifications |
+| [USAGE.md](docs/USAGE.md) | Usage examples and tutorials |
+| [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) | Quick Render deployment guide |
+
+---
+
+## 📁 Project Structure
 
 ```
 .
-├── backend/
+├── backend/                    # FastAPI backend
 │   ├── app/
-│   │   ├── core/              # Configuration, database, cache, logging
-│   │   ├── models/            # Data models and schemas
-│   │   ├── services/          # Recommendation engines and business logic
-│   │   └── main.py            # FastAPI application entry point
-│   ├── database/
-│   │   └── init.sql           # Database initialization schema
-│   ├── scripts/               # Utility and maintenance scripts
-│   └── requirements.txt       # Python dependencies
-├── frontend-nextjs/
+│   │   ├── core/              # Configuration, database, cache
+│   │   ├── models/            # Pydantic models
+│   │   ├── services/          # Recommendation engines
+│   │   ├── evaluation/        # Evaluation framework
+│   │   └── main.py            # FastAPI application
+│   ├── requirements.txt       # Python dependencies
+│   ├── Dockerfile             # Docker configuration
+│   └── test_integration.py    # Integration tests
+├── frontend-nextjs/           # Next.js frontend
 │   ├── src/
-│   │   ├── app/               # Next.js pages and routing
-│   │   ├── components/        # React components
-│   │   └── lib/               # Utilities and helpers
-│   ├── package.json           # Node.js dependencies
-│   └── tailwind.config.js     # Tailwind CSS configuration
-├── data/
-│   ├── shl_products.json      # Assessment data source
-│   └── SUPABASE_SQL_SETUP.sql # Database setup script
-├── docs/
-│   ├── API.md                 # API documentation
-│   ├── ARCHITECTURE.md        # System architecture
-│   ├── DEPLOYMENT.md          # Deployment guide
-│   └── USAGE.md               # Usage guide
-├── .env.example               # Environment variables template
-├── .gitignore                 # Git ignore rules
-├── requirements.txt           # Root-level Python dependencies
-└── README.md                  # This file
+│   │   ├── app/              # Next.js pages
+│   │   ├── components/       # React components
+│   │   └── lib/              # Utilities
+│   └── package.json          # Node dependencies
+├── data/                      # Data and scripts
+│   ├── shl_products_complete.json  # 518 assessments
+│   ├── scrape_full_catalogue.py    # Web scraper
+│   └── migrate_to_supabase_simple.py  # Data migration
+├── docs/                      # Documentation
+│   ├── ARCHITECTURE.md
+│   ├── API.md
+│   ├── DEPLOYMENT.md
+│   ├── EVALUATION.md
+│   ├── TECHNICAL_JUSTIFICATION.md
+│   └── USAGE.md
+├── scripts/                   # Utility scripts
+│   ├── run_comprehensive_evaluation.py
+│   └── verify_supabase_migration.py
+├── render.yaml               # Render deployment config
+├── RENDER_DEPLOYMENT.md      # Deployment guide
+└── README.md                 # This file
 ```
 
-## Development
+---
+
+## 🧪 Testing
+
+### Integration Tests
+
+```bash
+cd backend
+python test_integration.py
+```
+
+Tests:
+- ✅ Supabase connection
+- ✅ Embedding service (HuggingFace API)
+- ✅ All recommendation engines
+- ✅ Environment variables
+
+### Evaluation Tests
+
+```bash
+python scripts/run_comprehensive_evaluation.py --stage all
+```
+
+Generates comprehensive evaluation report with metrics for all stages.
+
+---
+
+## 🔧 Development
 
 ### Backend Development
 
 ```bash
 cd backend
 
-# Activate virtual environment
-# Windows
-venv\Scripts\activate
-# Linux/macOS
-source venv/bin/activate
+# Run with auto-reload
+uvicorn app.main:app --reload
 
-# Run tests
-pytest
-
-# Code formatting
+# Format code
 black app/
 isort app/
 
@@ -296,58 +448,53 @@ flake8 app/
 ```bash
 cd frontend-nextjs
 
-# Run development server
+# Development server
 npm run dev
-
-# Run tests
-npm test
 
 # Build for production
 npm run build
 
-# Lint code
+# Lint
 npm run lint
 ```
 
-### Code Quality Standards
+---
 
-- Follow PEP 8 guidelines for Python code
-- Use TypeScript strict mode for frontend development
-- Maintain comprehensive type hints and documentation
-- Write unit tests for critical functionality
+## 🤝 Contributing
 
-## Troubleshooting
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Database Connection Issues
+---
 
-- Verify Supabase project is active and accessible
-- Confirm `DATABASE_URL` or `SUPABASE_URL` is correctly configured
-- Check IP allowlist settings in Supabase dashboard
-- Use Connection Pooling URL for production deployments
+## 📄 License
 
-### Redis Connection Issues
+This project is proprietary. All rights reserved.
 
-- Ensure Redis server is running locally or accessible remotely
-- Verify `REDIS_URL` configuration is correct
-- Check firewall settings for port 6379
+---
 
-### Import Errors
+## 🙏 Acknowledgments
 
-- Confirm virtual environment is activated
-- Run `pip install -r requirements.txt` to install dependencies
-- Verify Python version compatibility (3.11+)
+- **SHL** for the assessment catalogue
+- **Google** for Gemini AI API
+- **HuggingFace** for embedding models
+- **Supabase** for managed PostgreSQL with vector search
+- **Render** for deployment platform
 
-### Frontend Issues
+---
 
-- Ensure backend server is running before starting frontend
-- Verify `NEXT_PUBLIC_API_URL` points to correct backend address
-- Clear `.next` cache directory and reinstall dependencies if needed
+## 📞 Support
 
-## License
-
-Proprietary - All rights reserved.
+For questions or issues:
+- Open an issue on GitHub
+- Check [documentation](docs/)
+- Review [evaluation framework](docs/EVALUATION.md)
 
 ---
 
 **Version**: 2.0.0  
-**Last Updated**: December 2024
+**Last Updated**: December 2024  
+**Status**: ✅ Production Ready

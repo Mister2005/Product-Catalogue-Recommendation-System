@@ -1,0 +1,121 @@
+{
+  "overall_status": "FAILED",
+  "overall_score": 0.45460102960102955,
+  "completeness": {
+    "score": 0.3333333333333333,
+    "status": "FAILED",
+    "total_assessments": 518,
+    "expected_min": 500,
+    "pre_packaged_count": 0,
+    "expected_pre_packaged_min": 130,
+    "individual_count": 0,
+    "expected_individual_min": 370,
+    "total_score": 1.0,
+    "pre_packaged_score": 0.0,
+    "individual_score": 0.0
+  },
+  "data_quality": {
+    "score": 0.5758687258687258,
+    "status": "FAILED",
+    "total_assessments": 518,
+    "required_fields_complete": 518,
+    "required_fields_score": 1.0,
+    "with_description": 518,
+    "with_rich_description": 131,
+    "description_score": 0.2528957528957529,
+    "with_job_levels": 0,
+    "with_industries": 0,
+    "with_languages": 0,
+    "with_job_family": 0,
+    "with_duration": 0,
+    "with_detail_url": 0,
+    "metadata_score": 0.0,
+    "percentages": {
+      "required_complete": "100.0%",
+      "with_rich_description": "25.3%",
+      "with_job_levels": "0.0%",
+      "with_industries": "0.0%",
+      "with_languages": "0.0%"
+    }
+  },
+  "sample_validation": {
+    "status": "WARNING",
+    "sample_size": 10,
+    "all_required_fields_present": true,
+    "average_metadata_completeness": 0.0,
+    "sample_results": [
+      {
+        "name": "Verify Interactive G+ Report",
+        "id": "verify_interactive_g+_report",
+        "has_all_required": true,
+        "description_length": 43,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "Digital Readiness Development Report - Manager",
+        "id": "digital_readiness_development_report___manager",
+        "has_all_required": true,
+        "description_length": 61,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "Entry Level Customer Service 7.1 (Americas)",
+        "id": "entry_level_customer_service_7_1_americas",
+        "has_all_required": true,
+        "description_length": 58,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "Verify - Deductive Reasoning",
+        "id": "verify___deductive_reasoning",
+        "has_all_required": true,
+        "description_length": 43,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "Kubernetes (New)",
+        "id": "kubernetes_new",
+        "has_all_required": true,
+        "description_length": 31,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "Load Runner (New)",
+        "id": "load_runner_new",
+        "has_all_required": true,
+        "description_length": 32,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "Manager 8.0+ JFA",
+        "id": "manager_8_0+_jfa",
+        "has_all_required": true,
+        "description_length": 31,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "District/Regional Manager Solution",
+        "id": "district/regional_manager_solution",
+        "has_all_required": true,
+        "description_length": 49,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "Angular 6 (New)",
+        "id": "angular_6_new",
+        "has_all_required": true,
+        "description_length": 30,
+        "metadata_completeness": 0.0
+      },
+      {
+        "name": "Food Science (New)",
+        "id": "food_science_new",
+        "has_all_required": true,
+        "description_length": 33,
+        "metadata_completeness": 0.0
+      }
+    ]
+  },
+  "timestamp": "2025-12-19T21:27:51.889757",
+  "source_file": "data/shl_products_complete.json"
+}

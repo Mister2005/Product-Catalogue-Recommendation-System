@@ -501,7 +501,8 @@ async def list_assessments(
     from app.core.database import get_supabase_client
     db = get_supabase_client()
     
-    query = db.table("assessments").select("*")
+    # Use assessment_details view which includes array fields
+    query = db.from_("assessment_details").select("*")
     
     if job_family:
         query = query.ilike("job_family", f"%{job_family}%")
@@ -517,7 +518,8 @@ async def get_assessment(assessment_id: str):
     from app.core.database import get_supabase_client
     db = get_supabase_client()
     
-    response = db.table("assessments").select("*").eq("id", assessment_id).execute()
+    # Use assessment_details view which includes array fields
+    response = db.from_("assessment_details").select("*").eq("id", assessment_id).execute()
     
     if not response.data:
         raise HTTPException(status_code=404, detail="Assessment not found")

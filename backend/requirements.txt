@@ -12,13 +12,13 @@ postgrest>=0.13.2
 redis>=5.0.1
 hiredis>=2.3.2
 
-# Machine Learning & NLP (using flexible versions for compatibility)
+# Machine Learning & NLP (lightweight versions for Render deployment)
 scikit-learn>=1.4.0
 numpy>=1.26.0
 pandas>=2.1.0
-sentence-transformers>=2.2.2
-transformers>=4.36.0
-torch>=2.1.0
+
+# HuggingFace API Client (replaces local sentence-transformers/torch)
+huggingface-hub>=0.20.0
 
 # Embeddings & RAG
 chromadb>=0.4.22

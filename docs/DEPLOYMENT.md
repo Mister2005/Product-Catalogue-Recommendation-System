@@ -1,306 +1,549 @@
 # Deployment Guide
 
-This guide covers deploying the SHL Assessment Recommendation Engine to production using **Vercel** (frontend) and **Render** (backend).
+This guide covers deploying the SHL Assessment Recommendation Engine to production environments.
 
 ---
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
-- [Part 1: Deploy Backend to Render](#part-1-deploy-backend-to-render)
-- [Part 2: Deploy Frontend to Vercel](#part-2-deploy-frontend-to-vercel)
-- [Part 3: Post-Deployment Configuration](#part-3-post-deployment-configuration)
+- [Overview](#overview)
+- [Deployment Options](#deployment-options)
+- [Backend Deployment (Render)](#backend-deployment-render)
+- [Frontend Deployment (Vercel)](#frontend-deployment-vercel)
+- [Database Setup (Supabase)](#database-setup-supabase)
+- [Cache Setup (Redis/Upstash)](#cache-setup-redisupstash)
+- [Environment Variables](#environment-variables)
+- [Post-Deployment](#post-deployment)
+- [Monitoring](#monitoring)
 - [Troubleshooting](#troubleshooting)
 
 ---
 
-## Prerequisites
+## Overview
 
-Before deploying, ensure you have:
+The application consists of three main components:
 
-1. **GitHub Repository**: Push your code to GitHub (public or private)
-2. **Supabase Project**: Database already set up with tables created
-3. **Redis Instance**: Use [Upstash](https://upstash.com) for free managed Redis
-4. **API Keys**: Gemini API key ready
-5. **Accounts**: Create free accounts on [Render](https://render.com) and [Vercel](https://vercel.com)
+1. **Backend API** (FastAPI) → Deploy to Render
+2. **Frontend** (Next.js) → Deploy to Vercel
+3. **Database** (PostgreSQL) → Managed by Supabase
+4. **Cache** (Redis) → Optional, use Upstash free tier
 
----
+**Recommended Stack**:
+- Backend: Render (Free tier: 512MB RAM, auto-sleep after 15 min)
+- Frontend: Vercel (Free tier: Unlimited bandwidth)
+- Database: Supabase (Free tier: 500MB storage, 2GB bandwidth)
+- Cache: Upstash (Free tier: 10K commands/day)
 
-## Part 1: Deploy Backend to Render
-
-### Step 1: Prepare Backend for Deployment
-
-Create a `render.yaml` file in the project root (optional, for Infrastructure as Code):
-
-```yaml
-services:
-  - type: web
-    name: shl-recommendation-api
-    env: python
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-    rootDir: backend
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
-```
-
-### Step 2: Create Web Service on Render
-
-1. Go to [render.com](https://render.com) and sign in
-2. Click **New** → **Web Service**
-3. Connect your GitHub repository
-4. Configure the service:
-
-| Setting | Value |
-|---------|-------|
-| Name | `shl-recommendation-api` |
-| Region | Choose nearest to your users |
-| Branch | `main` |
-| Root Directory | `backend` |
-| Runtime | `Python 3` |
-| Build Command | `pip install -r requirements.txt` |
-| Start Command | `uvicorn app.main:app --host 0.0.0.0 --port $PORT` |
-
-### Step 3: Configure Environment Variables on Render
-
-In the Render dashboard, go to **Environment** and add:
-
-| Variable | Value |
-|----------|-------|
-| `SUPABASE_URL` | `https://your-project.supabase.co` |
-| `SUPABASE_KEY` | Your Supabase anon key |
-| `SUPABASE_DB_PASSWORD` | Your database password |
-| `REDIS_URL` | `redis://default:xxx@your-redis.upstash.io:6379` |
-| `GEMINI_API_KEY` | Your Gemini API key |
-| `ENVIRONMENT` | `production` |
-| `DEBUG` | `false` |
-| `LOG_LEVEL` | `INFO` |
-| `SECRET_KEY` | Generate a secure random string |
-| `ALLOWED_ORIGINS` | `https://your-app.vercel.app` (update after Vercel deploy) |
-| `GEMINI_MODEL` | `gemini-2.5-flash` |
-| `GEMINI_TEMPERATURE` | `0.7` |
-| `GEMINI_MAX_TOKENS` | `2048` |
-| `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` |
-| `VECTOR_DIMENSION` | `384` |
-| `TOP_K_RESULTS` | `10` |
-| `DEFAULT_RECOMMENDATION_ENGINE` | `hybrid` |
-| `MAX_RECOMMENDATIONS` | `10` |
-| `RATE_LIMIT_PER_MINUTE` | `60` |
-
-### Step 4: Deploy
-
-1. Click **Create Web Service**
-2. Wait for the build to complete (5-10 minutes for first deploy)
-3. Note your backend URL: `https://shl-recommendation-api.onrender.com`
-
-### Step 5: Verify Backend Deployment
-
-Visit these URLs to verify:
-- Health check: `https://your-api.onrender.com/health`
-- API docs: `https://your-api.onrender.com/docs`
+**Total Cost**: $0/month (free tiers) or $7/month (Render paid tier for no cold starts)
 
 ---
 
-## Part 2: Deploy Frontend to Vercel
+## Deployment Options
 
-### Step 1: Prepare Frontend for Deployment
+### Option 1: Free Tier (Recommended for Development)
 
-The Next.js frontend is already configured for Vercel deployment. Verify `next.config.js` exists in `frontend-nextjs/`.
+| Service | Platform | Cost | Limitations |
+|---------|----------|------|-------------|
+| Backend | Render Free | $0 | 512MB RAM, cold starts after 15 min |
+| Frontend | Vercel Free | $0 | Unlimited bandwidth |
+| Database | Supabase Free | $0 | 500MB storage, 2GB bandwidth/month |
+| Cache | Upstash Free | $0 | 10K commands/day |
 
-### Step 2: Deploy to Vercel
+### Option 2: Production (Recommended for Production)
 
-**Option A: Using Vercel Dashboard (Recommended)**
+| Service | Platform | Cost | Benefits |
+|---------|----------|------|----------|
+| Backend | Render Starter | $7/month | 512MB RAM, no cold starts |
+| Frontend | Vercel Pro | $20/month | Advanced analytics, more bandwidth |
+| Database | Supabase Pro | $25/month | 8GB storage, 50GB bandwidth |
+| Cache | Upstash Pro | $10/month | 1M commands/day |
 
-1. Go to [vercel.com](https://vercel.com) and sign in
-2. Click **Add New** → **Project**
-3. Import your GitHub repository
-4. Configure the project:
+---
 
-| Setting | Value |
-|---------|-------|
-| Framework Preset | `Next.js` |
-| Root Directory | `frontend-nextjs` |
-| Build Command | `npm run build` |
-| Output Directory | `.next` |
+## Backend Deployment (Render)
 
-### Step 3: Configure Environment Variables on Vercel
+### Prerequisites
 
-In the Vercel dashboard, go to **Settings** → **Environment Variables** and add:
+1. GitHub account with repository
+2. Render account ([render.com](https://render.com))
+3. Environment variables ready (see [Environment Variables](#environment-variables))
 
-| Variable | Value |
-|----------|-------|
-| `NEXT_PUBLIC_API_URL` | `https://shl-recommendation-api.onrender.com` |
-
-**Important**: Use your actual Render backend URL.
-
-### Step 4: Deploy
-
-1. Click **Deploy**
-2. Wait for deployment to complete (2-5 minutes)
-3. Note your frontend URL: `https://your-app.vercel.app`
-
-**Option B: Using Vercel CLI**
+### Step 1: Prepare Repository
 
 ```bash
-# Install Vercel CLI
-npm install -g vercel
+# Ensure all changes are committed
+git add .
+git commit -m "Prepare for Render deployment"
+git push origin main
+```
 
-# Navigate to frontend directory
+### Step 2: Create Render Service
+
+1. Go to [dashboard.render.com](https://dashboard.render.com)
+2. Click **"New +"** → **"Web Service"**
+3. Connect your GitHub repository
+4. Render will auto-detect `render.yaml` blueprint
+5. Click **"Apply"** to use the blueprint
+
+### Step 3: Configure Environment Variables
+
+In Render dashboard, add these environment variables:
+
+**Required**:
+- `SUPABASE_URL`: Your Supabase project URL
+- `SUPABASE_KEY`: Your Supabase anon key
+- `GEMINI_API_KEY`: Your Google Gemini API key
+- `HUGGINGFACE_API_KEY`: Your HuggingFace API token
+- `ALLOWED_ORIGINS`: Your frontend URL (e.g., `https://product-catalogue-recommendation-sy.vercel.app`)
+
+**Optional**:
+- `REDIS_URL`: Upstash Redis URL (recommended for better performance)
+
+**Auto-Generated**:
+- `SECRET_KEY`: Render will generate this automatically
+
+### Step 4: Deploy
+
+1. Click **"Create Web Service"**
+2. Wait for build to complete (~5-10 minutes)
+3. Render will run health checks
+4. Service will be live at `https://shl-recommendation-api-30oz.onrender.com`
+
+### Step 5: Verify Deployment
+
+```bash
+# Test health endpoint
+curl https://shl-recommendation-api-30oz.onrender.com/health
+
+# Expected response:
+{
+  "status": "healthy",
+  "timestamp": "2025-12-19T...",
+  "version": "2.0.0",
+  "environment": "production"
+}
+```
+
+---
+
+## Frontend Deployment (Vercel)
+
+### Prerequisites
+
+1. Vercel account ([vercel.com](https://vercel.com))
+2. Backend deployed and URL available
+
+### Step 1: Install Vercel CLI
+
+```bash
+npm install -g vercel
+```
+
+### Step 2: Deploy
+
+```bash
 cd frontend-nextjs
+
+# Login to Vercel
+vercel login
 
 # Deploy
 vercel
 
-# Follow the prompts:
-# - Set up and deploy? Yes
-# - Which scope? Select your account
+# Follow prompts:
 # - Link to existing project? No
-# - Project name: shl-recommendation-app
+# - Project name: shl-recommendation-frontend
 # - Directory: ./
 # - Override settings? No
 ```
 
----
+### Step 3: Set Environment Variable
 
-## Part 3: Post-Deployment Configuration
+```bash
+# Add backend URL
+vercel env add NEXT_PUBLIC_API_URL production
 
-### Step 1: Update CORS on Render
-
-After deploying to Vercel, update the `ALLOWED_ORIGINS` environment variable on Render:
-
-```
-ALLOWED_ORIGINS=https://your-app.vercel.app,https://shl-recommendation-app.vercel.app
+# Enter value: https://shl-recommendation-api-30oz.onrender.com
 ```
 
-Then redeploy the Render service.
+### Step 4: Redeploy with Environment Variable
 
-### Step 2: Verify Full Stack
+```bash
+vercel --prod
+```
 
-1. Open your Vercel frontend URL
-2. Try getting recommendations
-3. Test the AI chatbot
-4. Check browser console for any errors
+### Step 5: Update Backend CORS
 
-### Step 3: Set Up Custom Domain (Optional)
-
-**Vercel:**
-1. Go to **Settings** → **Domains**
-2. Add your custom domain
-3. Configure DNS as instructed
-
-**Render:**
-1. Go to **Settings** → **Custom Domains**
-2. Add your API subdomain (e.g., `api.yourdomain.com`)
-3. Configure DNS as instructed
+Update `ALLOWED_ORIGINS` in Render dashboard to include your Vercel URL:
+```
+https://product-catalogue-recommendation-sy.vercel.app
+```
 
 ---
 
-## Upstash Redis Setup (Free Tier)
+## Database Setup (Supabase)
 
-If you don't have Redis yet:
+### Step 1: Create Project
+
+1. Go to [supabase.com](https://supabase.com)
+2. Click **"New Project"**
+3. Choose organization and region
+4. Set database password (save this!)
+5. Wait for project to be created (~2 minutes)
+
+### Step 2: Run SQL Setup
+
+1. Go to **SQL Editor** in Supabase dashboard
+2. Create new query
+3. Copy contents of `data/SUPABASE_SQL_SETUP_SIMPLE.sql`
+4. Run the query
+
+This creates:
+- `assessments` table with all fields
+- `embedding` column for vector search
+- Indexes for performance
+
+### Step 3: Migrate Data
+
+```bash
+cd data
+python migrate_to_supabase_simple.py
+```
+
+This will:
+- Load 518 assessments from JSON
+- Generate embeddings using HuggingFace API
+- Insert into Supabase
+- Verify migration
+
+### Step 4: Verify Data
+
+```bash
+python ../scripts/verify_supabase_migration.py
+```
+
+Expected output:
+```
+✅ Connected to Supabase
+📊 Assessments in database: 517/518 (99.8%)
+✅ Embeddings found: 517/517 assessments have embeddings
+```
+
+---
+
+## Cache Setup (Redis/Upstash)
+
+### Option 1: Upstash (Recommended)
 
 1. Go to [upstash.com](https://upstash.com)
-2. Sign up for free
-3. Create a new Redis database
-4. Copy the Redis URL in format: `redis://default:password@endpoint:port`
-5. Use this URL for `REDIS_URL` environment variable
+2. Create account
+3. Click **"Create Database"**
+4. Choose region closest to your Render deployment
+5. Copy **REST URL** (not Redis URL)
+6. Add to Render as `REDIS_URL`
+
+### Option 2: Skip Redis
+
+The application works without Redis, but:
+- Responses will be slower
+- No caching of recommendations
+- Higher database load
+
+To skip Redis:
+- Don't set `REDIS_URL` environment variable
+- Backend will detect and skip Redis initialization
 
 ---
 
-## Production Checklist
+## Environment Variables
 
-Before going live, verify:
+### Backend (Render)
 
-- [ ] Backend health check returns `healthy`
-- [ ] Frontend loads without errors
-- [ ] Recommendations work correctly
-- [ ] Chatbot responds appropriately
-- [ ] CORS is configured correctly
-- [ ] Environment variables are set (not exposed in client)
-- [ ] API keys are kept secret
-- [ ] Rate limiting is enabled
-- [ ] Database connection is stable
+| Variable | Required | Description | Example |
+|----------|----------|-------------|---------|
+| `SUPABASE_URL` | ✅ | Supabase project URL | `https://abc.supabase.co` |
+| `SUPABASE_KEY` | ✅ | Supabase anon key | `eyJhbG...` |
+| `GEMINI_API_KEY` | ✅ | Google Gemini API key | `AIza...` |
+| `HUGGINGFACE_API_KEY` | ✅ | HuggingFace token | `hf_...` |
+| `ALLOWED_ORIGINS` | ✅ | Frontend URL for CORS | `https://app.vercel.app` |
+| `REDIS_URL` | ⚠️ | Redis connection URL | `redis://...` |
+| `SECRET_KEY` | Auto | Auto-generated | - |
+| `ENVIRONMENT` | Auto | Set to `production` | `production` |
+| `DEBUG` | Auto | Set to `false` | `false` |
+| `LOG_LEVEL` | Auto | Logging level | `INFO` |
+
+### Frontend (Vercel)
+
+| Variable | Required | Description | Example |
+|----------|----------|-------------|---------|
+| `NEXT_PUBLIC_API_URL` | ✅ | Backend API URL | `https://api.onrender.com` |
+
+---
+
+## Post-Deployment
+
+### 1. Test All Endpoints
+
+```bash
+# Health check
+curl https://shl-recommendation-api-30oz.onrender.com/health
+
+# Get recommendations
+curl -X POST https://shl-recommendation-api-30oz.onrender.com/api/v1/recommend \
+  -H "Content-Type: application/json" \
+  -d '{
+    "job_title": "Software Engineer",
+    "required_skills": ["Python"],
+    "engine": "hybrid"
+  }'
+
+# List assessments
+curl https://shl-recommendation-api-30oz.onrender.com/api/v1/assessments?limit=5
+
+# API documentation
+open https://shl-recommendation-api-30oz.onrender.com/docs
+```
+
+### 2. Test All Engines
+
+Test each recommendation engine:
+- `hybrid` (default)
+- `gemini`
+- `rag`
+- `nlp`
+- `clustering`
+
+### 3. Monitor Performance
+
+- **Cold Start**: First request after 15 min inactivity: ~30-60s
+- **Warm Requests**: Subsequent requests: <2s
+- **Memory Usage**: Should stay under 400MB
+
+### 4. Set Up Monitoring
+
+**Render Dashboard**:
+- Monitor memory usage
+- Check error logs
+- Set up alerts for downtime
+
+**Health Check Cron**:
+Keep service warm by pinging `/health` every 10 minutes:
+
+```bash
+# Use a service like cron-job.org or UptimeRobot
+GET https://shl-recommendation-api-30oz.onrender.com/health
+```
+
+---
+
+## Monitoring
+
+### Application Logs
+
+**Render**:
+- Go to your service dashboard
+- Click "Logs" tab
+- View real-time logs
+
+**Log Levels**:
+- `INFO`: Normal operations
+- `WARNING`: Non-critical issues
+- `ERROR`: Critical errors
+
+### Performance Metrics
+
+**Render Dashboard**:
+- CPU usage
+- Memory usage
+- Request count
+- Response times
+
+**Custom Monitoring**:
+- Set up Sentry for error tracking
+- Use Prometheus for metrics
+- Configure alerts for downtime
 
 ---
 
 ## Troubleshooting
 
-### Backend Issues
+### Build Fails
 
-**Build Fails on Render:**
-- Check Python version is 3.11+
-- Verify `requirements.txt` is in the `backend/` directory
-- Check build logs for missing dependencies
+**Issue**: Build fails during `pip install`
 
-**Database Connection Error:**
-- Verify Supabase URL and key are correct
-- Check IP allowlist in Supabase (may need to allow all IPs for Render)
-- Ensure database tables are created
+**Solutions**:
+1. Check Python version is 3.11
+2. Verify all dependencies in `requirements.txt`
+3. Check build logs for specific errors
+4. Ensure `render.yaml` is correct
 
-**Redis Connection Error:**
-- Verify Redis URL format is correct
-- Check Upstash dashboard for connection details
-- Ensure TLS is enabled if required
+### Health Check Fails
 
-### Frontend Issues
+**Issue**: Health check endpoint returns 503
 
-**Build Fails on Vercel:**
-- Check Node.js version (should be 18+)
-- Run `npm run build` locally first to catch errors
-- Verify all dependencies are in `package.json`
+**Solutions**:
+1. Wait 2-3 minutes for initial startup
+2. Check environment variables are set
+3. Review application logs for errors
+4. Verify Supabase connection
 
-**API Requests Fail:**
-- Check `NEXT_PUBLIC_API_URL` is set correctly
-- Verify CORS is configured on backend
-- Check browser console for specific errors
+### Slow Response Times
 
-**502 Bad Gateway:**
-- Backend might be cold starting (wait 30 seconds)
-- Check Render logs for errors
-- Verify start command is correct
+**Issue**: API responses take >10 seconds
+
+**Solutions**:
+1. **Cold Start**: Normal for first request after inactivity
+   - Solution: Set up cron job to keep warm
+2. **Missing Redis**: Responses slower without caching
+   - Solution: Add Upstash Redis
+3. **Database Slow**: Supabase queries taking too long
+   - Solution: Check indexes, optimize queries
+
+### Memory Issues
+
+**Issue**: Service crashes with "Out of Memory"
+
+**Solutions**:
+1. Render free tier: 512MB RAM limit
+2. Backend uses lazy loading to minimize memory
+3. Upgrade to paid tier ($7/month for 2GB RAM)
+4. Optimize model loading
 
 ### CORS Errors
 
-If you see CORS errors:
-1. Verify `ALLOWED_ORIGINS` includes your Vercel URL
-2. Include both `https://` prefix and exact domain
-3. Redeploy backend after changing environment variables
+**Issue**: Frontend can't connect to backend
+
+**Solutions**:
+1. Add frontend URL to `ALLOWED_ORIGINS`
+2. Include `https://` in URL
+3. Restart backend service after changing env vars
+
+### HuggingFace API Errors
+
+**Issue**: Embedding generation fails
+
+**Solutions**:
+1. Verify `HUGGINGFACE_API_KEY` is set
+2. Check API key is valid
+3. Ensure rate limits not exceeded
+4. Check HuggingFace API status
 
 ---
 
-## Cost Estimates
+## Scaling
 
-| Service | Free Tier | Paid Tier |
-|---------|-----------|-----------|
-| Render | 750 hours/month (spins down after inactivity) | $7/month (always on) |
-| Vercel | 100GB bandwidth, unlimited deploys | $20/month (team features) |
-| Supabase | 500MB database, 2GB bandwidth | $25/month (more resources) |
-| Upstash | 10,000 commands/day | $0.20/100K commands |
+### Horizontal Scaling
 
-**Note**: Render's free tier spins down after 15 minutes of inactivity, causing ~30 second cold starts.
+**Render**:
+- Upgrade to paid tier
+- Add more instances
+- Use load balancer
+
+**Vercel**:
+- Automatically scales
+- No configuration needed
+
+### Database Scaling
+
+**Supabase**:
+- Upgrade to Pro plan
+- Increase connection pool
+- Add read replicas
+
+### Cache Scaling
+
+**Upstash**:
+- Upgrade plan for more commands
+- Use Redis cluster for high availability
 
 ---
 
-## Alternative: Docker Deployment
+## Security Checklist
 
-For other platforms (AWS, GCP, etc.), use Docker:
+- [ ] All environment variables set securely
+- [ ] `DEBUG=false` in production
+- [ ] `SECRET_KEY` is strong and unique
+- [ ] CORS configured correctly
+- [ ] Rate limiting enabled
+- [ ] HTTPS enforced
+- [ ] Database credentials secured
+- [ ] API keys not exposed in frontend
 
-```dockerfile
-# backend/Dockerfile
-FROM python:3.11-slim
+---
 
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
+## Cost Optimization
 
-EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
+### Free Tier Strategy
 
-Build and run:
+1. **Backend**: Render free tier with cold starts
+2. **Frontend**: Vercel free tier
+3. **Database**: Supabase free tier
+4. **Cache**: Upstash free tier or skip Redis
+
+**Total**: $0/month
+
+### Production Strategy
+
+1. **Backend**: Render Starter ($7/month) - no cold starts
+2. **Frontend**: Vercel free tier (sufficient)
+3. **Database**: Supabase free tier (upgrade if needed)
+4. **Cache**: Upstash free tier (upgrade if needed)
+
+**Total**: $7/month
+
+---
+
+## Backup and Recovery
+
+### Database Backups
+
+**Supabase**:
+- Automatic daily backups (Pro plan)
+- Point-in-time recovery (Pro plan)
+- Manual backups via SQL export
+
+### Code Backups
+
+**GitHub**:
+- All code in version control
+- Tag releases for easy rollback
+- Use branches for staging
+
+---
+
+## CI/CD Pipeline
+
+### Automatic Deployment
+
+**Render**:
+- Auto-deploys on push to `main` branch
+- Can configure branch-specific deployments
+
+**Vercel**:
+- Auto-deploys on push to `main`
+- Preview deployments for PRs
+
+### Manual Deployment
+
 ```bash
-docker build -t shl-api ./backend
-docker run -p 8000:8000 --env-file .env shl-api
+# Backend (Render)
+git push origin main  # Triggers auto-deploy
+
+# Frontend (Vercel)
+vercel --prod
 ```
+
+---
+
+## Support
+
+For deployment issues:
+1. Check [Troubleshooting](#troubleshooting) section
+2. Review application logs
+3. Check service status pages
+4. Open GitHub issue
+
+---
+
+**Last Updated**: December 2024  
+**Version**: 2.0.0

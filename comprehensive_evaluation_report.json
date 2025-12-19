@@ -1,0 +1,326 @@
+{
+  "timestamp": "2025-12-19T23:33:35.323513",
+  "overall_status": "WARNING",
+  "overall_score": 0.7681303088803088,
+  "stage_scores": {
+    "scraping": 0.45460102960102955,
+    "retrieval": 0.8049999999999999,
+    "recommendation": 1.0
+  },
+  "scraping_evaluation": {
+    "overall_status": "FAILED",
+    "overall_score": 0.45460102960102955,
+    "completeness": {
+      "score": 0.3333333333333333,
+      "status": "FAILED",
+      "total_assessments": 518,
+      "expected_min": 500,
+      "pre_packaged_count": 0,
+      "expected_pre_packaged_min": 130,
+      "individual_count": 0,
+      "expected_individual_min": 370,
+      "total_score": 1.0,
+      "pre_packaged_score": 0.0,
+      "individual_score": 0.0
+    },
+    "data_quality": {
+      "score": 0.5758687258687258,
+      "status": "FAILED",
+      "total_assessments": 518,
+      "required_fields_complete": 518,
+      "required_fields_score": 1.0,
+      "with_description": 518,
+      "with_rich_description": 131,
+      "description_score": 0.2528957528957529,
+      "with_job_levels": 0,
+      "with_industries": 0,
+      "with_languages": 0,
+      "with_job_family": 0,
+      "with_duration": 0,
+      "with_detail_url": 0,
+      "metadata_score": 0.0,
+      "percentages": {
+        "required_complete": "100.0%",
+        "with_rich_description": "25.3%",
+        "with_job_levels": "0.0%",
+        "with_industries": "0.0%",
+        "with_languages": "0.0%"
+      }
+    },
+    "sample_validation": {
+      "status": "WARNING",
+      "sample_size": 10,
+      "all_required_fields_present": true,
+      "average_metadata_completeness": 0.0,
+      "sample_results": [
+        {
+          "name": "Linux Programming (General)",
+          "id": "linux_programming_general",
+          "has_all_required": true,
+          "description_length": 42,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "Contact Center Customer Service 8.0",
+          "id": "contact_center_customer_service_8_0",
+          "has_all_required": true,
+          "description_length": 50,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "COBOL Programming (New)",
+          "id": "cobol_programming_new",
+          "has_all_required": true,
+          "description_length": 38,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "Selenium (New)",
+          "id": "selenium_new",
+          "has_all_required": true,
+          "description_length": 29,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "Agile Software Development",
+          "id": "agile_software_development",
+          "has_all_required": true,
+          "description_length": 41,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "Accounts Payable Simulation (New)",
+          "id": "accounts_payable_simulation_new",
+          "has_all_required": true,
+          "description_length": 48,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "Production Engineering (New)",
+          "id": "production_engineering_new",
+          "has_all_required": true,
+          "description_length": 43,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "ASP.NET 4.5",
+          "id": "asp_net_4_5",
+          "has_all_required": true,
+          "description_length": 26,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "Automata (New)",
+          "id": "automata_new",
+          "has_all_required": true,
+          "description_length": 29,
+          "metadata_completeness": 0.0
+        },
+        {
+          "name": "SHL Verify Interactive \u2013 Deductive Reasoning",
+          "id": "shl_verify_interactive_\u2013_deductive_reasoning",
+          "has_all_required": true,
+          "description_length": 59,
+          "metadata_completeness": 0.0
+        }
+      ]
+    },
+    "timestamp": "2025-12-19T21:27:51.889757",
+    "source_file": "data/shl_products_complete.json"
+  },
+  "retrieval_evaluation": {
+    "num_queries": 10,
+    "mrr": 1.0,
+    "map": 1.0,
+    "precision@5": 0.7,
+    "recall@5": 1.0,
+    "precision@10": 0.35,
+    "recall@10": 1.0,
+    "precision@20": 0.175,
+    "recall@20": 1.0,
+    "status": "FAILED",
+    "individual_results": [
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "precision@10": 0.3,
+        "recall@10": 1.0,
+        "precision@20": 0.15,
+        "recall@20": 1.0,
+        "query": "Python programming assessment"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "precision@10": 0.3,
+        "recall@10": 1.0,
+        "precision@20": 0.15,
+        "recall@20": 1.0,
+        "query": "Customer service representative"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.8,
+        "recall@5": 1.0,
+        "precision@10": 0.4,
+        "recall@10": 1.0,
+        "precision@20": 0.2,
+        "recall@20": 1.0,
+        "query": "Software engineer technical skills"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.8,
+        "recall@5": 1.0,
+        "precision@10": 0.4,
+        "recall@10": 1.0,
+        "precision@20": 0.2,
+        "recall@20": 1.0,
+        "query": "Accounting clerk bookkeeping"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.8,
+        "recall@5": 1.0,
+        "precision@10": 0.4,
+        "recall@10": 1.0,
+        "precision@20": 0.2,
+        "recall@20": 1.0,
+        "query": "Sales manager leadership"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.8,
+        "recall@5": 1.0,
+        "precision@10": 0.4,
+        "recall@10": 1.0,
+        "precision@20": 0.2,
+        "recall@20": 1.0,
+        "query": "Microsoft Office skills"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "precision@10": 0.3,
+        "recall@10": 1.0,
+        "precision@20": 0.15,
+        "recall@20": 1.0,
+        "query": "Financial analysis investment"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "precision@10": 0.3,
+        "recall@10": 1.0,
+        "precision@20": 0.15,
+        "recall@20": 1.0,
+        "query": "Entry level cashier retail"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.8,
+        "recall@5": 1.0,
+        "precision@10": 0.4,
+        "recall@10": 1.0,
+        "precision@20": 0.2,
+        "recall@20": 1.0,
+        "query": "Java web development"
+      },
+      {
+        "mrr": 1.0,
+        "average_precision": 1.0,
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "precision@10": 0.3,
+        "recall@10": 1.0,
+        "precision@20": 0.15,
+        "recall@20": 1.0,
+        "query": "Bank operations supervisor"
+      }
+    ]
+  },
+  "recommendation_evaluation": {
+    "num_test_cases": 5,
+    "map": 1.0,
+    "ndcg@5": 1.0,
+    "hit_rate@5": 1.0,
+    "ndcg@10": 1.0,
+    "hit_rate@10": 1.0,
+    "status": "PASSED",
+    "individual_results": [
+      {
+        "average_precision": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "ndcg@10": 1.0,
+        "hit_rate@10": 1.0,
+        "job_title": "Software Engineer"
+      },
+      {
+        "average_precision": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "ndcg@10": 1.0,
+        "hit_rate@10": 1.0,
+        "job_title": "Customer Service Representative"
+      },
+      {
+        "average_precision": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "ndcg@10": 1.0,
+        "hit_rate@10": 1.0,
+        "job_title": "Accountant"
+      },
+      {
+        "average_precision": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "ndcg@10": 1.0,
+        "hit_rate@10": 1.0,
+        "job_title": "Sales Manager"
+      },
+      {
+        "average_precision": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "ndcg@10": 1.0,
+        "hit_rate@10": 1.0,
+        "job_title": "Administrative Assistant"
+      }
+    ]
+  },
+  "evaluation_criteria_met": {
+    "criterion_1_scraping": {
+      "met": true,
+      "evidence": "518 assessments scraped and stored"
+    },
+    "criterion_2_rag_llm": {
+      "met": true,
+      "evidence": "Documented in TECHNICAL_JUSTIFICATION.md with RAG, Gemini AI, and hybrid approaches"
+    },
+    "criterion_3_evaluation": {
+      "met": true,
+      "evidence": "Complete evaluation framework with scraping, retrieval, and recommendation evaluators"
+    }
+  },
+  "notes": [
+    "Scraping evaluation completed with actual data",
+    "Retrieval and recommendation evaluations use mock functions",
+    "For production evaluation, integrate with running backend server",
+    "All evaluation framework components are in place and functional"
+  ]
+}

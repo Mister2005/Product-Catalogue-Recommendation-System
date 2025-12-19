@@ -1,17 +1,17 @@
 """
 RAG (Retrieval-Augmented Generation) based recommendation engine
-Uses sentence transformers for embeddings and ChromaDB for vector search
+Uses HuggingFace API for embeddings and ChromaDB for vector search
 """
 import asyncio
 from typing import List, Dict, Any, Optional
 import numpy as np
-from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
 
 from app.models.schemas import RecommendationRequest, RecommendationItem, RecommendationScore, AssessmentResponse
 from app.core.config import get_settings
 from app.core.logging import log
+from app.services.embedding_service import get_embedding_service
 
 settings = get_settings()
 
@@ -22,62 +22,32 @@ class RAGRecommender:
     """
     
     def __init__(self):
-        """Initialize RAG recommender with lazy loading"""
-        self.model_name = settings.embedding_model
+        """Initialize RAG recommender with HuggingFace embeddings"""
         self.dimension = settings.vector_dimension
         self.top_k = settings.top_k_results
         
-        # Lazy loading flags
-        self._embedding_model = None
+        # Get embedding service (lightweight, no model loading)
+        self._embedding_service = None
+        
+        # ChromaDB components
         self._chroma_client = None
         self._collection = None
         self._indexed = False
         
-        log.info(f"RAG recommender initialized (lazy loading mode)")
+        log.info(f"RAG recommender initialized (using HuggingFace API)")
     
-    def _ensure_model_loaded(self):
-        """Lazy load embedding model with timeout protection"""
-        if self._embedding_model is not None:
+    def _ensure_embedding_service(self):
+        """Ensure embedding service is initialized"""
+        if self._embedding_service is not None:
             return
         
-        import signal
-        from contextlib import contextmanager
-        
-        @contextmanager
-        def timeout(seconds):
-            """Context manager for timeout"""
-            def timeout_handler(signum, frame):
-                raise TimeoutError(f"Model loading exceeded {seconds} seconds")
-            
-            # Set the signal handler and alarm
-            old_handler = signal.signal(signal.SIGALRM, timeout_handler)
-            signal.alarm(seconds)
-            try:
-                yield
-            finally:
-                signal.alarm(0)
-                signal.signal(signal.SIGALRM, old_handler)
-        
         try:
-            log.info(f"Loading embedding model: {self.model_name}")
-            timeout_seconds = getattr(settings, 'model_loading_timeout', 60)
-            
-            # Try with timeout on Unix systems
-            try:
-                with timeout(timeout_seconds):
-                    self._embedding_model = SentenceTransformer(self.model_name)
-            except (AttributeError, ValueError):
-                # Windows doesn't support SIGALRM, load without timeout
-                log.warning("Timeout not supported on this platform, loading without timeout")
-                self._embedding_model = SentenceTransformer(self.model_name)
-            
-            log.info(f"Embedding model loaded successfully")
-        except TimeoutError as e:
-            log.error(f"Model loading timeout: {e}")
-            raise RuntimeError(f"Failed to load embedding model: {e}")
+            log.info("Initializing HuggingFace embedding service")
+            self._embedding_service = get_embedding_service()
+            log.info("Embedding service ready")
         except Exception as e:
-            log.error(f"Error loading embedding model: {e}")
-            raise RuntimeError(f"Failed to load embedding model: {e}")
+            log.error(f"Error initializing embedding service: {e}")
+            raise RuntimeError(f"Failed to initialize embedding service: {e}")
     
     def _ensure_collection_loaded(self):
         """Lazy load ChromaDB collection"""
@@ -142,8 +112,8 @@ class RAGRecommender:
         """Index all assessments in ChromaDB with memory optimization"""
         import gc
         
-        # Ensure model and collection are loaded
-        self._ensure_model_loaded()
+        # Ensure embedding service and collection are loaded
+        self._ensure_embedding_service()
         self._ensure_collection_loaded()
         
         if self._indexed:
@@ -191,8 +161,8 @@ class RAGRecommender:
                     metadatas.append(metadata)
                     ids.append(assessment['id'])
                 
-                # Generate embeddings for batch
-                embeddings = self._embedding_model.encode(documents, show_progress_bar=False)
+                # Generate embeddings for batch using HuggingFace API
+                embeddings = self._embedding_service.encode(documents, show_progress_bar=False)
                 
                 # Add to ChromaDB
                 self._collection.add(
@@ -258,8 +228,8 @@ class RAGRecommender:
         Returns:
             List of recommendation items
         """
-        # Ensure model and collection are loaded
-        self._ensure_model_loaded()
+        # Ensure embedding service and collection are loaded
+        self._ensure_embedding_service()
         self._ensure_collection_loaded()
         
         # Index assessments if not already done
@@ -273,8 +243,8 @@ class RAGRecommender:
         query_text = self._create_query_text(request)
         log.info(f"Query text: {query_text}")
         
-        # Generate query embedding
-        query_embedding = self._embedding_model.encode([query_text])[0]
+        # Generate query embedding using HuggingFace API
+        query_embedding = self._embedding_service.encode([query_text])[0]
         
         # Search in ChromaDB
         results = self._collection.query(
