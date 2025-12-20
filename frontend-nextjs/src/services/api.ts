@@ -164,3 +164,67 @@ export const chatWithAI = async (
     })
     return response.data
 }
+
+// ============================================================================
+// NEW SIMPLIFIED API (SHL Assignment)
+// ============================================================================
+
+export interface SimpleRecommendRequest {
+    query?: string
+    url?: string
+}
+
+export interface SimpleAssessmentRecommendation {
+    assessment_name: string
+    assessment_url: string
+}
+
+export interface SimpleRecommendResponse {
+    recommendations: SimpleAssessmentRecommendation[]
+}
+
+/**
+ * Get recommendations using the new simplified API
+ * Accepts either a natural language query or a URL containing job description
+ */
+export const getSimpleRecommendations = async (
+    request: SimpleRecommendRequest
+): Promise<SimpleRecommendResponse> => {
+    const response = await api.post('/recommend', request)
+    return response.data
+}
+
+/**
+ * Helper function to get recommendations from a query string
+ */
+export const getRecommendationsFromQuery = async (
+    query: string
+): Promise<SimpleRecommendResponse> => {
+    return getSimpleRecommendations({ query })
+}
+
+/**
+ * Helper function to get recommendations from a URL
+ */
+export const getRecommendationsFromURL = async (
+    url: string
+): Promise<SimpleRecommendResponse> => {
+    return getSimpleRecommendations({ url })
+}
+
+/**
+ * Get recommendations from a PDF file
+ */
+export const getRecommendationsFromPDF = async (
+    file: File
+): Promise<SimpleRecommendResponse> => {
+    const formData = new FormData()
+    formData.append('file', file)
+
+    const response = await axios.post(`${API_URL}/recommend/pdf`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+    })
+    return response.data
+}

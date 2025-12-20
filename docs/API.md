@@ -18,9 +18,80 @@ Currently, the API does not require authentication. This can be added in product
 
 ## Endpoints
 
-### 1. Get Recommendations
+### 1. Get Recommendations (Simplified) ⭐ NEW
 
-Get personalized assessment recommendations based on requirements.
+Get recommendations using natural language queries or URLs.
+
+**Endpoint:** `POST /recommend`
+
+**Request Body:**
+```json
+{
+  "query": "I am hiring for Java developers with ML experience"
+  // OR
+  "url": "https://example.com/job-description"
+}
+```
+
+**Request Parameters:**
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `query` | string | No* | Natural language job description |
+| `url` | string | No* | URL containing job description |
+
+*Either `query` or `url` must be provided
+
+**Response:**
+```json
+{
+  "recommendations": [
+    {
+      "assessment_name": "Java 8 (New)",
+      "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/java-8-new/"
+    },
+    {
+      "assessment_name": "Machine Learning",
+      "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/machine-learning/"
+    }
+  ]
+}
+```
+
+---
+
+### 2. Get Recommendations from PDF ⭐ NEW
+
+Upload a PDF file containing job description to get recommendations.
+
+**Endpoint:** `POST /recommend/pdf`
+
+**Request:**
+- Content-Type: `multipart/form-data`
+- Body: PDF file with key `file`
+
+**Example (curl):**
+```bash
+curl -X POST http://localhost:8000/recommend/pdf \
+  -F "file=@job_description.pdf"
+```
+
+**Response:**
+```json
+{
+  "recommendations": [
+    {
+      "assessment_name": "Python (New)",
+      "assessment_url": "https://www.shl.com/solutions/products/product-catalog/view/python-new/"
+    }
+  ]
+}
+```
+
+---
+
+### 3. Get Recommendations (Advanced)
+
+Get personalized assessment recommendations with detailed parameters.
 
 **Endpoint:** `POST /api/v1/recommend`
 
@@ -219,8 +290,8 @@ Check API health status.
 ```json
 {
   "status": "healthy",
-  "assessments_loaded": 10,
-  "version": "2.0.0"
+  "assessments_loaded": 517,
+  "version": "2.1.0"
 }
 ```
 

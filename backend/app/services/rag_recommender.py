@@ -122,7 +122,8 @@ class RAGRecommender:
         
         log.info("Starting assessment indexing for RAG")
         
-        response = db.table("assessments").select("*").execute()
+        # FILTER: Only get Individual Test Solutions (exclude Pre-packaged Job Solutions)
+        response = db.table("assessments").select("*").eq("type", "Individual Test Solution").execute()
         assessments = response.data
         
         if not assessments:

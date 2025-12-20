@@ -40,8 +40,22 @@ class RecommendationEngineEnum(str, Enum):
 
 
 # Request Schemas
+
+# NEW SIMPLIFIED SCHEMAS (SHL Assignment)
+class RecommendRequest(BaseModel):
+    """Simplified request for recommendations - accepts query or URL"""
+    query: Optional[str] = Field(None, description="Natural language query or job description text")
+    url: Optional[str] = Field(None, description="URL containing job description")
+    
+    def model_post_init(self, __context):
+        """Validate that at least one of query or url is provided"""
+        if not self.query and not self.url:
+            raise ValueError('Either query or url must be provided')
+
+
+# OLD COMPLEX SCHEMA (Deprecated - keeping for backward compatibility)
 class RecommendationRequest(BaseModel):
-    """Request model for recommendations"""
+    """Request model for recommendations (DEPRECATED - use RecommendRequest)"""
     model_config = ConfigDict(use_enum_values=True)
     
     job_title: Optional[str] = Field(None, description="Target job title")
@@ -84,8 +98,22 @@ class FeedbackCreate(BaseModel):
 
 
 # Response Schemas
+
+# NEW SIMPLIFIED SCHEMAS (SHL Assignment)
+class AssessmentRecommendation(BaseModel):
+    """Single assessment recommendation - simplified format"""
+    assessment_name: str
+    assessment_url: str
+
+
+class RecommendResponse(BaseModel):
+    """Simplified recommendation response"""
+    recommendations: List[AssessmentRecommendation]
+
+
+# OLD COMPLEX SCHEMAS (Deprecated - keeping for backward compatibility)
 class AssessmentResponse(BaseModel):
-    """Response model for assessment"""
+    """Response model for assessment (DEPRECATED)"""
     model_config = ConfigDict(from_attributes=True)
     
     id: str

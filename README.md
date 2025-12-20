@@ -10,7 +10,8 @@ This application provides intelligent assessment recommendations based on job re
 
 ### Key Achievements
 
-✅ **518 Assessments** scraped from SHL website and stored in Supabase  
+✅ **517 Assessments** with complete URL mapping from Supabase  
+✅ **3 Input Methods** - Query, URL, and PDF upload support  
 ✅ **5 Recommendation Engines** with hybrid approach (RAG, Gemini AI, NLP, Clustering)  
 ✅ **Complete Evaluation Framework** with industry-standard metrics  
 ✅ **Production-Ready** deployment on Render with optimized performance  
@@ -51,6 +52,8 @@ This application provides intelligent assessment recommendations based on job re
 
 ### Additional Features
 
+- **📄 PDF Upload**: Upload job description PDFs for instant recommendations
+- **🔗 URL Mapping**: All 517 assessments with verified URLs from Supabase
 - **💬 AI Chatbot**: Interactive assistant for assessment queries
 - **📈 Real-time Database**: Supabase PostgreSQL with vector search (pgvector)
 - **⚡ High-Performance Caching**: Redis for optimized response times
@@ -495,6 +498,6 @@ For questions or issues:
 
 ---
 
-**Version**: 2.0.0  
-**Last Updated**: December 2025  
-**Status**: ✅ Production Ready
+**Version**: 2.1.0  
+**Last Updated**: December 2024  
+**Status**: ✅ Production Ready with PDF Upload Support
