@@ -26,7 +26,7 @@ langchain>=0.1.0
 langchain-community>=0.0.13
 
 # Clustering
-umap-learn>=0.5.5
+# Removed: umap-learn (replaced with PCA from scikit-learn)
 hdbscan>=0.8.33
 
 # AI Models

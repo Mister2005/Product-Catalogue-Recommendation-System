@@ -1,12 +1,12 @@
 """
-Clustering-based recommendation engine using K-Means and UMAP
+Clustering-based recommendation engine using K-Means and PCA
 """
 from typing import List, Dict
 import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.feature_extraction.text import TfidfVectorizer
-import umap
+from sklearn.decomposition import PCA
 
 from app.models.schemas import RecommendationRequest, RecommendationItem, RecommendationScore, AssessmentResponse
 from app.core.logging import log
@@ -14,14 +14,14 @@ from app.core.logging import log
 
 class ClusteringRecommender:
     """
-    Clustering-based recommender using K-Means and UMAP for dimensionality reduction
+    Clustering-based recommender using K-Means and PCA for dimensionality reduction
     """
     
     def __init__(self, n_clusters: int = 10):
         """Initialize clustering recommender"""
         self.n_clusters = n_clusters
         self.kmeans = None
-        self.umap_reducer = None
+        self.pca_reducer = None  # Changed from umap_reducer to pca_reducer
         self.scaler = StandardScaler()
         self.vectorizer = TfidfVectorizer(max_features=500, ngram_range=(1, 2))
         self.assessments_cache = []
@@ -76,34 +76,26 @@ class ClusteringRecommender:
         # Combine features
         self.feature_matrix = np.hstack([tfidf_features, numerical_features])
         
-        # Dimensionality reduction with UMAP (optimized for speed)
+        # Dimensionality reduction with PCA (much faster than UMAP)
         try:
-            if len(assessments) > self.n_clusters and len(assessments) >= 15:
-                # Optimized parameters for faster fitting
-                n_neighbors = min(10, len(assessments) - 1)  # Reduced from 15 to 10
-                n_components = min(5, len(assessments) // 3, self.feature_matrix.shape[1] - 1)  # Reduced from 10 to 5
-               # Apply UMAP for dimensionality reduction (optimized for speed)
-                log.info(f"Starting UMAP reduction: {self.feature_matrix.shape[0]} -> {n_components} dims")
+            if len(assessments) > self.n_clusters and self.feature_matrix.shape[1] > 10:
+                # Use PCA for fast dimensionality reduction
+                n_components = min(50, len(assessments) - 1, self.feature_matrix.shape[1] - 1)
+                log.info(f"Starting PCA reduction: {self.feature_matrix.shape[0]} -> {n_components} dims")
                 
-                self.umap_reducer = umap.UMAP(
+                self.pca_reducer = PCA(
                     n_components=n_components,
-                    n_neighbors=10,  # Reduced from 15 for faster computation
-                    min_dist=0.1,
-                    metric='euclidean',  # Faster than cosine
-                    random_state=42,
-                    n_jobs=1,  # Single job to avoid memory issues
-                    low_memory=True,  # Enable low memory mode
-                    verbose=False
+                    random_state=42
                 )
-                reduced_features = self.umap_reducer.fit_transform(self.feature_matrix)
-                log.info(f"✅ UMAP completed: {self.feature_matrix.shape[0]} -> {reduced_features.shape[1]} dimensions")
+                reduced_features = self.pca_reducer.fit_transform(self.feature_matrix)
+                log.info(f"✅ PCA completed in <1s: {self.feature_matrix.shape[0]} -> {reduced_features.shape[1]} dimensions")
             else:
                 reduced_features = self.feature_matrix
-                log.info("Skipping UMAP reduction (insufficient data)")
+                log.info("Skipping PCA reduction (insufficient data)")
         except Exception as e:
-            log.warning(f"UMAP reduction failed: {e}, using original features")
+            log.warning(f"PCA reduction failed: {e}, using original features")
             reduced_features = self.feature_matrix
-            self.umap_reducer = None
+            self.pca_reducer = None
         
         # Clustering
         n_clusters = min(self.n_clusters, len(assessments), len(assessments) // 2 + 1)
@@ -143,9 +135,9 @@ class ClusteringRecommender:
         # Combine
         combined = np.hstack([tfidf_features, numerical_features])
         
-        # Apply UMAP if fitted
-        if self.umap_reducer:
-            combined = self.umap_reducer.transform(combined)
+        # Apply PCA if fitted
+        if self.pca_reducer:
+            combined = self.pca_reducer.transform(combined)
         
         return combined
     
@@ -181,8 +173,8 @@ class ClusteringRecommender:
         scored_assessments = []
         for idx, assessment in cluster_assessments:
             # Get assessment features
-            if self.umap_reducer:
-                assessment_features = self.umap_reducer.transform(self.feature_matrix[idx:idx+1])
+            if self.pca_reducer:
+                assessment_features = self.pca_reducer.transform(self.feature_matrix[idx:idx+1])
             else:
                 assessment_features = self.feature_matrix[idx:idx+1]
             

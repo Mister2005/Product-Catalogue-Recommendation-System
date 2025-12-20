@@ -250,7 +250,7 @@ async def root():
                 </div>
                 <div class="engine-card">
                     <strong>🎲 Clustering</strong><br>
-                    <small>K-Means + UMAP</small>
+                    <small>K-Means + PCA</small>
                 </div>
             </div>
             
