@@ -5,7 +5,7 @@ from typing import List, Dict
 from collections import defaultdict
 
 from app.models.schemas import RecommendationRequest, RecommendationItem, RecommendationScore
-from app.services.rag_recommender import RAGRecommender
+from app.services.rag_recommender_v2 import RAGRecommender
 from app.services.nlp_recommender import NLPRecommender
 from app.services.clustering_recommender import ClusteringRecommender
 from app.services.gemini_recommender import GeminiRecommender
@@ -50,14 +50,20 @@ class HybridRecommender:
         """
         log.info(f"Hybrid recommendation for: {request.dict()}")
         
+        # Extract keywords from query for strict filtering
+        query_keywords = self._extract_keywords(request)
+        log.info(f"Extracted keywords for filtering: {query_keywords}")
+        
         # Get recommendations from each engine
         recommendations_by_engine = {}
         
         # RAG recommendations
         try:
             rag_recs = await self.rag_recommender.recommend(request, db)
+            # Apply strict keyword filter
+            rag_recs = self._filter_by_keywords(rag_recs, query_keywords)
             recommendations_by_engine["rag"] = rag_recs
-            log.info(f"RAG contributed {len(rag_recs)} recommendations")
+            log.info(f"RAG contributed {len(rag_recs)} recommendations (after keyword filter)")
         except Exception as e:
             log.error(f"RAG recommender error: {e}")
             recommendations_by_engine["rag"] = []
@@ -65,8 +71,10 @@ class HybridRecommender:
         # NLP recommendations
         try:
             nlp_recs = await self.nlp_recommender.recommend(request, db)
+            # Apply strict keyword filter
+            nlp_recs = self._filter_by_keywords(nlp_recs, query_keywords)
             recommendations_by_engine["nlp"] = nlp_recs
-            log.info(f"NLP contributed {len(nlp_recs)} recommendations")
+            log.info(f"NLP contributed {len(nlp_recs)} recommendations (after keyword filter)")
         except Exception as e:
             log.error(f"NLP recommender error: {e}")
             recommendations_by_engine["nlp"] = []
@@ -74,8 +82,10 @@ class HybridRecommender:
         # Clustering recommendations
         try:
             clustering_recs = await self.clustering_recommender.recommend(request, db)
+            # Apply strict keyword filter
+            clustering_recs = self._filter_by_keywords(clustering_recs, query_keywords)
             recommendations_by_engine["clustering"] = clustering_recs
-            log.info(f"Clustering contributed {len(clustering_recs)} recommendations")
+            log.info(f"Clustering contributed {len(clustering_recs)} recommendations (after keyword filter)")
         except Exception as e:
             log.error(f"Clustering recommender error: {e}")
             recommendations_by_engine["clustering"] = []
@@ -84,8 +94,10 @@ class HybridRecommender:
         try:
             if self.gemini_recommender.model:
                 gemini_recs = await self.gemini_recommender.recommend(request, db)
+                # Apply strict keyword filter
+                gemini_recs = self._filter_by_keywords(gemini_recs, query_keywords)
                 recommendations_by_engine["gemini"] = gemini_recs
-                log.info(f"Gemini contributed {len(gemini_recs)} recommendations")
+                log.info(f"Gemini contributed {len(gemini_recs)} recommendations (after keyword filter)")
             else:
                 recommendations_by_engine["gemini"] = []
         except Exception as e:
@@ -97,6 +109,62 @@ class HybridRecommender:
         
         log.info(f"Hybrid returned {len(combined)} recommendations")
         return combined
+    
+    def _extract_keywords(self, request: RecommendationRequest) -> set:
+        """Extract relevant keywords from the request for strict filtering"""
+        keywords = set()
+        
+        # Common words to ignore
+        stop_words = {
+            'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
+            'of', 'with', 'by', 'from', 'as', 'is', 'was', 'are', 'were', 'be',
+            'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will',
+            'would', 'should', 'could', 'may', 'might', 'must', 'can', 'i', 'you',
+            'he', 'she', 'it', 'we', 'they', 'them', 'their', 'this', 'that',
+            'these', 'those', 'am', 'want', 'hire', 'looking', 'need', 'require',
+            'required', 'find', 'me', 'my', 'our', 'your', 'who', 'what', 'where',
+            'when', 'why', 'how', 'all', 'each', 'every', 'both', 'few', 'more',
+            'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own',
+            'same', 'so', 'than', 'too', 'very', 'can', 'just', 'should', 'now'
+        }
+        
+        # Extract from job title
+        if request.job_title:
+            words = request.job_title.lower().split()
+            keywords.update(w for w in words if len(w) > 2 and w not in stop_words)
+        
+        # Extract from required skills
+        if request.required_skills:
+            for skill in request.required_skills:
+                words = skill.lower().split()
+                keywords.update(w for w in words if len(w) > 2 and w not in stop_words)
+        
+        return keywords
+    
+    def _filter_by_keywords(self, recommendations: List[RecommendationItem], keywords: set) -> List[RecommendationItem]:
+        """
+        Strictly filter recommendations to only include assessments matching query keywords
+        This is harsh but necessary for high precision
+        """
+        if not keywords:
+            return recommendations
+        
+        filtered = []
+        for rec in recommendations:
+            assessment_name = rec.assessment.name.lower()
+            assessment_desc = (rec.assessment.description or "").lower()
+            
+            # Check if assessment name or description contains any keyword
+            assessment_text = f"{assessment_name} {assessment_desc}"
+            
+            # Must match at least one keyword
+            if any(keyword in assessment_text for keyword in keywords):
+                filtered.append(rec)
+            else:
+                log.debug(f"Filtered out '{rec.assessment.name}' - no keyword match")
+        
+        return filtered
+    
     
     def _combine_recommendations(
         self, 

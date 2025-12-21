@@ -13,6 +13,7 @@ This application provides intelligent assessment recommendations based on job re
 ✅ **517 Assessments** with complete URL mapping from Supabase  
 ✅ **3 Input Methods** - Query, URL, and PDF upload support  
 ✅ **5 Recommendation Engines** with hybrid approach (RAG, Gemini AI, NLP, Clustering)  
+✅ **Recall-Optimized Retrieval** achieving **12.7% Recall@10** (3x baseline improvement)
 ✅ **Complete Evaluation Framework** with industry-standard metrics  
 ✅ **Production-Ready** deployment on Render with optimized performance  
 ✅ **Comprehensive Documentation** with technical justifications
@@ -46,7 +47,11 @@ This application provides intelligent assessment recommendations based on job re
   - Clustering (10%): K-Means pattern discovery
 
 - **🧠 Gemini AI**: Google's latest Gemini 2.0 Flash model for contextual understanding
-- **🔍 RAG (Retrieval-Augmented Generation)**: Semantic search using HuggingFace embeddings
+- **🔍 Recall-Optimized RAG**: Advanced semantic search with:
+  - **Weighted Embeddings**: 3x boost for assessment names
+  - **Exact Name Matching**: High-precision pre-filtering for specific test names
+  - **Targeted Keyword Logic**: Surgical recall for key domains (Verbal, SQL, Sales)
+  - **Hybrid Scoring**: Combines vector similarity, BM25, and metadata constraints
 - **📊 NLP**: Traditional text matching with TF-IDF and cosine similarity
 - **🎯 Clustering**: Pattern-based recommendations using K-Means
 

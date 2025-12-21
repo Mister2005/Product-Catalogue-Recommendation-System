@@ -1,0 +1,5700 @@
+[
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/account-manager-solution",
+    "name": "Account Manager Solution",
+    "description": "Assessment for Account Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CPAB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/administrative-professional---short-form",
+    "name": "Administrative Professional - Short Form",
+    "description": "Assessment for Administrative Professional - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AKP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/agency-manager-solution",
+    "name": "Agency Manager Solution",
+    "description": "Assessment for Agency Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apprentice-+-8-0-job-focused-assessment",
+    "name": "Apprentice + 8.0 Job Focused Assessment",
+    "description": "Assessment for Apprentice + 8.0 Job Focused Assessment",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apprentice-8-0-job-focused-assessment",
+    "name": "Apprentice 8.0 Job Focused Assessment",
+    "description": "Assessment for Apprentice 8.0 Job Focused Assessment",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/bank-administrative-assistant---short-form",
+    "name": "Bank Administrative Assistant - Short Form",
+    "description": "Assessment for Bank Administrative Assistant - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABKP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/bank-collections-agent---short-form",
+    "name": "Bank Collections Agent - Short Form",
+    "description": "Assessment for Bank Collections Agent - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/bank-operations-supervisor---short-form",
+    "name": "Bank Operations Supervisor - Short Form",
+    "description": "Assessment for Bank Operations Supervisor - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/bilingual-spanish-reservation-agent-solution",
+    "name": "Bilingual Spanish Reservation Agent Solution",
+    "description": "Assessment for Bilingual Spanish Reservation Agent Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BPSA"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/bookkeeping,-accounting,-auditing-clerk-short-form",
+    "name": "Bookkeeping, Accounting, Auditing Clerk Short Form",
+    "description": "Assessment for Bookkeeping, Accounting, Auditing Clerk Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PSKBA"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/branch-manager---short-form",
+    "name": "Branch Manager - Short Form",
+    "description": "Assessment for Branch Manager - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/cashier-solution",
+    "name": "Cashier Solution",
+    "description": "Assessment for Cashier Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BAP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/global-skills-development-report",
+    "name": "Global Skills Development Report",
+    "description": "Assessment for Global Skills Development Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AEBCDP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/-net-framework-4-5",
+    "name": ".NET Framework 4.5",
+    "description": "Assessment for .NET Framework 4.5",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/-net-mvc-new",
+    "name": ".NET MVC (New)",
+    "description": "Assessment for .NET MVC (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/-net-mvvm-new",
+    "name": ".NET MVVM (New)",
+    "description": "Assessment for .NET MVVM (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/-net-wcf-new",
+    "name": ".NET WCF (New)",
+    "description": "Assessment for .NET WCF (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/-net-wpf-new",
+    "name": ".NET WPF (New)",
+    "description": "Assessment for .NET WPF (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/-net-xaml-new",
+    "name": ".NET XAML (New)",
+    "description": "Assessment for .NET XAML (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/accounts-payable-new",
+    "name": "Accounts Payable (New)",
+    "description": "Assessment for Accounts Payable (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/accounts-payable-simulation-new",
+    "name": "Accounts Payable Simulation (New)",
+    "description": "Assessment for Accounts Payable Simulation (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/accounts-receivable-new",
+    "name": "Accounts Receivable (New)",
+    "description": "Assessment for Accounts Receivable (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/accounts-receivable-simulation-new",
+    "name": "Accounts Receivable Simulation (New)",
+    "description": "Assessment for Accounts Receivable Simulation (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ado-net-new",
+    "name": "ADO.NET (New)",
+    "description": "Assessment for ADO.NET (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/executive-scenarios-profile-report",
+    "name": "Executive Scenarios Profile Report",
+    "description": "Assessment for Executive Scenarios Profile Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/expressjs-new",
+    "name": "ExpressJS (New)",
+    "description": "Assessment for ExpressJS (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/filing---names-r1",
+    "name": "Filing - Names (R1)",
+    "description": "Assessment for Filing - Names (R1)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/filing---numbers",
+    "name": "Filing - Numbers",
+    "description": "Assessment for Filing - Numbers",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/financial-accounting-new",
+    "name": "Financial Accounting (New)",
+    "description": "Assessment for Financial Accounting (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/financial-and-banking-services-new",
+    "name": "Financial and Banking Services (New)",
+    "description": "Assessment for Financial and Banking Services (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/fire-engineering-new",
+    "name": "Fire Engineering (New)",
+    "description": "Assessment for Fire Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/following-instructions-v1---uk-r1",
+    "name": "Following Instructions v1 - UK (R1)",
+    "description": "Assessment for Following Instructions v1 - UK (R1)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/following-instructions-v1---us-r2",
+    "name": "Following Instructions v1 - US (R2)",
+    "description": "Assessment for Following Instructions v1 - US (R2)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/food-and-beverage-services-new",
+    "name": "Food and Beverage Services (New)",
+    "description": "Assessment for Food and Beverage Services (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/food-science-new",
+    "name": "Food Science (New)",
+    "description": "Assessment for Food Science (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/front-office-management-new",
+    "name": "Front Office Management (New)",
+    "description": "Assessment for Front Office Management (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-professional-solution",
+    "name": "Sales Professional Solution",
+    "description": "Assessment for Sales Professional Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-representative-solution",
+    "name": "Sales Representative Solution",
+    "description": "Assessment for Sales Representative Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-supervisor-solution",
+    "name": "Sales Supervisor Solution",
+    "description": "Assessment for Sales Supervisor Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-support-specialist-solution",
+    "name": "Sales Support Specialist Solution",
+    "description": "Assessment for Sales Support Specialist Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/senior-insurance-agent-solution",
+    "name": "Senior Insurance Agent Solution",
+    "description": "Assessment for Senior Insurance Agent Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/senior-sales-professional-solution",
+    "name": "Senior Sales Professional Solution",
+    "description": "Assessment for Senior Sales Professional Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/server-solution",
+    "name": "Server Solution",
+    "description": "Assessment for Server Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BAP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/service-associate-solution",
+    "name": "Service Associate Solution",
+    "description": "Assessment for Service Associate Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/service-supervisor-solution",
+    "name": "Service Supervisor Solution",
+    "description": "Assessment for Service Supervisor Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/stock-clerk-solution",
+    "name": "Stock Clerk Solution",
+    "description": "Assessment for Stock Clerk Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/store-manager-7-0-solution",
+    "name": "Store Manager 7.0 Solution",
+    "description": "Assessment for Store Manager 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/store-manager-7-1-americas",
+    "name": "Store Manager 7.1 (Americas)",
+    "description": "Assessment for Store Manager 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/adobe-experience-manager-new",
+    "name": "Adobe Experience Manager (New)",
+    "description": "Assessment for Adobe Experience Manager (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/adobe-photoshop-cc",
+    "name": "Adobe Photoshop CC",
+    "description": "Assessment for Adobe Photoshop CC",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/aeronautical-engineering-new",
+    "name": "Aeronautical Engineering (New)",
+    "description": "Assessment for Aeronautical Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/aerospace-engineering-new",
+    "name": "Aerospace Engineering (New)",
+    "description": "Assessment for Aerospace Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/agile-software-development",
+    "name": "Agile Software Development",
+    "description": "Assessment for Agile Software Development",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/agile-testing-new",
+    "name": "Agile Testing (New)",
+    "description": "Assessment for Agile Testing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ai-skills",
+    "name": "AI Skills",
+    "description": "Assessment for AI Skills",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/amazon-web-services-aws-development-new",
+    "name": "Amazon Web Services (AWS) Development (New)",
+    "description": "Assessment for Amazon Web Services (AWS) Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/android-development-new",
+    "name": "Android Development (New)",
+    "description": "Assessment for Android Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/angular-6-new",
+    "name": "Angular 6 (New)",
+    "description": "Assessment for Angular 6 (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/angularjs-new",
+    "name": "AngularJS (New)",
+    "description": "Assessment for AngularJS (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apache-hadoop-new",
+    "name": "Apache Hadoop (New)",
+    "description": "Assessment for Apache Hadoop (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/claims/operations-supervisor-solution",
+    "name": "Claims/Operations Supervisor Solution",
+    "description": "Assessment for Claims/Operations Supervisor Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PSAB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-center-customer-service-+-8-0",
+    "name": "Contact Center Customer Service + 8.0",
+    "description": "Assessment for Contact Center Customer Service + 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABCPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-center-customer-service-8-0",
+    "name": "Contact Center Customer Service 8.0",
+    "description": "Assessment for Contact Center Customer Service 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "SBCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-center-manager---short-form",
+    "name": "Contact Center Manager - Short Form",
+    "description": "Assessment for Contact Center Manager - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-center-sales-&-service-+-8-0",
+    "name": "Contact Center Sales & Service + 8.0",
+    "description": "Assessment for Contact Center Sales & Service + 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PBCAS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-center-sales-&-service-8-0",
+    "name": "Contact Center Sales & Service 8.0",
+    "description": "Assessment for Contact Center Sales & Service 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "SBCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-center-team-lead/coach---short-form",
+    "name": "Contact Center Team Lead/Coach - Short Form",
+    "description": "Assessment for Contact Center Team Lead/Coach - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-centre-agent-solution---uk",
+    "name": "Contact Centre Agent Solution - UK",
+    "description": "Assessment for Contact Centre Agent Solution - UK",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/customer-service---short-form",
+    "name": "Customer Service - Short Form",
+    "description": "Assessment for Customer Service - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/customer-service---short-form---uk",
+    "name": "Customer Service - Short Form - UK",
+    "description": "Assessment for Customer Service - Short Form - UK",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/customer-service-with-sales---short-form",
+    "name": "Customer Service with Sales - Short Form",
+    "description": "Assessment for Customer Service with Sales - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/director---short-form",
+    "name": "Director - Short Form",
+    "description": "Assessment for Director - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/fundamentals-of-chemistry-new",
+    "name": "Fundamentals of Chemistry (New)",
+    "description": "Assessment for Fundamentals of Chemistry (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/fundamentals-of-physics-new",
+    "name": "Fundamentals of Physics (New)",
+    "description": "Assessment for Fundamentals of Physics (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/general-diseases-new",
+    "name": "General Diseases (New)",
+    "description": "Assessment for General Diseases (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/geoinformatics-engineering-new",
+    "name": "Geoinformatics Engineering (New)",
+    "description": "Assessment for Geoinformatics Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/geoscience-engineering-new",
+    "name": "Geoscience Engineering (New)",
+    "description": "Assessment for Geoscience Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/git-new",
+    "name": "GIT (New)",
+    "description": "Assessment for GIT (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/global-skills-assessment",
+    "name": "Global Skills Assessment",
+    "description": "Assessment for Global Skills Assessment",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CK"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/graduate-scenarios",
+    "name": "Graduate Scenarios",
+    "description": "Assessment for Graduate Scenarios",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/graduate-scenarios-narrative-report",
+    "name": "Graduate Scenarios Narrative Report",
+    "description": "Assessment for Graduate Scenarios Narrative Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/graduate-scenarios-profile-report",
+    "name": "Graduate Scenarios Profile Report",
+    "description": "Assessment for Graduate Scenarios Profile Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/hibernate-new",
+    "name": "Hibernate (New)",
+    "description": "Assessment for Hibernate (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/hipaa-security",
+    "name": "HIPAA (Security)",
+    "description": "Assessment for HIPAA (Security)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/store-manager-7-1-international",
+    "name": "Store Manager 7.1 (International)",
+    "description": "Assessment for Store Manager 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/store-manager-solution",
+    "name": "Store Manager Solution",
+    "description": "Assessment for Store Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/supervisor---short-form",
+    "name": "Supervisor - Short Form",
+    "description": "Assessment for Supervisor - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/supervisor-7-0-solution",
+    "name": "Supervisor 7.0 Solution",
+    "description": "Assessment for Supervisor 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/supervisor-7-1-americas",
+    "name": "Supervisor 7.1 (Americas)",
+    "description": "Assessment for Supervisor 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/supervisor-7-1-international",
+    "name": "Supervisor 7.1 (International)",
+    "description": "Assessment for Supervisor 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PCB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/support-associate-solution",
+    "name": "Support Associate Solution",
+    "description": "Assessment for Support Associate Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/support-supervisor-solution",
+    "name": "Support Supervisor Solution",
+    "description": "Assessment for Support Supervisor Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "APSB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/technical-sales-associate-solution",
+    "name": "Technical Sales Associate Solution",
+    "description": "Assessment for Technical Sales Associate Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/technician/technologist-solution",
+    "name": "Technician/Technologist Solution",
+    "description": "Assessment for Technician/Technologist Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/technology-professional-8-0-job-focused-assessment",
+    "name": "Technology Professional 8.0 Job Focused Assessment",
+    "description": "Assessment for Technology Professional 8.0 Job Focused Assessment",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/telenurse-solution",
+    "name": "Telenurse Solution",
+    "description": "Assessment for Telenurse Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/hipo-assessment-report-1-0",
+    "name": "HiPo Assessment Report 1.0",
+    "description": "Assessment for HiPo Assessment Report 1.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/hipo-assessment-report-2-0",
+    "name": "HiPo Assessment Report 2.0",
+    "description": "Assessment for HiPo Assessment Report 2.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/hipo-unlocking-potential-report-2-0",
+    "name": "HiPo Unlocking Potential Report 2.0",
+    "description": "Assessment for HiPo Unlocking Potential Report 2.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "C"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/housekeeping-new",
+    "name": "Housekeeping (New)",
+    "description": "Assessment for Housekeeping (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/html/css-new",
+    "name": "HTML/CSS (New)",
+    "description": "Assessment for HTML/CSS (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/html5-new",
+    "name": "HTML5 (New)",
+    "description": "Assessment for HTML5 (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/human-resources-new",
+    "name": "Human Resources (New)",
+    "description": "Assessment for Human Resources (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ibm-datastage-new",
+    "name": "IBM DataStage (New)",
+    "description": "Assessment for IBM DataStage (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ibm-sterling-order-management-system-new",
+    "name": "IBM Sterling Order Management System (New)",
+    "description": "Assessment for IBM Sterling Order Management System (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial-engineering-new",
+    "name": "Industrial Engineering (New)",
+    "description": "Assessment for Industrial Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/informatica-architecture-new",
+    "name": "Informatica (Architecture) (New)",
+    "description": "Assessment for Informatica (Architecture) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/informatica-developer-new",
+    "name": "Informatica (Developer) (New)",
+    "description": "Assessment for Informatica (Developer) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/teller-7-0",
+    "name": "Teller 7.0",
+    "description": "Assessment for Teller 7.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BKPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/teller-with-sales---short-form",
+    "name": "Teller with Sales - Short Form",
+    "description": "Assessment for Teller with Sales - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABKPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/transcriptionist-solution",
+    "name": "Transcriptionist Solution",
+    "description": "Assessment for Transcriptionist Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABKP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/workplace-safety---individual-7-0-solution",
+    "name": "Workplace Safety - Individual 7.0 Solution",
+    "description": "Assessment for Workplace Safety - Individual 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/workplace-safety---individual-7-1-americas",
+    "name": "Workplace Safety - Individual 7.1 (Americas)",
+    "description": "Assessment for Workplace Safety - Individual 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/workplace-safety---team-7-0-solution",
+    "name": "Workplace Safety - Team 7.0 Solution",
+    "description": "Assessment for Workplace Safety - Team 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/workplace-safety---team-7-1-americas",
+    "name": "Workplace Safety - Team 7.1 (Americas)",
+    "description": "Assessment for Workplace Safety - Team 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/workplace-safety---team-7-1-international",
+    "name": "Workplace Safety - Team 7.1 (International)",
+    "description": "Assessment for Workplace Safety - Team 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/workplace-safety-solution",
+    "name": "Workplace Safety Solution",
+    "description": "Assessment for Workplace Safety Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/instrumentation-engineering-new",
+    "name": "Instrumentation Engineering (New)",
+    "description": "Assessment for Instrumentation Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/interpersonal-communications",
+    "name": "Interpersonal Communications",
+    "description": "Assessment for Interpersonal Communications",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/interviewing-and-hiring-concepts-u-s-",
+    "name": "Interviewing and Hiring Concepts (U.S.)",
+    "description": "Assessment for Interviewing and Hiring Concepts (U.S.)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ios-development-new",
+    "name": "iOS Development (New)",
+    "description": "Assessment for iOS Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/itil-it-infrastructure-library-new",
+    "name": "ITIL (IT Infrastructure Library) (New)",
+    "description": "Assessment for ITIL (IT Infrastructure Library) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/java-2-platform-enterprise-edition-1-4-fundamental",
+    "name": "Java 2 Platform Enterprise Edition 1.4 Fundamental",
+    "description": "Assessment for Java 2 Platform Enterprise Edition 1.4 Fundamental",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/java-8-new",
+    "name": "Java 8 (New)",
+    "description": "Assessment for Java 8 (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/java-design-patterns-new",
+    "name": "Java Design Patterns (New)",
+    "description": "Assessment for Java Design Patterns (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/java-frameworks-new",
+    "name": "Java Frameworks (New)",
+    "description": "Assessment for Java Frameworks (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/java-platform-enterprise-edition-7-java-ee-7",
+    "name": "Java Platform Enterprise Edition 7 (Java EE 7)",
+    "description": "Assessment for Java Platform Enterprise Edition 7 (Java EE 7)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/java-web-services-new",
+    "name": "Java Web Services (New)",
+    "description": "Assessment for Java Web Services (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/javascript-new",
+    "name": "JavaScript (New)",
+    "description": "Assessment for JavaScript (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/jenkins-new",
+    "name": "Jenkins (New)",
+    "description": "Assessment for Jenkins (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/job-control-language-new",
+    "name": "Job Control Language (New)",
+    "description": "Assessment for Job Control Language (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/jquery-new",
+    "name": "jQuery (New)",
+    "description": "Assessment for jQuery (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/kubernetes-new",
+    "name": "Kubernetes (New)",
+    "description": "Assessment for Kubernetes (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/linux-administration-new",
+    "name": "Linux Administration (New)",
+    "description": "Assessment for Linux Administration (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/linux-operating-system",
+    "name": "Linux Operating System",
+    "description": "Assessment for Linux Operating System",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/linux-programming-general",
+    "name": "Linux Programming (General)",
+    "description": "Assessment for Linux Programming (General)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/load-runner-new",
+    "name": "Load Runner (New)",
+    "description": "Assessment for Load Runner (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/management-scenarios",
+    "name": "Management Scenarios",
+    "description": "Assessment for Management Scenarios",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/managerial-scenarios-candidate-report",
+    "name": "Managerial Scenarios Candidate Report",
+    "description": "Assessment for Managerial Scenarios Candidate Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/managerial-scenarios-narrative-report",
+    "name": "Managerial Scenarios Narrative Report",
+    "description": "Assessment for Managerial Scenarios Narrative Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/managerial-scenarios-profile-report",
+    "name": "Managerial Scenarios Profile Report",
+    "description": "Assessment for Managerial Scenarios Profile Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manual-testing-new",
+    "name": "Manual Testing (New)",
+    "description": "Assessment for Manual Testing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manufac--&-indust----mechanical-&-vigilance-8-0",
+    "name": "Manufac. & Indust. - Mechanical & Vigilance 8.0",
+    "description": "Assessment for Manufac. & Indust. - Mechanical & Vigilance 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manufac--&-indust----safety-&-dependability-8-0",
+    "name": "Manufac. & Indust. - Safety & Dependability 8.0",
+    "description": "Assessment for Manufac. & Indust. - Safety & Dependability 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manufacturing-&-industrial---essential-focus-8-0",
+    "name": "Manufacturing & Industrial - Essential Focus 8.0",
+    "description": "Assessment for Manufacturing & Industrial - Essential Focus 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manufacturing-&-industrial---mechanical-focus-8-0",
+    "name": "Manufacturing & Industrial - Mechanical Focus 8.0",
+    "description": "Assessment for Manufacturing & Industrial - Mechanical Focus 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manufacturing-&-industrial---vigilance-focus-8-0",
+    "name": "Manufacturing & Industrial - Vigilance Focus 8.0",
+    "description": "Assessment for Manufacturing & Industrial - Vigilance Focus 8.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/marketing-new",
+    "name": "Marketing (New)",
+    "description": "Assessment for Marketing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/maven-new",
+    "name": "Maven (New)",
+    "description": "Assessment for Maven (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mechanical-engineering-new",
+    "name": "Mechanical Engineering (New)",
+    "description": "Assessment for Mechanical Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mechatronics-engineering-new",
+    "name": "Mechatronics Engineering (New)",
+    "description": "Assessment for Mechatronics Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/medical-terminology-new",
+    "name": "Medical Terminology (New)",
+    "description": "Assessment for Medical Terminology (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/metallurgical-engineering-new",
+    "name": "Metallurgical Engineering (New)",
+    "description": "Assessment for Metallurgical Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mfs-360-enterprise-leadership-report",
+    "name": "MFS 360 Enterprise Leadership Report",
+    "description": "Assessment for MFS 360 Enterprise Leadership Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "D"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mfs-360-ucf-group-report",
+    "name": "MFS 360 UCF Group Report",
+    "description": "Assessment for MFS 360 UCF Group Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "D"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mfs-360-ucf-performance-potential-dev-tips-report",
+    "name": "MFS 360 UCF Performance Potential Dev Tips Report",
+    "description": "Assessment for MFS 360 UCF Performance Potential Dev Tips Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "D"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mfs-360-ucf-standard-report",
+    "name": "MFS 360 UCF Standard Report",
+    "description": "Assessment for MFS 360 UCF Standard Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "D"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/micro-focus-unified-functional-testing-new",
+    "name": "Micro Focus Unified Functional Testing (New)",
+    "description": "Assessment for Micro Focus Unified Functional Testing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microservices-new",
+    "name": "Microservices (New)",
+    "description": "Assessment for Microservices (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-dynamics-development-new",
+    "name": "Microsoft Dynamics Development (New)",
+    "description": "Assessment for Microsoft Dynamics Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-excel-365---essentials-new",
+    "name": "Microsoft Excel 365 - Essentials (New)",
+    "description": "Assessment for Microsoft Excel 365 - Essentials (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "KS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-excel-365-new",
+    "name": "Microsoft Excel 365 (New)",
+    "description": "Assessment for Microsoft Excel 365 (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "KS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-outlook-2013-adaptive",
+    "name": "Microsoft Outlook 2013 (adaptive)",
+    "description": "Assessment for Microsoft Outlook 2013 (adaptive)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-powerpoint-365---essentials-new",
+    "name": "Microsoft PowerPoint 365 - Essentials (New)",
+    "description": "Assessment for Microsoft PowerPoint 365 - Essentials (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "KS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-sql-server-2014-programming",
+    "name": "Microsoft SQL Server 2014 Programming",
+    "description": "Assessment for Microsoft SQL Server 2014 Programming",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-windows-server-2012-administration",
+    "name": "Microsoft Windows Server 2012 Administration",
+    "description": "Assessment for Microsoft Windows Server 2012 Administration",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-word-365---essentials-new",
+    "name": "Microsoft Word 365 - Essentials (New)",
+    "description": "Assessment for Microsoft Word 365 - Essentials (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "KS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/microsoft-word-365-new",
+    "name": "Microsoft Word 365 (New)",
+    "description": "Assessment for Microsoft Word 365 (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "SK"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mineral-engineering-new",
+    "name": "Mineral Engineering (New)",
+    "description": "Assessment for Mineral Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mining-engineering-new",
+    "name": "Mining Engineering (New)",
+    "description": "Assessment for Mining Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mobility-new",
+    "name": "Mobility (New)",
+    "description": "Assessment for Mobility (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/molecular-biology-new",
+    "name": "Molecular Biology (New)",
+    "description": "Assessment for Molecular Biology (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mongodb-new",
+    "name": "MongoDB (New)",
+    "description": "Assessment for MongoDB (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/motivation-questionnaire-mqm5",
+    "name": "Motivation Questionnaire MQM5",
+    "description": "Assessment for Motivation Questionnaire MQM5",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mq-candidate-motivation-report",
+    "name": "MQ Candidate Motivation Report",
+    "description": "Assessment for MQ Candidate Motivation Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mq-employee-motivation-report",
+    "name": "MQ Employee Motivation Report",
+    "description": "Assessment for MQ Employee Motivation Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mq-motivation-report-pack",
+    "name": "MQ Motivation Report Pack",
+    "description": "Assessment for MQ Motivation Report Pack",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mq-profile",
+    "name": "MQ Profile",
+    "description": "Assessment for MQ Profile",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ms-access-new",
+    "name": "MS Access (New)",
+    "description": "Assessment for MS Access (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ms-excel-new",
+    "name": "MS Excel (New)",
+    "description": "Assessment for MS Excel (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ms-office-basic-computer-literacy-new",
+    "name": "MS Office Basic Computer Literacy (New)",
+    "description": "Assessment for MS Office Basic Computer Literacy (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ms-office-basic-computer-literacy-sim-new",
+    "name": "MS Office Basic Computer Literacy (Sim) (New)",
+    "description": "Assessment for MS Office Basic Computer Literacy (Sim) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ms-powerpoint-new",
+    "name": "MS PowerPoint (New)",
+    "description": "Assessment for MS PowerPoint (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ms-word-new",
+    "name": "MS Word (New)",
+    "description": "Assessment for MS Word (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/mulesoft-development-new",
+    "name": "MuleSoft Development (New)",
+    "description": "Assessment for MuleSoft Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/multitasking-ability",
+    "name": "Multitasking Ability",
+    "description": "Assessment for Multitasking Ability",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AKS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/networking-and-implementation-new",
+    "name": "Networking and Implementation (New)",
+    "description": "Assessment for Networking and Implementation (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/node-js-new",
+    "name": "Node.js (New)",
+    "description": "Assessment for Node.js (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/nursing-new",
+    "name": "Nursing (New)",
+    "description": "Assessment for Nursing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/occupational-personality-questionnaire-opq32r",
+    "name": "Occupational Personality Questionnaire OPQ32r",
+    "description": "Assessment for Occupational Personality Questionnaire OPQ32r",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/operations-management-new",
+    "name": "Operations Management (New)",
+    "description": "Assessment for Operations Management (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-candidate-plus-report",
+    "name": "OPQ Candidate Plus Report",
+    "description": "Assessment for OPQ Candidate Plus Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-candidate-report-2-0",
+    "name": "OPQ Candidate Report 2.0",
+    "description": "Assessment for OPQ Candidate Report 2.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-emotional-intelligence-report",
+    "name": "OPQ Emotional Intelligence Report",
+    "description": "Assessment for OPQ Emotional Intelligence Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-leadership-report",
+    "name": "OPQ Leadership Report",
+    "description": "Assessment for OPQ Leadership Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-manager-plus-report",
+    "name": "OPQ Manager Plus Report",
+    "description": "Assessment for OPQ Manager Plus Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-manager-plus-report-2-0",
+    "name": "OPQ Manager Plus Report 2.0",
+    "description": "Assessment for OPQ Manager Plus Report 2.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-maximising-your-learning-report",
+    "name": "OPQ Maximising your Learning Report",
+    "description": "Assessment for OPQ Maximising your Learning Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-mq-sales-report",
+    "name": "OPQ MQ Sales Report",
+    "description": "Assessment for OPQ MQ Sales Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-premium-plus-report",
+    "name": "OPQ Premium Plus Report",
+    "description": "Assessment for OPQ Premium Plus Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-premium-plus-report-2-0",
+    "name": "OPQ Premium Plus Report 2.0",
+    "description": "Assessment for OPQ Premium Plus Report 2.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-profile-report",
+    "name": "OPQ Profile Report",
+    "description": "Assessment for OPQ Profile Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-team-impact-group-development-report",
+    "name": "OPQ Team Impact Group Development Report",
+    "description": "Assessment for OPQ Team Impact Group Development Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-team-impact-individual-development-report",
+    "name": "OPQ Team Impact Individual Development Report",
+    "description": "Assessment for OPQ Team Impact Individual Development Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-team-impact-selection-report",
+    "name": "OPQ Team Impact Selection Report",
+    "description": "Assessment for OPQ Team Impact Selection Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-team-types-&-leadership-styles-profile",
+    "name": "OPQ Team Types & Leadership Styles Profile",
+    "description": "Assessment for OPQ Team Types & Leadership Styles Profile",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-team-types-and-leadership-styles-report",
+    "name": "OPQ Team Types and Leadership Styles Report",
+    "description": "Assessment for OPQ Team Types and Leadership Styles Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-ucf-development-action-planner-report-1-0",
+    "name": "OPQ UCF Development Action Planner Report 1.0",
+    "description": "Assessment for OPQ UCF Development Action Planner Report 1.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-ucf-development-action-planner-report-2-0",
+    "name": "OPQ UCF Development Action Planner Report 2.0",
+    "description": "Assessment for OPQ UCF Development Action Planner Report 2.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-universal-competency-report-1-0",
+    "name": "OPQ Universal Competency Report 1.0",
+    "description": "Assessment for OPQ Universal Competency Report 1.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-universal-competency-report-2-0",
+    "name": "OPQ Universal Competency Report 2.0",
+    "description": "Assessment for OPQ Universal Competency Report 2.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-user-and-managers-report",
+    "name": "OPQ User and Managers Report",
+    "description": "Assessment for OPQ User and Managers Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/opq-user-report",
+    "name": "OPQ User Report",
+    "description": "Assessment for OPQ User Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apache-hadoop-extensions-new",
+    "name": "Apache Hadoop Extensions (New)",
+    "description": "Assessment for Apache Hadoop Extensions (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apache-hbase-new",
+    "name": "Apache HBase (New)",
+    "description": "Assessment for Apache HBase (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apache-hive-new",
+    "name": "Apache Hive (New)",
+    "description": "Assessment for Apache Hive (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apache-kafka-new",
+    "name": "Apache Kafka (New)",
+    "description": "Assessment for Apache Kafka (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apache-pig-new",
+    "name": "Apache Pig (New)",
+    "description": "Assessment for Apache Pig (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/apache-spark-new",
+    "name": "Apache Spark (New)",
+    "description": "Assessment for Apache Spark (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/asp--net-with-c#-new",
+    "name": "ASP .NET with C# (New)",
+    "description": "Assessment for ASP .NET with C# (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/asp-net-4-5",
+    "name": "ASP.NET 4.5",
+    "description": "Assessment for ASP.NET 4.5",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/assessment-and-development-center-exercises",
+    "name": "Assessment and Development Center Exercises",
+    "description": "Assessment for Assessment and Development Center Exercises",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "E"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata---fix-new",
+    "name": "Automata - Fix (New)",
+    "description": "Assessment for Automata - Fix (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata---sql-new",
+    "name": "Automata - SQL (New)",
+    "description": "Assessment for Automata - SQL (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata-new",
+    "name": "Automata (New)",
+    "description": "Assessment for Automata (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/district/regional-manager-solution",
+    "name": "District/Regional Manager Solution",
+    "description": "Assessment for District/Regional Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-cashier-7-1-americas",
+    "name": "Entry Level Cashier 7.1 (Americas)",
+    "description": "Assessment for Entry Level Cashier 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BPA"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-cashier-7-1-international",
+    "name": "Entry Level Cashier 7.1 (International)",
+    "description": "Assessment for Entry Level Cashier 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-customer-service-7-1-americas",
+    "name": "Entry Level Customer Service 7.1 (Americas)",
+    "description": "Assessment for Entry Level Customer Service 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-customer-service-7-1-international",
+    "name": "Entry Level Customer Service 7.1 (International)",
+    "description": "Assessment for Entry Level Customer Service 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-customer-service-7-1-south-africa",
+    "name": "Entry Level Customer Service 7.1 (South Africa)",
+    "description": "Assessment for Entry Level Customer Service 7.1 (South Africa)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-sales-7-1-americas",
+    "name": "Entry level Sales 7.1 (Americas)",
+    "description": "Assessment for Entry level Sales 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-sales-7-1-international",
+    "name": "Entry level Sales 7.1 (International)",
+    "description": "Assessment for Entry level Sales 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PBC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-sales-sift-out-7-1",
+    "name": "Entry Level Sales Sift Out 7.1",
+    "description": "Assessment for Entry Level Sales Sift Out 7.1",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CPB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/event-sales-manager-solution",
+    "name": "Event Sales Manager Solution",
+    "description": "Assessment for Event Sales Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "SABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/executive---short-form",
+    "name": "Executive - Short Form",
+    "description": "Assessment for Executive - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/financial-professional---short-form",
+    "name": "Financial Professional - Short Form",
+    "description": "Assessment for Financial Professional - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/oracle-dba-advanced-level-new",
+    "name": "Oracle DBA (Advanced Level) (New)",
+    "description": "Assessment for Oracle DBA (Advanced Level) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/oracle-dba-entry-level-new",
+    "name": "Oracle DBA (Entry Level) (New)",
+    "description": "Assessment for Oracle DBA (Entry Level) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/oracle-pl/sql-new",
+    "name": "Oracle PL/SQL (New)",
+    "description": "Assessment for Oracle PL/SQL (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/oracle-weblogic-server-new",
+    "name": "Oracle WebLogic Server (New)",
+    "description": "Assessment for Oracle WebLogic Server (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/organic-chemistry-new",
+    "name": "Organic Chemistry (New)",
+    "description": "Assessment for Organic Chemistry (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/paint-technology-new",
+    "name": "Paint Technology (New)",
+    "description": "Assessment for Paint Technology (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pediatrics-new",
+    "name": "Pediatrics (New)",
+    "description": "Assessment for Pediatrics (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pega-development-new",
+    "name": "Pega Development (New)",
+    "description": "Assessment for Pega Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/perl-new",
+    "name": "Perl (New)",
+    "description": "Assessment for Perl (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/petrochemical-engineering-new",
+    "name": "Petrochemical Engineering (New)",
+    "description": "Assessment for Petrochemical Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/petroleum-engineering-new",
+    "name": "Petroleum Engineering (New)",
+    "description": "Assessment for Petroleum Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pharmaceutical-analysis-new",
+    "name": "Pharmaceutical Analysis (New)",
+    "description": "Assessment for Pharmaceutical Analysis (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pharmaceutical-chemistry-new",
+    "name": "Pharmaceutical Chemistry (New)",
+    "description": "Assessment for Pharmaceutical Chemistry (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pharmaceutical-science-new",
+    "name": "Pharmaceutical Science (New)",
+    "description": "Assessment for Pharmaceutical Science (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pharmaceutics-new",
+    "name": "Pharmaceutics (New)",
+    "description": "Assessment for Pharmaceutics (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pharmacology-new",
+    "name": "Pharmacology (New)",
+    "description": "Assessment for Pharmacology (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/php-new",
+    "name": "PHP (New)",
+    "description": "Assessment for PHP (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pjm-development-report",
+    "name": "PJM Development Report",
+    "description": "Assessment for PJM Development Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CAP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/pjm-selection-report",
+    "name": "PJM Selection Report",
+    "description": "Assessment for PJM Selection Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ACP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/polymer-engineering-new",
+    "name": "Polymer Engineering (New)",
+    "description": "Assessment for Polymer Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/power-electronics-and-drives-new",
+    "name": "Power Electronics and Drives (New)",
+    "description": "Assessment for Power Electronics and Drives (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/power-system-engineering-new",
+    "name": "Power System Engineering (New)",
+    "description": "Assessment for Power System Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/prism-new",
+    "name": "Prism (New)",
+    "description": "Assessment for Prism (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/production-and-industrial-engineering-new",
+    "name": "Production and Industrial Engineering (New)",
+    "description": "Assessment for Production and Industrial Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/production-engineering-new",
+    "name": "Production Engineering (New)",
+    "description": "Assessment for Production Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/programming-concepts",
+    "name": "Programming Concepts",
+    "description": "Assessment for Programming Concepts",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/project-management-2013",
+    "name": "Project Management (2013)",
+    "description": "Assessment for Project Management (2013)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/proofreading-v1",
+    "name": "Proofreading v1",
+    "description": "Assessment for Proofreading v1",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/python-new",
+    "name": "Python (New)",
+    "description": "Assessment for Python (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/r-programming-new",
+    "name": "R Programming (New)",
+    "description": "Assessment for R Programming (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/reactjs-new",
+    "name": "ReactJS (New)",
+    "description": "Assessment for ReactJS (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/reading-comprehension---english-v1",
+    "name": "Reading Comprehension - English v1",
+    "description": "Assessment for Reading Comprehension - English v1",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/reading-comprehension---spanish-v1",
+    "name": "Reading Comprehension - Spanish v1",
+    "description": "Assessment for Reading Comprehension - Spanish v1",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/reading-comprehension-v2",
+    "name": "Reading Comprehension v2",
+    "description": "Assessment for Reading Comprehension v2",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/remoteworkq",
+    "name": "RemoteWorkQ",
+    "description": "Assessment for RemoteWorkQ",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "C"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/remoteworkq-manager-report",
+    "name": "RemoteWorkQ Manager Report",
+    "description": "Assessment for RemoteWorkQ Manager Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "C"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/remoteworkq-participant-report",
+    "name": "RemoteWorkQ Participant Report",
+    "description": "Assessment for RemoteWorkQ Participant Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "C"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/restful-web-services-new",
+    "name": "RESTful Web Services (New)",
+    "description": "Assessment for RESTful Web Services (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/retail-sales-and-service-simulation",
+    "name": "Retail Sales and Service Simulation",
+    "description": "Assessment for Retail Sales and Service Simulation",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BKSA"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/reviewing-forms---us-r1",
+    "name": "Reviewing Forms - US (R1)",
+    "description": "Assessment for Reviewing Forms - US (R1)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ruby-new",
+    "name": "Ruby (New)",
+    "description": "Assessment for Ruby (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ruby-on-rails-new",
+    "name": "Ruby on Rails (New)",
+    "description": "Assessment for Ruby on Rails (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-&-service-phone-simulation",
+    "name": "Sales & Service Phone Simulation",
+    "description": "Assessment for Sales & Service Phone Simulation",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "SB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-&-service-phone-solution",
+    "name": "Sales & Service Phone Solution",
+    "description": "Assessment for Sales & Service Phone Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-interview-guide",
+    "name": "Sales Interview Guide",
+    "description": "Assessment for Sales Interview Guide",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-profiler-cards",
+    "name": "Sales Profiler Cards",
+    "description": "Assessment for Sales Profiler Cards",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-transformation-1-0---individual-contributor",
+    "name": "Sales Transformation 1.0 - Individual Contributor",
+    "description": "Assessment for Sales Transformation 1.0 - Individual Contributor",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-transformation-2-0---individual-contributor",
+    "name": "Sales Transformation 2.0 - Individual Contributor",
+    "description": "Assessment for Sales Transformation 2.0 - Individual Contributor",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-transformation-report-1-0---sales-manager",
+    "name": "Sales Transformation Report 1.0 - Sales Manager",
+    "description": "Assessment for Sales Transformation Report 1.0 - Sales Manager",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-transformation-report-2-0---sales-manager",
+    "name": "Sales Transformation Report 2.0 - Sales Manager",
+    "description": "Assessment for Sales Transformation Report 2.0 - Sales Manager",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/salesforce-development-new",
+    "name": "Salesforce Development (New)",
+    "description": "Assessment for Salesforce Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-abap-advanced-level-new",
+    "name": "SAP ABAP (Advanced Level) (New)",
+    "description": "Assessment for SAP ABAP (Advanced Level) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-abap-intermediate-level-new",
+    "name": "SAP ABAP (Intermediate Level) (New)",
+    "description": "Assessment for SAP ABAP (Intermediate Level) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-basis-new",
+    "name": "SAP Basis (New)",
+    "description": "Assessment for SAP Basis (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-business-objects-webi-new",
+    "name": "SAP Business Objects WebI (New)",
+    "description": "Assessment for SAP Business Objects WebI (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-bw-business-warehouse-new",
+    "name": "SAP BW (Business Warehouse) (New)",
+    "description": "Assessment for SAP BW (Business Warehouse) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-hcm-human-capital-management-new",
+    "name": "SAP HCM (Human Capital Management) (New)",
+    "description": "Assessment for SAP HCM (Human Capital Management) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-hybris-new",
+    "name": "SAP Hybris (New)",
+    "description": "Assessment for SAP Hybris (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-materials-management-new",
+    "name": "SAP Materials Management (New)",
+    "description": "Assessment for SAP Materials Management (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sap-sd-sales-and-distribution-new",
+    "name": "SAP SD (Sales and Distribution) (New)",
+    "description": "Assessment for SAP SD (Sales and Distribution) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/search-engine-optimization-new",
+    "name": "Search Engine Optimization (New)",
+    "description": "Assessment for Search Engine Optimization (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/selenium-new",
+    "name": "Selenium (New)",
+    "description": "Assessment for Selenium (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/shell-scripting-new",
+    "name": "Shell Scripting (New)",
+    "description": "Assessment for Shell Scripting (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/shl-verify-interactive---inductive-reasoning",
+    "name": "SHL Verify Interactive - Inductive Reasoning",
+    "description": "Assessment for SHL Verify Interactive - Inductive Reasoning",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/shl-verify-interactive-\u2013-deductive-reasoning",
+    "name": "SHL Verify Interactive \u2013 Deductive Reasoning",
+    "description": "Assessment for SHL Verify Interactive \u2013 Deductive Reasoning",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/shl-verify-interactive-\u2013-numerical-reasoning",
+    "name": "SHL Verify Interactive \u2013 Numerical Reasoning",
+    "description": "Assessment for SHL Verify Interactive \u2013 Numerical Reasoning",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/shl-verify-interactive-g+",
+    "name": "SHL Verify Interactive G+",
+    "description": "Assessment for SHL Verify Interactive G+",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/shl-verify-interactive-numerical-calculation",
+    "name": "SHL Verify Interactive Numerical Calculation",
+    "description": "Assessment for SHL Verify Interactive Numerical Calculation",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/siebel-development-new",
+    "name": "Siebel Development (New)",
+    "description": "Assessment for Siebel Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/smart-interview-live",
+    "name": "Smart Interview Live",
+    "description": "Assessment for Smart Interview Live",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/smart-interview-live-coding",
+    "name": "Smart Interview Live Coding",
+    "description": "Assessment for Smart Interview Live Coding",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/smart-interview-on-demand",
+    "name": "Smart Interview On Demand",
+    "description": "Assessment for Smart Interview On Demand",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/social-media-new",
+    "name": "Social Media (New)",
+    "description": "Assessment for Social Media (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/software-business-analysis",
+    "name": "Software Business Analysis",
+    "description": "Assessment for Software Business Analysis",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sonarqube-new",
+    "name": "SonarQube (New)",
+    "description": "Assessment for SonarQube (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/spelling-u-s--new",
+    "name": "Spelling (U.S.) (New)",
+    "description": "Assessment for Spelling (U.S.) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/split-screen-typing-test---form-1",
+    "name": "Split Screen Typing Test - Form 1",
+    "description": "Assessment for Split Screen Typing Test - Form 1",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AK"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/spring-new",
+    "name": "Spring (New)",
+    "description": "Assessment for Spring (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sql-new",
+    "name": "SQL (New)",
+    "description": "Assessment for SQL (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sql-server-new",
+    "name": "SQL Server (New)",
+    "description": "Assessment for SQL Server (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sql-server-analysis-services-ssas-new",
+    "name": "SQL Server Analysis Services (SSAS) (New)",
+    "description": "Assessment for SQL Server Analysis Services (SSAS) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sql-server-integration-services-ssis-new",
+    "name": "SQL Server Integration Services (SSIS) (New)",
+    "description": "Assessment for SQL Server Integration Services (SSIS) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sql-server-reporting-services-ssrs-new",
+    "name": "SQL Server Reporting Services (SSRS) (New)",
+    "description": "Assessment for SQL Server Reporting Services (SSRS) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/statistical-analysis-system-new",
+    "name": "Statistical Analysis System (New)",
+    "description": "Assessment for Statistical Analysis System (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/struts-new",
+    "name": "Struts (New)",
+    "description": "Assessment for Struts (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar---spoken-english-aus",
+    "name": "SVAR - Spoken English (AUS)",
+    "description": "Assessment for SVAR - Spoken English (AUS)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar---spoken-english-indian-accent--new",
+    "name": "SVAR - Spoken English (Indian Accent)  (New)",
+    "description": "Assessment for SVAR - Spoken English (Indian Accent)  (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar---spoken-english-u-k-",
+    "name": "SVAR - Spoken English (U.K.)",
+    "description": "Assessment for SVAR - Spoken English (U.K.)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar---spoken-english-us--new",
+    "name": "SVAR - Spoken English (US)  (New)",
+    "description": "Assessment for SVAR - Spoken English (US)  (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar---spoken-french-canadian-new",
+    "name": "SVAR - Spoken French (Canadian) (New)",
+    "description": "Assessment for SVAR - Spoken French (Canadian) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar---spoken-french-european-new",
+    "name": "SVAR - Spoken French (European) (New)",
+    "description": "Assessment for SVAR - Spoken French (European) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar---spoken-spanish-castilian-new",
+    "name": "SVAR - Spoken Spanish (Castilian) (New)",
+    "description": "Assessment for SVAR - Spoken Spanish (Castilian) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/svar---spoken-spanish-north-american-new",
+    "name": "SVAR - Spoken Spanish (North American) (New)",
+    "description": "Assessment for SVAR - Spoken Spanish (North American) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/swing-new",
+    "name": "Swing (New)",
+    "description": "Assessment for Swing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/tableau-new",
+    "name": "Tableau (New)",
+    "description": "Assessment for Tableau (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/telecommunications-engineering-new",
+    "name": "Telecommunications Engineering (New)",
+    "description": "Assessment for Telecommunications Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/teradata-development-new",
+    "name": "Teradata Development (New)",
+    "description": "Assessment for Teradata Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/time-management-u-s-",
+    "name": "Time Management (U.S.)",
+    "description": "Assessment for Time Management (U.S.)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/training-development",
+    "name": "Training Development",
+    "description": "Assessment for Training Development",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/typing-new",
+    "name": "Typing (New)",
+    "description": "Assessment for Typing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/uipath-rpa-development-new",
+    "name": "UiPath RPA Development (New)",
+    "description": "Assessment for UiPath RPA Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/universal-competency-framework-interview-guide",
+    "name": "Universal Competency Framework Interview Guide",
+    "description": "Assessment for Universal Competency Framework Interview Guide",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/universal-competency-framework-job-profiling-guide",
+    "name": "Universal Competency Framework Job profiling guide",
+    "description": "Assessment for Universal Competency Framework Job profiling guide",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/universal-competency-framework-profiler-cards-44",
+    "name": "Universal Competency Framework Profiler Cards (44)",
+    "description": "Assessment for Universal Competency Framework Profiler Cards (44)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/unix-new",
+    "name": "UNIX (New)",
+    "description": "Assessment for UNIX (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/vb-net-new",
+    "name": "VB.NET (New)",
+    "description": "Assessment for VB.NET (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---deductive-reasoning",
+    "name": "Verify - Deductive Reasoning",
+    "description": "Assessment for Verify - Deductive Reasoning",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---following-instructions",
+    "name": "Verify - Following Instructions",
+    "description": "Assessment for Verify - Following Instructions",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---g+",
+    "name": "Verify - G+",
+    "description": "Assessment for Verify - G+",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---general-ability-screen",
+    "name": "Verify - General Ability Screen",
+    "description": "Assessment for Verify - General Ability Screen",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---inductive-reasoning-2014",
+    "name": "Verify - Inductive Reasoning (2014)",
+    "description": "Assessment for Verify - Inductive Reasoning (2014)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---numerical-ability",
+    "name": "Verify - Numerical Ability",
+    "description": "Assessment for Verify - Numerical Ability",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---technical-checking---next-generation",
+    "name": "Verify - Technical Checking - Next Generation",
+    "description": "Assessment for Verify - Technical Checking - Next Generation",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---verbal-ability---next-generation",
+    "name": "Verify - Verbal Ability - Next Generation",
+    "description": "Assessment for Verify - Verbal Ability - Next Generation",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify---working-with-information",
+    "name": "Verify - Working with Information",
+    "description": "Assessment for Verify - Working with Information",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify-g+---ability-test-report",
+    "name": "Verify G+ - Ability Test Report",
+    "description": "Assessment for Verify G+ - Ability Test Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify-g+---candidate-report",
+    "name": "Verify G+ - Candidate Report",
+    "description": "Assessment for Verify G+ - Candidate Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify-interactive-ability-report",
+    "name": "Verify Interactive Ability Report",
+    "description": "Assessment for Verify Interactive Ability Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify-interactive-g+-candidate-report",
+    "name": "Verify Interactive G+ Candidate Report",
+    "description": "Assessment for Verify Interactive G+ Candidate Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify-interactive-g+-report",
+    "name": "Verify Interactive G+ Report",
+    "description": "Assessment for Verify Interactive G+ Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata-data-science-new",
+    "name": "Automata Data Science (New)",
+    "description": "Assessment for Automata Data Science (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata-data-science-pro-new",
+    "name": "Automata Data Science Pro (New)",
+    "description": "Assessment for Automata Data Science Pro (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata-front-end",
+    "name": "Automata Front End",
+    "description": "Assessment for Automata Front End",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata-pro-new",
+    "name": "Automata Pro (New)",
+    "description": "Assessment for Automata Pro (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automata-selenium",
+    "name": "Automata Selenium",
+    "description": "Assessment for Automata Selenium",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automation-anywhere-rpa-development-new",
+    "name": "Automation Anywhere RPA Development (New)",
+    "description": "Assessment for Automation Anywhere RPA Development (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/automotive-engineering-new",
+    "name": "Automotive Engineering (New)",
+    "description": "Assessment for Automotive Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/basic-biology-new",
+    "name": "Basic Biology (New)",
+    "description": "Assessment for Basic Biology (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/basic-computer-literacy-windows-10-new",
+    "name": "Basic Computer Literacy (Windows 10) (New)",
+    "description": "Assessment for Basic Computer Literacy (Windows 10) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "SK"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/basic-statistics-new",
+    "name": "Basic Statistics (New)",
+    "description": "Assessment for Basic Statistics (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/biochemistry-new",
+    "name": "Biochemistry (New)",
+    "description": "Assessment for Biochemistry (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/biotech-lab-techniques-new",
+    "name": "Biotech Lab Techniques (New)",
+    "description": "Assessment for Biotech Lab Techniques (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/financial-services-representative-solution",
+    "name": "Financial Services Representative Solution",
+    "description": "Assessment for Financial Services Representative Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/front-desk-associate-solution",
+    "name": "Front Desk Associate Solution",
+    "description": "Assessment for Front Desk Associate Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/gaming-associate-solution",
+    "name": "Gaming Associate Solution",
+    "description": "Assessment for Gaming Associate Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/gaming-manager-solution",
+    "name": "Gaming Manager Solution",
+    "description": "Assessment for Gaming Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "SABKP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/general-entry-level---all-industries-7-0-solution",
+    "name": "General Entry Level - All Industries 7.0 Solution",
+    "description": "Assessment for General Entry Level - All Industries 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/general-entry-level---all-industries-7-1-solution",
+    "name": "General Entry Level - All Industries 7.1 Solution",
+    "description": "Assessment for General Entry Level - All Industries 7.1 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/general-entry-level---all-industries-7-1americas",
+    "name": "General Entry Level - All Industries 7.1(Americas)",
+    "description": "Assessment for General Entry Level - All Industries 7.1(Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/general-entry-level-\u2013-data-entry-7-0-solution",
+    "name": "General Entry Level \u2013 Data Entry 7.0 Solution",
+    "description": "Assessment for General Entry Level \u2013 Data Entry 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BK"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/graduate-+-8-0-job-focused-assessment",
+    "name": "Graduate + 8.0 Job Focused Assessment",
+    "description": "Assessment for Graduate + 8.0 Job Focused Assessment",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/graduate-7-1-job-focused-assessment",
+    "name": "Graduate 7.1 Job Focused Assessment",
+    "description": "Assessment for Graduate 7.1 Job Focused Assessment",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/graduate-8-0-job-focused-assessment",
+    "name": "Graduate 8.0 Job Focused Assessment",
+    "description": "Assessment for Graduate 8.0 Job Focused Assessment",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/guest-service-team-7-0-solution",
+    "name": "Guest Service Team 7.0 Solution",
+    "description": "Assessment for Guest Service Team 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/verify-interactive-process-monitoring",
+    "name": "Verify Interactive Process Monitoring",
+    "description": "Assessment for Verify Interactive Process Monitoring",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "A"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/virtual-assessment-and-development-centers",
+    "name": "Virtual Assessment and Development Centers",
+    "description": "Assessment for Virtual Assessment and Development Centers",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/visual-basic-for-applications-new",
+    "name": "Visual Basic for Applications (New)",
+    "description": "Assessment for Visual Basic for Applications (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/visual-comparison---uk",
+    "name": "Visual Comparison - UK",
+    "description": "Assessment for Visual Comparison - UK",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/visual-comparison---us",
+    "name": "Visual Comparison - US",
+    "description": "Assessment for Visual Comparison - US",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/vlsi-and-embedded-systems-new",
+    "name": "VLSI and Embedded Systems (New)",
+    "description": "Assessment for VLSI and Embedded Systems (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/what-is-the-value---us",
+    "name": "What Is The Value - US",
+    "description": "Assessment for What Is The Value - US",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/workplace-administration-skills-new",
+    "name": "Workplace Administration Skills (New)",
+    "description": "Assessment for Workplace Administration Skills (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/workplace-health-and-safety-new",
+    "name": "Workplace Health and Safety (New)",
+    "description": "Assessment for Workplace Health and Safety (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/writex---email-writing-customer-service-new",
+    "name": "WriteX - Email Writing (Customer Service) (New)",
+    "description": "Assessment for WriteX - Email Writing (Customer Service) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/writex---email-writing-managerial-new",
+    "name": "WriteX - Email Writing (Managerial) (New)",
+    "description": "Assessment for WriteX - Email Writing (Managerial) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/writex---email-writing-sales-new",
+    "name": "WriteX - Email Writing (Sales) (New)",
+    "description": "Assessment for WriteX - Email Writing (Sales) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/written-english-v1",
+    "name": "Written English v1",
+    "description": "Assessment for Written English v1",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/written-spanish",
+    "name": "Written Spanish",
+    "description": "Assessment for Written Spanish",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/zabbix-new",
+    "name": "Zabbix (New)",
+    "description": "Assessment for Zabbix (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/360-digital-report",
+    "name": "360 Digital Report",
+    "description": "Assessment for 360 Digital Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "D"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/360\u00b0-multi-rater-feedback-system-mfs",
+    "name": "360\u00b0 Multi-Rater Feedback System (MFS)",
+    "description": "Assessment for 360\u00b0 Multi-Rater Feedback System (MFS)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "DP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/biztalk-new",
+    "name": "BizTalk (New)",
+    "description": "Assessment for BizTalk (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/business-communication-adaptive",
+    "name": "Business Communication (adaptive)",
+    "description": "Assessment for Business Communication (adaptive)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/business-communications",
+    "name": "Business Communications",
+    "description": "Assessment for Business Communications",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/c-programming-new",
+    "name": "C Programming (New)",
+    "description": "Assessment for C Programming (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/c#-programming-new",
+    "name": "C# Programming (New)",
+    "description": "Assessment for C# Programming (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/c++-programming-new",
+    "name": "C++ Programming (New)",
+    "description": "Assessment for C++ Programming (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/cardiology-and-diabetes-management-new",
+    "name": "Cardiology and Diabetes Management (New)",
+    "description": "Assessment for Cardiology and Diabetes Management (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/ceramic-engineering-new",
+    "name": "Ceramic Engineering (New)",
+    "description": "Assessment for Ceramic Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/chemical-engineering-new",
+    "name": "Chemical Engineering (New)",
+    "description": "Assessment for Chemical Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/cisco-appdynamics-new",
+    "name": "Cisco AppDynamics (New)",
+    "description": "Assessment for Cisco AppDynamics (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/civil-engineering-new",
+    "name": "Civil Engineering (New)",
+    "description": "Assessment for Civil Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/cloud-computing-new",
+    "name": "Cloud Computing (New)",
+    "description": "Assessment for Cloud Computing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/guest-services-associate-solution",
+    "name": "Guest Services Associate Solution",
+    "description": "Assessment for Guest Services Associate Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/healthcare-aide-7-0-solution",
+    "name": "Healthcare Aide 7.0 Solution",
+    "description": "Assessment for Healthcare Aide 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/healthcare-call-center-agent-solution",
+    "name": "Healthcare Call Center Agent Solution",
+    "description": "Assessment for Healthcare Call Center Agent Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/healthcare-service-associate-solution",
+    "name": "Healthcare Service Associate Solution",
+    "description": "Assessment for Healthcare Service Associate Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/healthcare-support-specialist-solution",
+    "name": "Healthcare Support Specialist Solution",
+    "description": "Assessment for Healthcare Support Specialist Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/home-health-aide-solution",
+    "name": "Home Health Aide Solution",
+    "description": "Assessment for Home Health Aide Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/hospitality-manager-solution",
+    "name": "Hospitality Manager Solution",
+    "description": "Assessment for Hospitality Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABKP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/host-solution",
+    "name": "Host Solution",
+    "description": "Assessment for Host Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial---entry-level-7-0-solution",
+    "name": "Industrial - Entry Level 7.0 Solution",
+    "description": "Assessment for Industrial - Entry Level 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial---entry-level-7-1-americas",
+    "name": "Industrial - Entry Level 7.1 (Americas)",
+    "description": "Assessment for Industrial - Entry Level 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial---entry-level-7-1-international",
+    "name": "Industrial - Entry Level 7.1 (International)",
+    "description": "Assessment for Industrial - Entry Level 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial---professional-and-skilled-7-0-solution",
+    "name": "Industrial - Professional and Skilled 7.0 Solution",
+    "description": "Assessment for Industrial - Professional and Skilled 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/cobol-programming-new",
+    "name": "COBOL Programming (New)",
+    "description": "Assessment for COBOL Programming (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/computer-science-new",
+    "name": "Computer Science (New)",
+    "description": "Assessment for Computer Science (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-center-call-simulation-new",
+    "name": "Contact Center Call Simulation (New)",
+    "description": "Assessment for Contact Center Call Simulation (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/conversational-multichat-simulation",
+    "name": "Conversational Multichat Simulation",
+    "description": "Assessment for Conversational Multichat Simulation",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/core-java-advanced-level-new",
+    "name": "Core Java (Advanced Level) (New)",
+    "description": "Assessment for Core Java (Advanced Level) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/core-java-entry-level-new",
+    "name": "Core Java (Entry Level) (New)",
+    "description": "Assessment for Core Java (Entry Level) (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/count-out-the-money",
+    "name": "Count Out The Money",
+    "description": "Assessment for Count Out The Money",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "KS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/css3-new",
+    "name": "CSS3 (New)",
+    "description": "Assessment for CSS3 (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/culinary-skills-new",
+    "name": "Culinary Skills (New)",
+    "description": "Assessment for Culinary Skills (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/customer-service-phone-simulation",
+    "name": "Customer Service Phone Simulation",
+    "description": "Assessment for Customer Service Phone Simulation",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/customer-service-phone-solution",
+    "name": "Customer Service Phone Solution",
+    "description": "Assessment for Customer Service Phone Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/cyber-risk-new",
+    "name": "Cyber Risk (New)",
+    "description": "Assessment for Cyber Risk (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial---semi-skilled-7-1-americas",
+    "name": "Industrial - Semi-skilled 7.1 (Americas)",
+    "description": "Assessment for Industrial - Semi-skilled 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial---semi-skilled-7-1-international",
+    "name": "Industrial - Semi-skilled 7.1 (International)",
+    "description": "Assessment for Industrial - Semi-skilled 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial-professional-and-skilled-7-1-americas",
+    "name": "Industrial Professional and Skilled 7.1 (Americas)",
+    "description": "Assessment for Industrial Professional and Skilled 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/industrial-professional-and-skilled-7-1-solution",
+    "name": "Industrial Professional and Skilled 7.1 Solution",
+    "description": "Assessment for Industrial Professional and Skilled 7.1 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/installation-and-repair-technician-solution",
+    "name": "Installation and Repair Technician Solution",
+    "description": "Assessment for Installation and Repair Technician Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/insurance-account-manager-solution",
+    "name": "Insurance Account Manager Solution",
+    "description": "Assessment for Insurance Account Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/insurance-administrative-assistant-solution",
+    "name": "Insurance Administrative Assistant Solution",
+    "description": "Assessment for Insurance Administrative Assistant Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/insurance-agent-solution",
+    "name": "Insurance Agent Solution",
+    "description": "Assessment for Insurance Agent Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/insurance-director-solution",
+    "name": "Insurance Director Solution",
+    "description": "Assessment for Insurance Director Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/insurance-sales-manager-solution",
+    "name": "Insurance Sales Manager Solution",
+    "description": "Assessment for Insurance Sales Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager---short-form",
+    "name": "Manager - Short Form",
+    "description": "Assessment for Manager - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABKPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager-+-7-0-solution",
+    "name": "Manager + 7.0 Solution",
+    "description": "Assessment for Manager + 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/data-entry-new",
+    "name": "Data Entry (New)",
+    "description": "Assessment for Data Entry (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/data-entry-alphanumeric-split-screen---us",
+    "name": "Data Entry Alphanumeric Split Screen - US",
+    "description": "Assessment for Data Entry Alphanumeric Split Screen - US",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/data-entry-numeric-split-screen---us",
+    "name": "Data Entry Numeric Split Screen - US",
+    "description": "Assessment for Data Entry Numeric Split Screen - US",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/data-entry-ten-key-split-screen",
+    "name": "Data Entry Ten Key Split Screen",
+    "description": "Assessment for Data Entry Ten Key Split Screen",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/data-science-new",
+    "name": "Data Science (New)",
+    "description": "Assessment for Data Science (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/data-warehousing-concepts",
+    "name": "Data Warehousing Concepts",
+    "description": "Assessment for Data Warehousing Concepts",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/dependability-and-safety-instrument-dsi",
+    "name": "Dependability and Safety Instrument (DSI)",
+    "description": "Assessment for Dependability and Safety Instrument (DSI)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/dermatology-new",
+    "name": "Dermatology (New)",
+    "description": "Assessment for Dermatology (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/desktop-support-new",
+    "name": "Desktop Support (New)",
+    "description": "Assessment for Desktop Support (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/digital-advertising-new",
+    "name": "Digital Advertising (New)",
+    "description": "Assessment for Digital Advertising (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/digital-readiness-development-report---ic",
+    "name": "Digital Readiness Development Report - IC",
+    "description": "Assessment for Digital Readiness Development Report - IC",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/digital-readiness-development-report---manager",
+    "name": "Digital Readiness Development Report - Manager",
+    "description": "Assessment for Digital Readiness Development Report - Manager",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager-+-7-1-americas",
+    "name": "Manager + 7.1 (Americas)",
+    "description": "Assessment for Manager + 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager-+-7-1-international",
+    "name": "Manager + 7.1 (International)",
+    "description": "Assessment for Manager + 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager-7-0-solution",
+    "name": "Manager 7.0 Solution",
+    "description": "Assessment for Manager 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager-7-1-americas",
+    "name": "Manager 7.1 (Americas)",
+    "description": "Assessment for Manager 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager-7-1-international",
+    "name": "Manager 7.1 (International)",
+    "description": "Assessment for Manager 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager-8-0-jfa",
+    "name": "Manager 8.0 JFA",
+    "description": "Assessment for Manager 8.0 JFA",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BKP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manager-8-0+-jfa",
+    "name": "Manager 8.0+ JFA",
+    "description": "Assessment for Manager 8.0+ JFA",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BKP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manufacturing-production-team-member",
+    "name": "Manufacturing Production Team Member",
+    "description": "Assessment for Manufacturing Production Team Member",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/manufacturing-skilled-maintenance-worker",
+    "name": "Manufacturing Skilled Maintenance Worker",
+    "description": "Assessment for Manufacturing Skilled Maintenance Worker",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "AB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/network-engineer/analyst-solution",
+    "name": "Network Engineer/Analyst Solution",
+    "description": "Assessment for Network Engineer/Analyst Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PSKBA"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/nurse-leader-solution",
+    "name": "Nurse Leader Solution",
+    "description": "Assessment for Nurse Leader Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "SABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/nurse-solution",
+    "name": "Nurse Solution",
+    "description": "Assessment for Nurse Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PAB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/docker-new",
+    "name": "Docker (New)",
+    "description": "Assessment for Docker (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/dojo-new",
+    "name": "Dojo (New)",
+    "description": "Assessment for Dojo (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/drupal-new",
+    "name": "Drupal (New)",
+    "description": "Assessment for Drupal (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/dsi-v1-1-interpretation-report",
+    "name": "DSI v1.1 Interpretation Report",
+    "description": "Assessment for DSI v1.1 Interpretation Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/econometrics-new",
+    "name": "Econometrics (New)",
+    "description": "Assessment for Econometrics (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/economics-new",
+    "name": "Economics (New)",
+    "description": "Assessment for Economics (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/electrical-and-electronics-engineering-new",
+    "name": "Electrical and Electronics Engineering (New)",
+    "description": "Assessment for Electrical and Electronics Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/electrical-engineering-new",
+    "name": "Electrical Engineering (New)",
+    "description": "Assessment for Electrical Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/electronics-&-telecommunications-engineering-new",
+    "name": "Electronics & Telecommunications Engineering (New)",
+    "description": "Assessment for Electronics & Telecommunications Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/electronics-and-embedded-systems-engineering-new",
+    "name": "Electronics and Embedded Systems Engineering (New)",
+    "description": "Assessment for Electronics and Embedded Systems Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/electronics-and-semiconductor-engineering-new",
+    "name": "Electronics and Semiconductor Engineering (New)",
+    "description": "Assessment for Electronics and Semiconductor Engineering (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/english-comprehension-new",
+    "name": "English Comprehension (New)",
+    "description": "Assessment for English Comprehension (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/nursing-assistant-solution",
+    "name": "Nursing Assistant Solution",
+    "description": "Assessment for Nursing Assistant Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/personal-banker---short-form",
+    "name": "Personal Banker - Short Form",
+    "description": "Assessment for Personal Banker - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABKPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/phone-banker---short-form",
+    "name": "Phone Banker - Short Form",
+    "description": "Assessment for Phone Banker - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/prep/line-cook-solution",
+    "name": "Prep/Line Cook Solution",
+    "description": "Assessment for Prep/Line Cook Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-+-7-0-solution",
+    "name": "Professional + 7.0 Solution",
+    "description": "Assessment for Professional + 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-+-7-1-americas",
+    "name": "Professional + 7.1 (Americas)",
+    "description": "Assessment for Professional + 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-+-7-1-international",
+    "name": "Professional + 7.1 (International)",
+    "description": "Assessment for Professional + 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BCP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-7-0-solution",
+    "name": "Professional 7.0 Solution",
+    "description": "Assessment for Professional 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-7-1-international",
+    "name": "Professional 7.1 (International)",
+    "description": "Assessment for Professional 7.1 (International)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-8-0-jfa",
+    "name": "Professional 8.0 JFA",
+    "description": "Assessment for Professional 8.0 JFA",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BKP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional/individual-contributor---short-form",
+    "name": "Professional/Individual Contributor - Short Form",
+    "description": "Assessment for Professional/Individual Contributor - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/project-manager---short-form",
+    "name": "Project Manager - Short Form",
+    "description": "Assessment for Project Manager - Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/enterprise-java-beans-new",
+    "name": "Enterprise Java Beans (New)",
+    "description": "Assessment for Enterprise Java Beans (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/enterprise-leadership-report-1-0",
+    "name": "Enterprise Leadership Report 1.0",
+    "description": "Assessment for Enterprise Leadership Report 1.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/enterprise-leadership-report-2-0",
+    "name": "Enterprise Leadership Report 2.0",
+    "description": "Assessment for Enterprise Leadership Report 2.0",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "P"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-cashier-solution",
+    "name": "Entry Level Cashier Solution",
+    "description": "Assessment for Entry Level Cashier Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-customer-serv-retail-&-contact-center",
+    "name": "Entry Level Customer Serv-Retail & Contact Center",
+    "description": "Assessment for Entry Level Customer Serv-Retail & Contact Center",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-customer-service-general-solution",
+    "name": "Entry Level Customer Service (General) Solution",
+    "description": "Assessment for Entry Level Customer Service (General) Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-hotel-front-desk-solution",
+    "name": "Entry Level Hotel Front Desk Solution",
+    "description": "Assessment for Entry Level Hotel Front Desk Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-sales-solution",
+    "name": "Entry Level Sales Solution",
+    "description": "Assessment for Entry Level Sales Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/entry-level-technical-support-solution",
+    "name": "Entry Level Technical Support Solution",
+    "description": "Assessment for Entry Level Technical Support Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "PC"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/etl-testing-new",
+    "name": "ETL Testing (New)",
+    "description": "Assessment for ETL Testing (New)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "K"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/executive-scenarios",
+    "name": "Executive Scenarios",
+    "description": "Assessment for Executive Scenarios",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/executive-scenarios-narrative-report",
+    "name": "Executive Scenarios Narrative Report",
+    "description": "Assessment for Executive Scenarios Narrative Report",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "B"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/proof-operator---processing-specialist--short-form",
+    "name": "Proof Operator - Processing Specialist -Short Form",
+    "description": "Assessment for Proof Operator - Processing Specialist -Short Form",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "S"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/reservation-agent-solution",
+    "name": "Reservation Agent Solution",
+    "description": "Assessment for Reservation Agent Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "APSB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/restaurant-manager-solution",
+    "name": "Restaurant Manager Solution",
+    "description": "Assessment for Restaurant Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/restaurant-supervisor-solution",
+    "name": "Restaurant Supervisor Solution",
+    "description": "Assessment for Restaurant Supervisor Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/retail-consultant-solution",
+    "name": "Retail Consultant Solution",
+    "description": "Assessment for Retail Consultant Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/retail-manager-w/-sales-solution",
+    "name": "Retail Manager w/ Sales Solution",
+    "description": "Assessment for Retail Manager w/ Sales Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/retail-sales-associate-solution",
+    "name": "Retail Sales Associate Solution",
+    "description": "Assessment for Retail Sales Associate Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-director-solution",
+    "name": "Sales Director Solution",
+    "description": "Assessment for Sales Director Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-engineer-solution",
+    "name": "Sales Engineer Solution",
+    "description": "Assessment for Sales Engineer Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABKPS"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-manager-solution",
+    "name": "Sales Manager Solution",
+    "description": "Assessment for Sales Manager Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "ABP"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-professional-7-0-solution",
+    "name": "Sales Professional 7.0 Solution",
+    "description": "Assessment for Sales Professional 7.0 Solution",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "CB"
+    ]
+  },
+  {
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/sales-professional-7-1-americas",
+    "name": "Sales Professional 7.1 (Americas)",
+    "description": "Assessment for Sales Professional 7.1 (Americas)",
+    "duration": null,
+    "adaptive_support": "No",
+    "remote_support": "No",
+    "test_type": [
+      "BC"
+    ]
+  }
+]

@@ -118,7 +118,7 @@ logs/
 *.onnx
 models/
 !backend/app/models/
-
+backend/backend
 # Large data files
 *.csv
 !data/*.csv
@@ -173,6 +173,12 @@ SUBMISSION_ANSWERS.md
 comprehensive_evaluation_report.json
 Gen_AI Dataset.xlsx
 SHL AI Intern RE Generative AI assignment.pdf
+generate_predictions.py
+evaluation_results_improved.txt
+evaluate_predictions.py
+scraped_377_assessments.json
+run_full_eval.py
+diagnose_recall.py
 #Latex files
 *.aux
 *.log
@@ -186,3 +192,4 @@ SHL AI Intern RE Generative AI assignment.pdf
 *.fdb_latexmk
 *.synctex
 *.synctex.gz
+*.txt

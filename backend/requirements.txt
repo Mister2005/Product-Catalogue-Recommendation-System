@@ -21,9 +21,12 @@ pandas>=2.1.0
 huggingface-hub>=0.20.0
 
 # Embeddings & RAG
-chromadb>=0.4.22
+chromadb>=0.4.22  # Optional - for local development
+pgvector>=0.2.4  # For Supabase vector operations
+sentence-transformers>=2.2.0  # For local embedding generation (fallback)
 langchain>=0.1.0
 langchain-community>=0.0.13
+rank-bm25>=0.2.2  # For BM25 keyword search
 
 # Clustering
 # Removed: umap-learn (replaced with PCA from scikit-learn)

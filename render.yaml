@@ -8,40 +8,32 @@ services:
     branch: main
     rootDir: backend
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: gunicorn app.main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:10000 --timeout 120
+    startCommand: gunicorn app.main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:10000
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
         value: "3.11.0"
       - key: ENVIRONMENT
         value: production
-      - key: DEBUG
-        value: "false"
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_KEY
-        sync: false
-      - key: SUPABASE_DB_PASSWORD
-        sync: false
-      - key: REDIS_URL
         sync: false
       - key: GEMINI_API_KEY
         sync: false
       - key: HUGGINGFACE_API_KEY
         sync: false
-      - key: SECRET_KEY
-        generateValue: true
-      - key: ALLOWED_ORIGINS
-        sync: false
-      - key: LOG_LEVEL
-        value: INFO
       - key: GEMINI_MODEL
         value: gemini-2.0-flash
       - key: EMBEDDING_MODEL
-        value: sentence-transformers/all-MiniLM-L6-v2
-      - key: DEFAULT_RECOMMENDATION_ENGINE
-        value: hybrid
-      - key: MAX_RECOMMENDATIONS
-        value: "10"
-      - key: RATE_LIMIT_PER_MINUTE
-        value: "60"
+        value: BAAI/bge-small-en-v1.5
+      - key: RERANKING_MODEL
+        value: cross-encoder/ms-marco-MiniLM-L-6-v2
+      - key: RERANKING_SCORE_THRESHOLD
+        value: "-5.0"
+      - key: RAG_RETRIEVAL_COUNT
+        value: "300"
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: RERANKER_API_URL
+        value: "https://mister2005-cross-encoder-reranking-api.hf.space/rerank"

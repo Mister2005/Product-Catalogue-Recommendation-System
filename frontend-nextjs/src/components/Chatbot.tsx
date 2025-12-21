@@ -18,6 +18,11 @@ function formatMessage(text: string): string {
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     // Convert *italic* to <em>
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    // Convert URLs to clickable links (must be done before line breaks)
+    .replace(
+      /(https?:\/\/[^\s<]+)/g,
+      '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-purple-600 hover:text-purple-700 underline break-all">$1</a>'
+    )
     // Convert bullet points (- or *) to list items
     .replace(/^[\*\-]\s+(.+)$/gm, '<li class="ml-4">$1</li>')
     // Wrap consecutive list items in <ul>

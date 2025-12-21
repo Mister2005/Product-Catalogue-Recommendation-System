@@ -30,6 +30,24 @@ class HuggingFaceEmbeddingService:
         self.space_url = os.getenv('HUGGINGFACE_SPACE_URL')
         
         if not self.api_key:
+            # Try loading .env explicitly
+            from dotenv import load_dotenv
+            from pathlib import Path
+            
+            # Try finding .env in current or parent directory
+            current_dir = Path.cwd()
+            env_path = current_dir / ".env"
+            if not env_path.exists():
+                env_path = current_dir / "backend" / ".env"
+            
+            if env_path.exists():
+                log.info(f"Loading environment from {env_path}")
+                load_dotenv(env_path)
+                self.api_key = os.getenv('HUGGINGFACE_API_KEY')
+                self.use_space = os.getenv('USE_HUGGINGFACE_SPACE', 'false').lower() == 'true'
+                self.space_url = os.getenv('HUGGINGFACE_SPACE_URL')
+        
+        if not self.api_key:
             raise ValueError("HUGGINGFACE_API_KEY environment variable is required")
         
         # Initialize client
@@ -47,7 +65,8 @@ class HuggingFaceEmbeddingService:
         normalize_embeddings: bool = True,
         show_progress_bar: bool = False,
         batch_size: int = 32,
-        max_retries: int = 3
+        max_retries: int = 3,
+        is_query: bool = False  # New parameter for query vs document encoding
     ) -> np.ndarray:
         """
         Generate embeddings for text(s)
@@ -58,6 +77,7 @@ class HuggingFaceEmbeddingService:
             show_progress_bar: Ignored (for compatibility with sentence-transformers)
             batch_size: Number of texts to process in one batch
             max_retries: Maximum number of retry attempts
+            is_query: Whether this is a query (True) or document (False)
             
         Returns:
             numpy array of embeddings
@@ -69,17 +89,18 @@ class HuggingFaceEmbeddingService:
         
         # Use custom Space if configured
         if self.use_space and self.space_url:
-            return self._encode_via_space(texts, normalize_embeddings, batch_size, max_retries)
+            return self._encode_via_space(texts, normalize_embeddings, batch_size, max_retries, is_query)
         
         # Otherwise use HuggingFace Inference API
-        return self._encode_via_inference_api(texts, normalize_embeddings, batch_size, max_retries)
+        return self._encode_via_inference_api(texts, normalize_embeddings, batch_size, max_retries, is_query)
     
     def _encode_via_inference_api(
         self, 
         texts: List[str], 
         normalize: bool,
         batch_size: int,
-        max_retries: int
+        max_retries: int,
+        is_query: bool = False
     ) -> np.ndarray:
         """Encode using HuggingFace Inference API with improved timeout handling"""
         all_embeddings = []
@@ -168,7 +189,8 @@ class HuggingFaceEmbeddingService:
         texts: List[str], 
         normalize: bool,
         batch_size: int,
-        max_retries: int
+        max_retries: int,
+        is_query: bool = False
     ) -> np.ndarray:
         """Encode using custom HuggingFace Space"""
         import requests
@@ -183,7 +205,7 @@ class HuggingFaceEmbeddingService:
                 try:
                     response = requests.post(
                         f"{self.space_url}/embed",
-                        json={"texts": batch, "normalize": normalize},
+                        json={"texts": batch, "normalize": normalize, "is_query": is_query},
                         timeout=30
                     )
                     response.raise_for_status()

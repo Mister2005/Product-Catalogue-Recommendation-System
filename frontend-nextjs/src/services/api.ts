@@ -175,12 +175,17 @@ export interface SimpleRecommendRequest {
 }
 
 export interface SimpleAssessmentRecommendation {
-    assessment_name: string
-    assessment_url: string
+    url: string
+    name: string
+    adaptive_support: string
+    description: string
+    duration: number
+    remote_support: string
+    test_type: string[]
 }
 
 export interface SimpleRecommendResponse {
-    recommendations: SimpleAssessmentRecommendation[]
+    recommended_assessments: SimpleAssessmentRecommendation[]
 }
 
 /**

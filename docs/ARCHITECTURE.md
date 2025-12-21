@@ -131,7 +131,7 @@ The SHL Assessment Recommendation Engine is a full-stack application consisting 
 |--------|------|-----------|
 | Hybrid | `hybrid_recommender.py` | Weighted combination of all engines |
 | Gemini | `gemini_recommender.py` | Google Gemini AI API |
-| RAG | `rag_recommender.py` | Sentence Transformers + Vector Search |
+| RAG | `rag_recommender_v2.py` | Sentence Transformers + Vector Search (Weighted Embeddings + Exact Name Match) |
 | NLP | `nlp_recommender.py` | TF-IDF + Cosine Similarity |
 | Clustering | `clustering_recommender.py` | K-Means Clustering |
 

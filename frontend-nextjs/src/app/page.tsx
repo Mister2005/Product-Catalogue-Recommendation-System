@@ -249,7 +249,7 @@ export default function Home() {
                     Recommended Assessments
                   </h2>
                   <p className="text-slate-400">
-                    {(pdfRecommendations?.recommendations.length || recommendationMutation.data?.recommendations.length || 0)} assessments found
+                    {(pdfRecommendations?.recommended_assessments.length || recommendationMutation.data?.recommended_assessments.length || 0)} assessments found
                   </p>
                 </div>
                 <button
@@ -262,7 +262,7 @@ export default function Home() {
 
               {/* Results List */}
               <div className="space-y-4">
-                {(pdfRecommendations?.recommendations || recommendationMutation.data?.recommendations || []).map((rec, index) => (
+                {(pdfRecommendations?.recommended_assessments || recommendationMutation.data?.recommended_assessments || []).map((rec, index) => (
                   <div
                     key={index}
                     className="glass p-6 rounded-lg hover-lift border border-white/10 animate-fade-in-up"
@@ -275,27 +275,8 @@ export default function Home() {
                             {index + 1}
                           </span>
                           <h3 className="text-lg font-semibold text-white">
-                            {rec.assessment_name}
+                            {rec.name}
                           </h3>
-                        </div>
-
-                        {/* Display URL */}
-                        <div className="ml-11 mb-3">
-                          <a
-                            href={rec.assessment_url}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              const newWindow = window.open('about:blank', '_blank');
-                              if (newWindow) {
-                                newWindow.opener = null;
-                                newWindow.location.href = rec.assessment_url;
-                              }
-                            }}
-                            className="text-sm text-blue-400 hover:text-blue-300 transition-colors break-all"
-                            title="Click to open assessment"
-                          >
-                            {rec.assessment_url}
-                          </a>
                         </div>
 
                         <button
@@ -304,7 +285,7 @@ export default function Home() {
                             const newWindow = window.open('about:blank', '_blank');
                             if (newWindow) {
                               newWindow.opener = null;
-                              newWindow.location.href = rec.assessment_url;
+                              newWindow.location.href = rec.url;
                             }
                           }}
                           className="ml-11 inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm cursor-pointer bg-transparent border-none p-0"
@@ -318,7 +299,7 @@ export default function Home() {
                 ))}
               </div>
 
-              {(pdfRecommendations?.recommendations.length === 0 || recommendationMutation.data?.recommendations.length === 0) && (
+              {(pdfRecommendations?.recommended_assessments.length === 0 || recommendationMutation.data?.recommended_assessments.length === 0) && (
                 <div className="text-center py-12">
                   <p className="text-slate-400">No recommendations found. Try a different query.</p>
                 </div>

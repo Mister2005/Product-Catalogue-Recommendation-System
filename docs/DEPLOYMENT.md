@@ -126,6 +126,25 @@ curl https://shl-recommendation-api-30oz.onrender.com/health
 
 ---
 
+## 4. Deploying Reranker to Hugging Face (Optional but Recommended)
+To save memory on Render Free Tier, deploy the Cross-Encoder model as a separate service.
+
+1.  **Create New Space**:
+    -   Go to [Hugging Face Spaces](https://huggingface.co/spaces)
+    -   Create new Space
+    -   SDK: **Docker**
+
+2.  **Upload Files**:
+    -   Upload contents of `hf_reranker_space/`:
+        -   `Dockerfile`
+        -   `app.py`
+        -   `requirements.txt`
+
+3.  **Update Backend Config**:
+    -   Set `RERANKER_API_URL` env var in Render to your new Space URL (e.g., `https://username-space-name.hf.space/rerank`).
+
+---
+
 ## Frontend Deployment (Vercel)
 
 ### Prerequisites
