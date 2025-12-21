@@ -190,7 +190,7 @@ export default function SimplifiedHome() {
                                         Recommended Assessments
                                     </h2>
                                     <p className="text-slate-400">
-                                        {recommendationMutation.data?.recommendations.length || 0} assessments found
+                                        {recommendationMutation.data?.recommended_assessments.length || 0} assessments found
                                     </p>
                                 </div>
                                 <button
@@ -203,7 +203,7 @@ export default function SimplifiedHome() {
 
                             {/* Results List */}
                             <div className="space-y-4">
-                                {recommendationMutation.data?.recommendations.map((rec, index) => (
+                                {recommendationMutation.data?.recommended_assessments.map((rec, index) => (
                                     <div
                                         key={index}
                                         className="glass p-6 rounded-lg hover-lift border border-white/10 animate-fade-in-up"
@@ -216,7 +216,7 @@ export default function SimplifiedHome() {
                                                         {index + 1}
                                                     </span>
                                                     <h3 className="text-lg font-semibold text-white">
-                                                        {rec.assessment_name}
+                                                        {rec.name}
                                                     </h3>
                                                 </div>
                                                 <button
@@ -225,7 +225,7 @@ export default function SimplifiedHome() {
                                                         const newWindow = window.open('about:blank', '_blank');
                                                         if (newWindow) {
                                                             newWindow.opener = null;
-                                                            newWindow.location.href = rec.assessment_url;
+                                                            newWindow.location.href = rec.url;
                                                         }
                                                     }}
                                                     className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm cursor-pointer bg-transparent border-none p-0"
@@ -239,7 +239,7 @@ export default function SimplifiedHome() {
                                 ))}
                             </div>
 
-                            {recommendationMutation.data?.recommendations.length === 0 && (
+                            {recommendationMutation.data?.recommended_assessments.length === 0 && (
                                 <div className="text-center py-12">
                                     <p className="text-slate-400">No recommendations found. Try a different query.</p>
                                 </div>
