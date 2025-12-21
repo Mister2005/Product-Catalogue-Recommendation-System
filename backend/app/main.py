@@ -25,11 +25,11 @@ async def lifespan(app: FastAPI):
     log.info("Starting up... initializing recommender")
     try:
         recommender = EnhancedHybridRecommender()
-        # Verify connection?
-        log.info("Recommender initialized successfully")
+        log.info("✅ Recommender initialized successfully")
     except Exception as e:
-        log.error(f"Failed to initialize recommender: {e}")
-        raise e
+        log.error(f"⚠️ Failed to initialize recommender: {e}")
+        log.warning("App will start but recommendations will return 503 errors")
+        recommender = None  # Allow app to start anyway
     yield
     # Shutdown
     log.info("Shutting down...")
