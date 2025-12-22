@@ -126,16 +126,14 @@ class SupabaseVectorBackend(VectorDB):
         self.db = get_supabase_client()
         self.table_name = "assessment_embeddings"
         
-        # Verify table exists
+        # Verify table exists (non-blocking - just warn if fails)
         try:
             result = self.db.table(self.table_name).select("id").limit(1).execute()
-            log.info(f"Connected to Supabase pgvector table '{self.table_name}'")
+            count = len(result.data) if result.data else 0
+            log.info(f"Connected to Supabase pgvector table '{self.table_name}' ({count} sample records)")
         except Exception as e:
-            log.error(f"Failed to connect to Supabase table '{self.table_name}': {e}")
-            raise ValueError(
-                f"Supabase table '{self.table_name}' not found. "
-                "Run setup_supabase_vectors.sql first."
-            )
+            log.warning(f"Could not verify Supabase table '{self.table_name}': {e}")
+            log.warning("Table may not exist or connection may be slow. Queries will fail until this is resolved.")
     
     def search(
         self, 

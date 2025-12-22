@@ -40,14 +40,20 @@ class RAGRecommender:
         self.retrieval_k = int(os.getenv("RAG_RETRIEVAL_COUNT", "50"))
         self.score_threshold = float(os.getenv("RERANKING_SCORE_THRESHOLD", "-2.0"))
         
-        # Get vector database backend
+        # Get vector database backend (non-blocking - allow startup even if DB is slow)
         try:
             self.vector_db = get_vector_db()
-            count = self.vector_db.count()
-            log.info(f"Vector DB initialized with {count} assessments")
+            try:
+                count = self.vector_db.count()
+                log.info(f"Vector DB initialized with {count} assessments")
+            except Exception as count_error:
+                log.warning(f"Could not get vector DB count: {count_error}")
+                log.warning("Vector DB may be slow or empty. Recommendations will work once DB is ready.")
         except Exception as e:
             log.error(f"Failed to initialize vector DB: {e}")
-            raise
+            log.error("Recommendations will fail until vector DB is properly configured.")
+            # Don't raise - allow app to start anyway
+            self.vector_db = None
         
         # Load URL mapping
         base_dir = Path(__file__).parent.parent.parent
@@ -215,6 +221,11 @@ class RAGRecommender:
         Hybrid Retrieval: Multi-Query + BM25 + Semantic + Metadata Filtering + Reranking
         """
         try:
+            # Safety check: if vector DB failed to initialize, return empty
+            if not self.vector_db:
+                log.error("Vector DB not initialized. Cannot provide recommendations.")
+                return []
+            
             # 0. Extract Metadata Constraints
             constraints = self.extract_metadata_constraints(query)
             
