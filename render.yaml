@@ -8,7 +8,7 @@ services:
     branch: main
     rootDir: backend
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: gunicorn app.main:app --bind 0.0.0.0:${PORT:-10000} --workers 1 --threads 8 --timeout 120
+    startCommand: python start.py
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
