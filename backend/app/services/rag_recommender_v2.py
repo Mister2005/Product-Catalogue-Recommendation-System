@@ -7,7 +7,7 @@ from typing import List, Dict, Any, Optional
 from pathlib import Path
 from app.services.embedding_service import HuggingFaceEmbeddingService
 from app.core.vector_db import get_vector_db
-from sentence_transformers import CrossEncoder
+# CrossEncoder imported conditionally in __init__ for development only
 import os
 import google.generativeai as genai
 import json
@@ -94,6 +94,7 @@ class RAGRecommender:
             try:
                 # Only load local model in development
                 log.info("Development mode: Loading local CrossEncoder...")
+                from sentence_transformers import CrossEncoder
                 self.reranker = CrossEncoder(model_name)
                 log.info(f"Loaded Local Reranker: {model_name}")
             except Exception as e:
