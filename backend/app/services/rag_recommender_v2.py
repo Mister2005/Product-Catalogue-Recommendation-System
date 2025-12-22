@@ -325,6 +325,16 @@ class RAGRecommender:
                     filters=filters if filters else None
                 )
                 
+                # ✅ Fallback: If no results with job_level filter, retry without it
+                if len(sem_metas) == 0 and filters and filters.get('job_level'):
+                    log.warning(f"No results with job_level={filters['job_level']} filter. Retrying without job level constraint...")
+                    filters_no_level = {k: v for k, v in filters.items() if k != 'job_level'}
+                    sem_metas, sem_docs = self.vector_db.search(
+                        query_embedding=query_embedding,
+                        n_results=self.retrieval_k,
+                        filters=filters_no_level if filters_no_level else None
+                    )
+                
                 # Add semantic results
                 for meta, doc in zip(sem_metas, sem_docs):
                     url = meta.get('url')
@@ -401,12 +411,12 @@ class RAGRecommender:
                     # --- REMOTE API PATH ---
                     try:
                         resp = requests.post(
-                            self.reranker_api_url, 
+                            f"{self.reranker_api_url}/rerank",  # ✅ Fixed: Add /rerank endpoint
                             json={
                                 "query": rerank_query,
                                 "documents": docs
                             },
-                            timeout=5.0
+                            timeout=10.0  # Increased timeout for production
                         )
                         if resp.status_code == 200:
                             data = resp.json()
@@ -452,8 +462,21 @@ class RAGRecommender:
                     # Higher boost for name matches (up to +5.0)
                     name_boost = name_overlap_ratio * 5.0
                     
-                    # Total boost
-                    total_boost = keyword_boost + name_boost
+                    # ✅ Apply job level penalty instead of hard filtering
+                    job_level_penalty = 0
+                    if constraints.get('job_level'):
+                        cand_level = metas[idx].get('job_level', 'General')
+                        req_level = constraints['job_level']
+                        
+                        # Strong penalty for mismatched levels
+                        if req_level == 'Entry_Level' and cand_level == 'Manager_Senior':
+                            job_level_penalty = -3.0
+                        elif req_level == 'Manager_Senior' and cand_level == 'Entry_Level':
+                            job_level_penalty = -3.0
+                        # General level or matching level gets no penalty
+                    
+                    # Total boost with penalty
+                    total_boost = keyword_boost + name_boost + job_level_penalty
                     boosted_score = score + total_boost
                     
                     boosted_scores.append(boosted_score)

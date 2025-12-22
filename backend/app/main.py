@@ -101,6 +101,11 @@ async def get_recommendations(request: RecommendationRequest):
 
         # Get recommendations
         results = recommender.recommend(query_text)
+        
+        # ✅ Validate response
+        num_recommendations = len(results.get('recommended_assessments', []))
+        log.info(f"Generated {num_recommendations} recommendations for query")
+        
         return results
     except HTTPException:
         raise
