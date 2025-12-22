@@ -1,70 +1,89 @@
-# Web Framework
+# Production Requirements for Render Deployment
+# MINIMAL - Only what's actually needed for production
+
+# ============================================
+# WEB FRAMEWORK
+# ============================================
 fastapi>=0.109.0
 uvicorn[standard]>=0.27.0
 pydantic>=2.5.3
 pydantic-settings>=2.1.0
 
-# Database - Supabase
+# ============================================
+# DATABASE - SUPABASE ONLY
+# ============================================
 supabase>=2.3.4
 postgrest>=0.13.2
+pgvector>=0.2.4
 
-# Caching
+# ============================================
+# CACHING
+# ============================================
 redis>=5.0.1
 hiredis>=2.3.2
 
-# Machine Learning & NLP (lightweight versions for Render deployment)
+# ============================================
+# MINIMAL ML - NO PYTORCH/TRANSFORMERS
+# ============================================
 scikit-learn>=1.4.0
 numpy>=1.26.0
 pandas>=2.1.0
+rank-bm25>=0.2.2
 
-# HuggingFace API Client (replaces local sentence-transformers/torch)
+# ============================================
+# HUGGINGFACE API CLIENT (NO LOCAL MODELS)
+# ============================================
 huggingface-hub>=0.20.0
 
-# Embeddings & RAG
-chromadb>=0.4.22  # Optional - for local development
-pgvector>=0.2.4  # For Supabase vector operations
-sentence-transformers>=2.2.0  # For local embedding generation (fallback)
-langchain>=0.1.0
-langchain-community>=0.0.13
-rank-bm25>=0.2.2  # For BM25 keyword search
-
-# Clustering
-# Removed: umap-learn (replaced with PCA from scikit-learn)
-hdbscan>=0.8.33
-
-# AI Models
+# ============================================
+# AI APIS (NO LOCAL MODELS)
+# ============================================
 google-generativeai>=0.3.2
-openai>=1.10.0
 
+# ============================================
 # HTTP & API
+# ============================================
 httpx>=0.26.0
 requests>=2.31.0
 aiofiles>=23.2.1
 
-# Document Processing
-PyPDF2>=3.0.1
+# ============================================
+# DOCUMENT PROCESSING
+# ============================================
 pypdf>=3.17.0
 pdfplumber>=0.10.3
 python-multipart>=0.0.6
-reportlab>=4.0.0
 beautifulsoup4>=4.12.0
-openpyxl>=3.1.0
 
-# GitHub Integration
-PyGithub>=2.1.1
-
-# Security & Authentication
+# ============================================
+# SECURITY & AUTH
+# ============================================
 python-jose[cryptography]>=3.3.0
 passlib[bcrypt]>=1.7.4
 python-dotenv>=1.0.0
 
-# Logging & Monitoring
+# ============================================
+# LOGGING & MONITORING
+# ============================================
 loguru>=0.7.2
-prometheus-client>=0.19.0
 
-# Utilities
+# ============================================
+# UTILITIES
+# ============================================
 python-dateutil>=2.8.2
 pytz>=2023.3
 
-# Production server
+# ============================================
+# PRODUCTION SERVER
+# ============================================
 gunicorn>=21.2.0
+
+# ============================================
+# REMOVED FOR PRODUCTION:
+# ============================================
+# chromadb - Uses Supabase instead
+# sentence-transformers - Uses HuggingFace API instead
+# langchain/langchain-community - Not needed, using direct APIs
+# hdbscan - Not used in production
+# openai - Not currently used
+# PyPDF2/reportlab/openpyxl/PyGithub - Not essential
