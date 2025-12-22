@@ -73,12 +73,21 @@ class RAGRecommender:
         log.info(f"Initializing Reranker: {model_name}")
         self.reranker_api_url = os.getenv("RERANKER_API_URL")
         
+        # CRITICAL: Never load local CrossEncoder in production (causes OOM on Render)
+        # Only use remote API or skip reranking
+        environment = os.getenv("ENVIRONMENT", "development")
+        
         if self.reranker_api_url:
             log.info(f"Using Remote Reranker API: {self.reranker_api_url}")
             self.reranker = "REMOTE"
+        elif environment == "production":
+            # In production without API, skip reranking to avoid OOM
+            log.warning("No RERANKER_API_URL in production. Reranking disabled to prevent OOM.")
+            self.reranker = None
         else:
             try:
-                # Fallback to local model if not API URL (e.g. dev environment with RAM)
+                # Only load local model in development
+                log.info("Development mode: Loading local CrossEncoder...")
                 self.reranker = CrossEncoder(model_name)
                 log.info(f"Loaded Local Reranker: {model_name}")
             except Exception as e:
