@@ -20,16 +20,27 @@ recommender: EnhancedHybridRecommender = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup
+    # Startup - Initialize in background to allow port binding first
     global recommender
-    log.info("Starting up... initializing recommender")
-    try:
-        recommender = EnhancedHybridRecommender()
-        log.info("✅ Recommender initialized successfully")
-    except Exception as e:
-        log.error(f"⚠️ Failed to initialize recommender: {e}")
-        log.warning("App will start but recommendations will return 503 errors")
-        recommender = None  # Allow app to start anyway
+    log.info("Starting up... app is ready to accept connections")
+    
+    # Initialize recommender in background (non-blocking)
+    import asyncio
+    
+    async def init_recommender():
+        global recommender
+        log.info("Initializing recommender in background...")
+        try:
+            recommender = EnhancedHybridRecommender()
+            log.info("✅ Recommender initialized successfully")
+        except Exception as e:
+            log.error(f"⚠️ Failed to initialize recommender: {e}")
+            log.warning("Recommendations will return 503 errors")
+            recommender = None
+    
+    # Start initialization in background
+    asyncio.create_task(init_recommender())
+    
     yield
     # Shutdown
     log.info("Shutting down...")
@@ -47,7 +58,8 @@ app.add_middleware(
 
 @app.get("/health", response_model=HealthCheck)
 async def health_check():
-    return {"status": "healthy"}
+    status = "healthy" if recommender else "initializing"
+    return {"status": status}
 
 @app.post("/recommend", response_model=RecommendationResponse)
 async def get_recommendations(request: RecommendationRequest):
