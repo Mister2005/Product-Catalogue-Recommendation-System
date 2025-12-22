@@ -85,11 +85,18 @@ class RAGRecommender:
                 log.error(f"Failed to load Reranker: {e}")
                 self.reranker = None
 
-        # Build BM25 Index
-        self._build_bm25_index()
+        # BM25 Index - Lazy load to save memory
+        self.bm25 = None
+        self.bm25_docs = []
+        self.bm25_metas = []
+        self._bm25_initialized = False
+        log.info("BM25 index will be lazy-loaded on first use")
     
-    def _build_bm25_index(self):
-        """Build BM25 index from all vector DB documents"""
+    def _ensure_bm25_initialized(self):
+        """Lazy-load BM25 index on first use"""
+        if self._bm25_initialized:
+            return
+            
         try:
             # Get all documents from vector DB
             metadatas, documents = self.vector_db.get_all()
@@ -101,6 +108,7 @@ class RAGRecommender:
             tokenized_docs = [doc.lower().split() for doc in self.bm25_docs]
             self.bm25 = BM25Okapi(tokenized_docs)
             
+            self._bm25_initialized = True
             log.info(f"Built BM25 index with {len(self.bm25_docs)} documents")
         except Exception as e:
             log.error(f"Failed to build BM25 index: {e}")
@@ -217,6 +225,9 @@ class RAGRecommender:
                 'java', 'python', 'sql', 'tableau', 'react', 'angular', 'node', 'marketing', 'sales',
                 'finance', 'account', 'manager', 'english', 'communication'
             }
+            
+            # Lazy-load BM25 index if needed
+            self._ensure_bm25_initialized()
             
             if self.bm25_metas:
                 query_lower = query.lower()
